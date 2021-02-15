@@ -8,13 +8,15 @@
 
 /* Begin PBXBuildFile section */
 		E7C95A5425D83F2B00DCB3B2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7C95A5325D83F2B00DCB3B2 /* AppDelegate.swift */; };
-		E7C95A5625D83F2B00DCB3B2 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7C95A5525D83F2B00DCB3B2 /* SceneDelegate.swift */; };
 		E7C95A5825D83F2B00DCB3B2 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7C95A5725D83F2B00DCB3B2 /* ViewController.swift */; };
 		E7C95A5B25D83F2B00DCB3B2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E7C95A5925D83F2B00DCB3B2 /* Main.storyboard */; };
 		E7C95A5D25D83F2F00DCB3B2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E7C95A5C25D83F2F00DCB3B2 /* Assets.xcassets */; };
 		E7C95A6025D83F2F00DCB3B2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E7C95A5E25D83F2F00DCB3B2 /* LaunchScreen.storyboard */; };
 		E7C95A6B25D83F2F00DCB3B2 /* TinkoffEdu2021Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7C95A6A25D83F2F00DCB3B2 /* TinkoffEdu2021Tests.swift */; };
 		E7C95A7625D83F2F00DCB3B2 /* TinkoffEdu2021UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7C95A7525D83F2F00DCB3B2 /* TinkoffEdu2021UITests.swift */; };
+		E7C95AA525D8490600DCB3B2 /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7C95AA425D8490600DCB3B2 /* Logger.swift */; };
+		E7C95AA625D8490600DCB3B2 /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7C95AA425D8490600DCB3B2 /* Logger.swift */; };
+		E7C95AA725D8490600DCB3B2 /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7C95AA425D8490600DCB3B2 /* Logger.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,9 +37,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		E7C95A5025D83F2B00DCB3B2 /* TinkoffEdu2021.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TinkoffEdu2021.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		E7C95A5025D83F2B00DCB3B2 /* Tinkoff Edu.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Tinkoff Edu.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E7C95A5325D83F2B00DCB3B2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		E7C95A5525D83F2B00DCB3B2 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		E7C95A5725D83F2B00DCB3B2 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		E7C95A5A25D83F2B00DCB3B2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		E7C95A5C25D83F2F00DCB3B2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -49,6 +50,7 @@
 		E7C95A7125D83F2F00DCB3B2 /* TinkoffEdu2021UITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TinkoffEdu2021UITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E7C95A7525D83F2F00DCB3B2 /* TinkoffEdu2021UITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TinkoffEdu2021UITests.swift; sourceTree = "<group>"; };
 		E7C95A7725D83F2F00DCB3B2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E7C95AA425D8490600DCB3B2 /* Logger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Logger.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -89,7 +91,7 @@
 		E7C95A5125D83F2B00DCB3B2 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				E7C95A5025D83F2B00DCB3B2 /* TinkoffEdu2021.app */,
+				E7C95A5025D83F2B00DCB3B2 /* Tinkoff Edu.app */,
 				E7C95A6625D83F2F00DCB3B2 /* TinkoffEdu2021Tests.xctest */,
 				E7C95A7125D83F2F00DCB3B2 /* TinkoffEdu2021UITests.xctest */,
 			);
@@ -99,8 +101,8 @@
 		E7C95A5225D83F2B00DCB3B2 /* TinkoffEdu2021 */ = {
 			isa = PBXGroup;
 			children = (
+				E7C95AA325D848F600DCB3B2 /* Tools */,
 				E7C95A5325D83F2B00DCB3B2 /* AppDelegate.swift */,
-				E7C95A5525D83F2B00DCB3B2 /* SceneDelegate.swift */,
 				E7C95A5725D83F2B00DCB3B2 /* ViewController.swift */,
 				E7C95A5925D83F2B00DCB3B2 /* Main.storyboard */,
 				E7C95A5C25D83F2F00DCB3B2 /* Assets.xcassets */,
@@ -128,6 +130,14 @@
 			path = TinkoffEdu2021UITests;
 			sourceTree = "<group>";
 		};
+		E7C95AA325D848F600DCB3B2 /* Tools */ = {
+			isa = PBXGroup;
+			children = (
+				E7C95AA425D8490600DCB3B2 /* Logger.swift */,
+			);
+			path = Tools;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -145,7 +155,7 @@
 			);
 			name = TinkoffEdu2021;
 			productName = TinkoffEdu2021;
-			productReference = E7C95A5025D83F2B00DCB3B2 /* TinkoffEdu2021.app */;
+			productReference = E7C95A5025D83F2B00DCB3B2 /* Tinkoff Edu.app */;
 			productType = "com.apple.product-type.application";
 		};
 		E7C95A6525D83F2F00DCB3B2 /* TinkoffEdu2021Tests */ = {
@@ -260,7 +270,7 @@
 			files = (
 				E7C95A5825D83F2B00DCB3B2 /* ViewController.swift in Sources */,
 				E7C95A5425D83F2B00DCB3B2 /* AppDelegate.swift in Sources */,
-				E7C95A5625D83F2B00DCB3B2 /* SceneDelegate.swift in Sources */,
+				E7C95AA525D8490600DCB3B2 /* Logger.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -269,6 +279,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E7C95A6B25D83F2F00DCB3B2 /* TinkoffEdu2021Tests.swift in Sources */,
+				E7C95AA625D8490600DCB3B2 /* Logger.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -277,6 +288,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E7C95A7625D83F2F00DCB3B2 /* TinkoffEdu2021UITests.swift in Sources */,
+				E7C95AA725D8490600DCB3B2 /* Logger.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -366,7 +378,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -421,7 +433,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -444,7 +456,7 @@
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.zvaro.TinkoffEdu2021;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "Tinkoff Edu";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -463,7 +475,7 @@
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.zvaro.TinkoffEdu2021;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "Tinkoff Edu";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
