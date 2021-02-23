@@ -8,42 +8,22 @@
 import UIKit
 
 class ViewController: UIViewController {
-    
-    private var logger: Logger = Logger()
-    
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        logger.info(message: "viewWillAppear")
-    }
-    
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-        logger.info(message: "viewDidAppear")
-    }
-    
-    override func viewWillLayoutSubviews() {
-        super.viewWillLayoutSubviews()
-        logger.info(message: "viewWillLayoutSubviews")
-    }
-    
-    override func viewDidLayoutSubviews() {
-        super.viewDidLayoutSubviews()
-        logger.info(message: "viewDidLayoutSubviews")
-    }
-    override func viewWillDisappear(_ animated: Bool) {
-        super.viewWillDisappear(animated)
-        logger.info(message: "viewWillDisappear")
-    }
-    
-    override func viewDidDisappear(_ animated: Bool) {
-        super.viewDidDisappear(animated)
-        logger.info(message: "viewDidDisappear")
-    }
-    
+    @IBOutlet weak var profileImg: UIImageView!
+    @IBOutlet weak var profileEditBtn: UIButton!
+    @IBOutlet weak var profileSymbolsLabel: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
-        logger.info(message: "viewDidLoad")
+        
+        profileImg.layer.cornerRadius = profileImg.frame.height/2
+        profileEditBtn.layer.cornerRadius = 14
+        
+        profileImg.isUserInteractionEnabled = true
+        let profileImgGesture = UITapGestureRecognizer(target: self, action: #selector(profileImgTap(_:)))
+        profileImg.addGestureRecognizer(profileImgGesture)
     }
-
+    
+    @objc func profileImgTap(_ sender: UITapGestureRecognizer){
+        print("Prifile img")
+    }
 }
 
