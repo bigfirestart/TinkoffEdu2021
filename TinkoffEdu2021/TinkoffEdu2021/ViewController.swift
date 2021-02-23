@@ -7,10 +7,12 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, UIImagePickerControllerDelegate & UINavigationControllerDelegate {
     @IBOutlet weak var profileImg: UIImageView!
     @IBOutlet weak var profileEditBtn: UIButton!
     @IBOutlet weak var profileSymbolsLabel: UILabel!
+    var imagePicker = UIImagePickerController()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -20,10 +22,6 @@ class ViewController: UIViewController {
         profileImg.isUserInteractionEnabled = true
         let profileImgGesture = UITapGestureRecognizer(target: self, action: #selector(profileImgTap(_:)))
         profileImg.addGestureRecognizer(profileImgGesture)
-    }
-    
-    @objc func profileImgTap(_ sender: UITapGestureRecognizer){
-        print("Prifile img")
     }
 }
 

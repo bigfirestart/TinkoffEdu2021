@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E78B27D225E54D1500FA709C /* ProfileImageController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E78B27D125E54D1500FA709C /* ProfileImageController.swift */; };
 		E7C95A5425D83F2B00DCB3B2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7C95A5325D83F2B00DCB3B2 /* AppDelegate.swift */; };
 		E7C95A5825D83F2B00DCB3B2 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7C95A5725D83F2B00DCB3B2 /* ViewController.swift */; };
 		E7C95A5B25D83F2B00DCB3B2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E7C95A5925D83F2B00DCB3B2 /* Main.storyboard */; };
@@ -37,6 +38,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		E78B27D125E54D1500FA709C /* ProfileImageController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileImageController.swift; sourceTree = "<group>"; };
 		E7C95A5025D83F2B00DCB3B2 /* Tinkoff Edu.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Tinkoff Edu.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E7C95A5325D83F2B00DCB3B2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E7C95A5725D83F2B00DCB3B2 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -108,6 +110,7 @@
 				E7C95A5C25D83F2F00DCB3B2 /* Assets.xcassets */,
 				E7C95A5E25D83F2F00DCB3B2 /* LaunchScreen.storyboard */,
 				E7C95A6125D83F2F00DCB3B2 /* Info.plist */,
+				E78B27D125E54D1500FA709C /* ProfileImageController.swift */,
 			);
 			path = TinkoffEdu2021;
 			sourceTree = "<group>";
@@ -269,6 +272,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E7C95A5825D83F2B00DCB3B2 /* ViewController.swift in Sources */,
+				E78B27D225E54D1500FA709C /* ProfileImageController.swift in Sources */,
 				E7C95A5425D83F2B00DCB3B2 /* AppDelegate.swift in Sources */,
 				E7C95AA525D8490600DCB3B2 /* Logger.swift in Sources */,
 			);
