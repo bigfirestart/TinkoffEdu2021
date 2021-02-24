@@ -23,26 +23,32 @@ extension ViewController {
     
     func chooseFromGallery(action: UIAlertAction){
         imagePicker.delegate = self
-        imagePicker.allowsEditing = true
         imagePicker.mediaTypes = ["public.image"]
         imagePicker.sourceType = .photoLibrary
         present(imagePicker, animated: true, completion: nil)
     }
     
     func takeCameraPhoto(action: UIAlertAction){
-        imagePicker.delegate = self
-        imagePicker.allowsEditing = true
-        imagePicker.sourceType = .camera
-        present(imagePicker, animated: true, completion: nil)
+        if UIImagePickerController.isSourceTypeAvailable(.camera) {
+            imagePicker.delegate = self
+            imagePicker.sourceType = .camera
+            present(imagePicker, animated: true, completion: nil)
+        }
     }
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         picker.dismiss(animated: true, completion: nil)
-        guard let image = info[.originalImage] as? UIImage else {
-            fatalError("Expected a dictionary containing an image, but was provided the following: \(info)")
+        if let image = info[.originalImage] as? UIImage {
+            profileImg?.image = image
+            profileSymbolsLabel?.isHidden = true
         }
-        profileImg.image = image
-        profileSymbolsLabel.isHidden = true
-        
+    }
+    
+    func getProfileEditBtnFrame() -> String {
+        if let frame = self.profileEditBtn?.frame {
+             return "\(frame)"
+        } else {
+            return "None"
+        }
     }
 }

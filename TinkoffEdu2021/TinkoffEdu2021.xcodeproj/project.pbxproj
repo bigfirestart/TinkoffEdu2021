@@ -12,7 +12,6 @@
 		E7C95A5825D83F2B00DCB3B2 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7C95A5725D83F2B00DCB3B2 /* ViewController.swift */; };
 		E7C95A5B25D83F2B00DCB3B2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E7C95A5925D83F2B00DCB3B2 /* Main.storyboard */; };
 		E7C95A5D25D83F2F00DCB3B2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E7C95A5C25D83F2F00DCB3B2 /* Assets.xcassets */; };
-		E7C95A6025D83F2F00DCB3B2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E7C95A5E25D83F2F00DCB3B2 /* LaunchScreen.storyboard */; };
 		E7C95A6B25D83F2F00DCB3B2 /* TinkoffEdu2021Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7C95A6A25D83F2F00DCB3B2 /* TinkoffEdu2021Tests.swift */; };
 		E7C95A7625D83F2F00DCB3B2 /* TinkoffEdu2021UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7C95A7525D83F2F00DCB3B2 /* TinkoffEdu2021UITests.swift */; };
 		E7C95AA525D8490600DCB3B2 /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7C95AA425D8490600DCB3B2 /* Logger.swift */; };
@@ -44,7 +43,6 @@
 		E7C95A5725D83F2B00DCB3B2 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		E7C95A5A25D83F2B00DCB3B2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		E7C95A5C25D83F2F00DCB3B2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		E7C95A5F25D83F2F00DCB3B2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E7C95A6125D83F2F00DCB3B2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E7C95A6625D83F2F00DCB3B2 /* TinkoffEdu2021Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TinkoffEdu2021Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E7C95A6A25D83F2F00DCB3B2 /* TinkoffEdu2021Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TinkoffEdu2021Tests.swift; sourceTree = "<group>"; };
@@ -108,7 +106,6 @@
 				E7C95A5725D83F2B00DCB3B2 /* ViewController.swift */,
 				E7C95A5925D83F2B00DCB3B2 /* Main.storyboard */,
 				E7C95A5C25D83F2F00DCB3B2 /* Assets.xcassets */,
-				E7C95A5E25D83F2F00DCB3B2 /* LaunchScreen.storyboard */,
 				E7C95A6125D83F2F00DCB3B2 /* Info.plist */,
 				E78B27D125E54D1500FA709C /* ProfileImageController.swift */,
 			);
@@ -244,7 +241,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E7C95A6025D83F2F00DCB3B2 /* LaunchScreen.storyboard in Resources */,
 				E7C95A5D25D83F2F00DCB3B2 /* Assets.xcassets in Resources */,
 				E7C95A5B25D83F2B00DCB3B2 /* Main.storyboard in Resources */,
 			);
@@ -318,14 +314,6 @@
 				E7C95A5A25D83F2B00DCB3B2 /* Base */,
 			);
 			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		E7C95A5E25D83F2F00DCB3B2 /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				E7C95A5F25D83F2F00DCB3B2 /* Base */,
-			);
-			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
