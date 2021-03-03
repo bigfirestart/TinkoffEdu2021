@@ -1,26 +1,24 @@
 import Foundation
 
 class Logger{
-    public var logOn: Bool
     
-    init() {
-        self.logOn = true
+    public static func logOn() -> Bool {
+        if let logOn = ProcessInfo.processInfo.environment["logOn"]{
+            return logOn=="true"
+        }
+        return false
     }
     
-    init(logOn: Bool) {
-        self.logOn = logOn
-    }
-    
-    public func info(message: String) {
-        if logOn {
+    public static func info(message: String) {
+        if logOn() {
             let format = DateFormatter()
             format.dateFormat = "yyyy-MM-dd HH:mm:ss"
             print(format.string(from: Date())  + " : " + message)
         }
     }
     
-    public func stateChangeLog(fromState: String, toState: String, methodName: String) {
-        self.info(message: "Application moved from \(fromState) to \(toState): \(methodName)")
+    public static func stateChangeLog(fromState: String, toState: String, methodName: String) {
+        Logger.info(message: "Application moved from \(fromState) to \(toState): \(methodName)")
     }
 }
 
