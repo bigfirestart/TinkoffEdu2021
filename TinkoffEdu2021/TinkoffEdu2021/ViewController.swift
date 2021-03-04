@@ -15,20 +15,19 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate & UINavi
     @IBOutlet weak var profileSymbolsLabel: UILabel?
     
     var imagePicker = UIImagePickerController()
-    let logger = Logger()
 
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         
         // тут view ещё не загружен
-        logger.info(message: "init frame - \(getProfileEditBtnFrame())")
+        Logger.info(message: "init frame - \(getProfileEditBtnFrame())")
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         // тут view из сториборда
-        logger.info(message: "viewDidLoad frame - \(getProfileEditBtnFrame())")
+        Logger.info(message: "viewDidLoad frame - \(getProfileEditBtnFrame())")
         
         profileImg?.layer.cornerRadius = (profileImg?.frame.height ?? 1)/2
         profileEditBtn?.layer.cornerRadius = 14
@@ -42,7 +41,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate & UINavi
         super.viewDidAppear(animated)
         
         // тут view перерисовался под наше устройство, поэтому отличается
-        logger.info(message: "viewDidAppear frame - \(getProfileEditBtnFrame())")
+        Logger.info(message: "viewDidAppear frame - \(getProfileEditBtnFrame())")
     }
 
 }
