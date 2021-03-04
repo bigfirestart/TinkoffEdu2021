@@ -16,27 +16,32 @@ class ConversationTableViewCell: UITableViewCell {
     var leadingConstraint: NSLayoutConstraint? = nil
     var trailingConstraint: NSLayoutConstraint? = nil
     
-    var isIncoming: Bool? {
-        didSet {
-            if self.isIncoming ?? false {
-                bubbleBackgroundView.backgroundColor = UIColor(red: 223/255, green: 223/255, blue: 223/255, alpha: 1)
-                leadingConstraint?.isActive = true
-                trailingConstraint?.isActive = false
-              
-            }
-            else{
-                bubbleBackgroundView.backgroundColor = UIColor(red: 220/255, green: 247/255, blue: 197/255, alpha: 1)
-                leadingConstraint?.isActive = false
-                trailingConstraint?.isActive = true
-            }
+    
+    func configure(with config: ConversationCellConfiguration){
+        if config.text == nil {
+            messageLabel.text = "..."
+        }
+        else {
+            messageLabel.text = config.text
+        }
+        
+        if config.isIncoming {
+            bubbleBackgroundView.backgroundColor = UIColor(red: 223/255, green: 223/255, blue: 223/255, alpha: 1)
+            leadingConstraint?.isActive = true
+            trailingConstraint?.isActive = false
+        }
+        else {
+            bubbleBackgroundView.backgroundColor = UIColor(red: 220/255, green: 247/255, blue: 197/255, alpha: 1)
+            leadingConstraint?.isActive = false
+            trailingConstraint?.isActive = true
         }
     }
+    
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         
         //bubble
-        bubbleBackgroundView.backgroundColor = .yellow
         bubbleBackgroundView.translatesAutoresizingMaskIntoConstraints = false
         bubbleBackgroundView.layer.cornerRadius = 10
         addSubview(bubbleBackgroundView)
@@ -70,8 +75,6 @@ class ConversationTableViewCell: UITableViewCell {
         
         
         leadingConstraint = messageLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 32)
-        
-        
         trailingConstraint = messageLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -32)
        
         

@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct ConversationCellConfiguration {
+struct ConversationsCellConfiguration {
     var name: String?
     var message: String?
     var date: Date?

@@ -22,26 +22,26 @@
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Keks" id="OHv-VE-hhS" customClass="ConversationsTableViewCell" customModule="Tinkoff_Edu" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="390" height="99.666664123535156"/>
+                                        <rect key="frame" x="0.0" y="28" width="390" height="73"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="OHv-VE-hhS" id="iaE-Jx-Ror">
-                                            <rect key="frame" x="0.0" y="0.0" width="390" height="99.666664123535156"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="390" height="73"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="34" translatesAutoresizingMaskIntoConstraints="NO" id="3Zu-w6-hgF">
-                                                    <rect key="frame" x="19.666666666666657" y="5" width="351" height="89.666666666666671"/>
+                                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="3Zu-w6-hgF">
+                                                    <rect key="frame" x="19.666666666666657" y="3.6666666666666643" width="351" height="65.666666666666686"/>
                                                     <subviews>
                                                         <stackView opaque="NO" contentMode="scaleToFill" spacing="267" translatesAutoresizingMaskIntoConstraints="NO" id="RfO-6u-RAP">
                                                             <rect key="frame" x="0.0" y="0.0" width="349.66666666666669" height="31.333333333333332"/>
                                                             <subviews>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mPA-vq-9Sb">
-                                                                    <rect key="frame" x="0.0" y="0.0" width="174.66666666666666" height="31.333333333333332"/>
+                                                                    <rect key="frame" x="0.0" y="0.0" width="279.66666666666669" height="31.333333333333332"/>
                                                                     <fontDescription key="fontDescription" type="system" pointSize="26"/>
                                                                     <nil key="textColor"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mwP-Ml-dhk">
-                                                                    <rect key="frame" x="244.66666666666663" y="0.0" width="105" height="31.333333333333332"/>
+                                                                    <rect key="frame" x="297" y="0.0" width="52.666666666666686" height="31.333333333333332"/>
                                                                     <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                                                     <nil key="textColor"/>
                                                                     <nil key="highlightedColor"/>
@@ -49,13 +49,13 @@
                                                             </subviews>
                                                             <constraints>
                                                                 <constraint firstItem="mPA-vq-9Sb" firstAttribute="leading" secondItem="RfO-6u-RAP" secondAttribute="leading" id="ouo-gV-M2O"/>
-                                                                <constraint firstItem="mwP-Ml-dhk" firstAttribute="width" secondItem="RfO-6u-RAP" secondAttribute="width" multiplier="0.3" id="q4Z-yy-gbZ"/>
-                                                                <constraint firstItem="mPA-vq-9Sb" firstAttribute="width" secondItem="RfO-6u-RAP" secondAttribute="width" multiplier="0.5" id="qkw-3H-0Pj"/>
+                                                                <constraint firstItem="mwP-Ml-dhk" firstAttribute="width" secondItem="RfO-6u-RAP" secondAttribute="width" multiplier="0.15" id="q4Z-yy-gbZ"/>
+                                                                <constraint firstItem="mPA-vq-9Sb" firstAttribute="width" secondItem="RfO-6u-RAP" secondAttribute="width" multiplier="0.8" id="qkw-3H-0Pj"/>
                                                                 <constraint firstAttribute="trailing" secondItem="mwP-Ml-dhk" secondAttribute="trailing" id="xKi-mE-ZPF"/>
                                                             </constraints>
                                                         </stackView>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="justified" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9AX-0N-x0U">
-                                                            <rect key="frame" x="0.0" y="65.333333333333329" width="349.66666666666669" height="24.333333333333329"/>
+                                                            <rect key="frame" x="0.0" y="41.333333333333336" width="349.66666666666669" height="24.333333333333336"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
@@ -108,10 +108,10 @@
             </objects>
             <point key="canvasLocation" x="-33.846153846153847" y="71.800947867298575"/>
         </scene>
-        <!--View Controller-->
+        <!--Profile View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Tinkoff_Edu" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ProfileViewController" customModule="Tinkoff_Edu" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="390" height="790"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -183,7 +183,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="968" y="72"/>
+            <point key="canvasLocation" x="922" y="72"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="gt9-uC-iqJ">

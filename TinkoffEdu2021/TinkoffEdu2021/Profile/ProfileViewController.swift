@@ -9,7 +9,7 @@ import UIKit
 import Foundation
 
 
-class ViewController: UIViewController, UIImagePickerControllerDelegate & UINavigationControllerDelegate {
+class ProfileViewController: UIViewController, UIImagePickerControllerDelegate & UINavigationControllerDelegate {
     @IBOutlet weak var profileImg: UIImageView?
     @IBOutlet weak var profileEditBtn: UIButton?
     @IBOutlet weak var profileSymbolsLabel: UILabel?

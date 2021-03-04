@@ -10,10 +10,7 @@ import UIKit
 class ConversationViewController: UIViewController {
     var conversationTable =  UITableView()
     
-    struct Message {
-        let text: String
-        var isIncoming: Bool
-    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -37,7 +34,7 @@ extension ConversationViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 30
+        return Mock.messages.count
     }
     
     
@@ -47,7 +44,8 @@ extension ConversationViewController: UITableViewDataSource {
             return UITableViewCell()
         }
         
-        cell.isIncoming = Int.random(in: 0..<2) == 0
+        cell.configure(with: Mock.messages[indexPath.row])
+        
         return cell
     }
 }
