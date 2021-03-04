@@ -36,7 +36,7 @@ class Mock {
         ConversationsCellConfiguration(
             name: sampleText,
             message: sampleText,
-            date: Calendar.current.date(byAdding: .hour, value: -2, to: Date()),
+            date: Calendar.current.date(byAdding: .hour, value: -23, to: Date()),
             online: true,
             hasUnreadMessages: true
         ),

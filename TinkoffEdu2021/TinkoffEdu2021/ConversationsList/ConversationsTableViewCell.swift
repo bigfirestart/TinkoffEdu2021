@@ -46,16 +46,18 @@ class ConversationsTableViewCell: UITableViewCell {
         else {
             lastMessageLabel.font = UIFont.systemFont(ofSize: lastMessageLabel.font.pointSize)
         }
-        // set dafault ?
+        
         
         if let lastMessageDate = config.date {
+            
             let format = DateFormatter()
-            if lastMessageDate < Calendar.current.date(byAdding: .day, value: -1, to: Date()) ?? Date() {
-                format.dateFormat = "dd.MM"
-            }
-            else {
+            format.dateFormat = "dd.MM"
+            
+            //check is day is same
+            if format.string(from: lastMessageDate) == format.string(from: Date()) {
                 format.dateFormat = "HH:mm"
             }
+    
             lastMessageDateLabel.text = format.string(from: lastMessageDate)
         }
         else {
