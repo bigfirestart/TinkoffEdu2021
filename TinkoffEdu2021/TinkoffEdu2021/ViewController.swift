@@ -6,43 +6,43 @@
 //
 
 import UIKit
+import Foundation
 
-class ViewController: UIViewController {
+
+class ViewController: UIViewController, UIImagePickerControllerDelegate & UINavigationControllerDelegate {
+    @IBOutlet weak var profileImg: UIImageView?
+    @IBOutlet weak var profileEditBtn: UIButton?
+    @IBOutlet weak var profileSymbolsLabel: UILabel?
     
-    private var logger: Logger = Logger()
-    
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        logger.info(message: "viewWillAppear")
-    }
-    
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-        logger.info(message: "viewDidAppear")
-    }
-    
-    override func viewWillLayoutSubviews() {
-        super.viewWillLayoutSubviews()
-        logger.info(message: "viewWillLayoutSubviews")
-    }
-    
-    override func viewDidLayoutSubviews() {
-        super.viewDidLayoutSubviews()
-        logger.info(message: "viewDidLayoutSubviews")
-    }
-    override func viewWillDisappear(_ animated: Bool) {
-        super.viewWillDisappear(animated)
-        logger.info(message: "viewWillDisappear")
-    }
-    
-    override func viewDidDisappear(_ animated: Bool) {
-        super.viewDidDisappear(animated)
-        logger.info(message: "viewDidDisappear")
+    var imagePicker = UIImagePickerController()
+    let logger = Logger()
+
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+        
+        // тут view ещё не загружен
+        logger.info(message: "init frame - \(getProfileEditBtnFrame())")
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        logger.info(message: "viewDidLoad")
+        
+        // тут view из сториборда
+        logger.info(message: "viewDidLoad frame - \(getProfileEditBtnFrame())")
+        
+        profileImg?.layer.cornerRadius = (profileImg?.frame.height ?? 1)/2
+        profileEditBtn?.layer.cornerRadius = 14
+        
+        profileImg?.isUserInteractionEnabled = true
+        let profileImgGesture = UITapGestureRecognizer(target: self, action: #selector(profileImgTap(_:)))
+        profileImg?.addGestureRecognizer(profileImgGesture)
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        // тут view перерисовался под наше устройство, поэтому отличается
+        logger.info(message: "viewDidAppear frame - \(getProfileEditBtnFrame())")
     }
 
 }
