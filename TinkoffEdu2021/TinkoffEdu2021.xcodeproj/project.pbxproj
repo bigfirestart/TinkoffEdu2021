@@ -8,6 +8,12 @@
 
 /* Begin PBXBuildFile section */
 		E78B27D225E54D1500FA709C /* ProfileImageController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E78B27D125E54D1500FA709C /* ProfileImageController.swift */; };
+		E78B27E325EF770700FA709C /* ConversationsListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E78B27E225EF770700FA709C /* ConversationsListViewController.swift */; };
+		E78B27EE25EF7F5100FA709C /* ConvesationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E78B27ED25EF7F5100FA709C /* ConvesationViewController.swift */; };
+		E78B27FC25EFF9D000FA709C /* ConversationCellConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = E78B27FB25EFF9D000FA709C /* ConversationCellConfiguration.swift */; };
+		E78B281325F024A600FA709C /* ConversationTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E78B281225F024A600FA709C /* ConversationTableViewCell.swift */; };
+		E78B281825F03AA600FA709C /* ConversationsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E78B281725F03AA500FA709C /* ConversationsTableViewCell.swift */; };
+		E78B282325F0CF7600FA709C /* Mock.swift in Sources */ = {isa = PBXBuildFile; fileRef = E78B282225F0CF7400FA709C /* Mock.swift */; };
 		E7C95A5425D83F2B00DCB3B2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7C95A5325D83F2B00DCB3B2 /* AppDelegate.swift */; };
 		E7C95A5825D83F2B00DCB3B2 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7C95A5725D83F2B00DCB3B2 /* ViewController.swift */; };
 		E7C95A5B25D83F2B00DCB3B2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E7C95A5925D83F2B00DCB3B2 /* Main.storyboard */; };
@@ -38,6 +44,12 @@
 
 /* Begin PBXFileReference section */
 		E78B27D125E54D1500FA709C /* ProfileImageController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileImageController.swift; sourceTree = "<group>"; };
+		E78B27E225EF770700FA709C /* ConversationsListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConversationsListViewController.swift; sourceTree = "<group>"; };
+		E78B27ED25EF7F5100FA709C /* ConvesationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConvesationViewController.swift; sourceTree = "<group>"; };
+		E78B27FB25EFF9D000FA709C /* ConversationCellConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConversationCellConfiguration.swift; sourceTree = "<group>"; };
+		E78B281225F024A600FA709C /* ConversationTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConversationTableViewCell.swift; sourceTree = "<group>"; };
+		E78B281725F03AA500FA709C /* ConversationsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConversationsTableViewCell.swift; sourceTree = "<group>"; };
+		E78B282225F0CF7400FA709C /* Mock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mock.swift; sourceTree = "<group>"; };
 		E7C95A5025D83F2B00DCB3B2 /* Tinkoff Edu.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Tinkoff Edu.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E7C95A5325D83F2B00DCB3B2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E7C95A5725D83F2B00DCB3B2 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -78,6 +90,33 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		E78B27E725EF771F00FA709C /* ConversationsList */ = {
+			isa = PBXGroup;
+			children = (
+				E78B27E225EF770700FA709C /* ConversationsListViewController.swift */,
+				E78B27FB25EFF9D000FA709C /* ConversationCellConfiguration.swift */,
+				E78B281725F03AA500FA709C /* ConversationsTableViewCell.swift */,
+			);
+			path = ConversationsList;
+			sourceTree = "<group>";
+		};
+		E78B27E825EF773D00FA709C /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				E78B27D125E54D1500FA709C /* ProfileImageController.swift */,
+			);
+			path = Profile;
+			sourceTree = "<group>";
+		};
+		E78B27E925EF777A00FA709C /* Conversation */ = {
+			isa = PBXGroup;
+			children = (
+				E78B27ED25EF7F5100FA709C /* ConvesationViewController.swift */,
+				E78B281225F024A600FA709C /* ConversationTableViewCell.swift */,
+			);
+			path = Conversation;
+			sourceTree = "<group>";
+		};
 		E7C95A4725D83F2B00DCB3B2 = {
 			isa = PBXGroup;
 			children = (
@@ -101,13 +140,15 @@
 		E7C95A5225D83F2B00DCB3B2 /* TinkoffEdu2021 */ = {
 			isa = PBXGroup;
 			children = (
+				E78B27E925EF777A00FA709C /* Conversation */,
+				E78B27E825EF773D00FA709C /* Profile */,
+				E78B27E725EF771F00FA709C /* ConversationsList */,
 				E7C95AA325D848F600DCB3B2 /* Tools */,
 				E7C95A5325D83F2B00DCB3B2 /* AppDelegate.swift */,
 				E7C95A5725D83F2B00DCB3B2 /* ViewController.swift */,
 				E7C95A5925D83F2B00DCB3B2 /* Main.storyboard */,
 				E7C95A5C25D83F2F00DCB3B2 /* Assets.xcassets */,
 				E7C95A6125D83F2F00DCB3B2 /* Info.plist */,
-				E78B27D125E54D1500FA709C /* ProfileImageController.swift */,
 			);
 			path = TinkoffEdu2021;
 			sourceTree = "<group>";
@@ -134,6 +175,7 @@
 			isa = PBXGroup;
 			children = (
 				E7C95AA425D8490600DCB3B2 /* Logger.swift */,
+				E78B282225F0CF7400FA709C /* Mock.swift */,
 			);
 			path = Tools;
 			sourceTree = "<group>";
@@ -267,9 +309,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E78B281325F024A600FA709C /* ConversationTableViewCell.swift in Sources */,
+				E78B282325F0CF7600FA709C /* Mock.swift in Sources */,
 				E7C95A5825D83F2B00DCB3B2 /* ViewController.swift in Sources */,
+				E78B27E325EF770700FA709C /* ConversationsListViewController.swift in Sources */,
+				E78B281825F03AA600FA709C /* ConversationsTableViewCell.swift in Sources */,
 				E78B27D225E54D1500FA709C /* ProfileImageController.swift in Sources */,
 				E7C95A5425D83F2B00DCB3B2 /* AppDelegate.swift in Sources */,
+				E78B27EE25EF7F5100FA709C /* ConvesationViewController.swift in Sources */,
+				E78B27FC25EFF9D000FA709C /* ConversationCellConfiguration.swift in Sources */,
 				E7C95AA525D8490600DCB3B2 /* Logger.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
