@@ -13,6 +13,8 @@ class ProfileViewController: UIViewController, UIImagePickerControllerDelegate &
     @IBOutlet weak var profileImg: UIImageView?
     @IBOutlet weak var profileEditBtn: UIButton?
     @IBOutlet weak var profileSymbolsLabel: UILabel?
+    @IBOutlet weak var backBtn: UIButton!
+    
     
     var imagePicker = UIImagePickerController()
 
@@ -35,6 +37,8 @@ class ProfileViewController: UIViewController, UIImagePickerControllerDelegate &
         profileImg?.isUserInteractionEnabled = true
         let profileImgGesture = UITapGestureRecognizer(target: self, action: #selector(profileImgTap(_:)))
         profileImg?.addGestureRecognizer(profileImgGesture)
+        
+        backBtn.addTarget(self, action: #selector(closeModal), for: .touchUpInside)
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -42,6 +46,10 @@ class ProfileViewController: UIViewController, UIImagePickerControllerDelegate &
         
         // тут view перерисовался под наше устройство, поэтому отличается
         Logger.info(message: "viewDidAppear frame - \(getProfileEditBtnFrame())")
+    }
+    
+    @objc func closeModal(sender: UIButton){
+        dismiss(animated: true, completion: nil)
     }
 
 }
