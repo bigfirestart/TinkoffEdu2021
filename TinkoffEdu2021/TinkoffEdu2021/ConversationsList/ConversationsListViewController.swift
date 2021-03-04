@@ -69,7 +69,15 @@ extension ConversationsListViewController: UITableViewDataSource {
 extension ConversationsListViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let conversationViewController = ConversationViewController()
-        conversationViewController.title = Mock.onlineConversationsList[indexPath.row].name
+        switch indexPath.section {
+            case 0:
+                conversationViewController.title = Mock.onlineConversationsList[indexPath.row].name
+            case 1:
+                conversationViewController.title = Mock.historyConversationsList[indexPath.row].name
+            default:
+                break
+        }
+       
         navigationController?.pushViewController(conversationViewController, animated: true)
     }
 }
