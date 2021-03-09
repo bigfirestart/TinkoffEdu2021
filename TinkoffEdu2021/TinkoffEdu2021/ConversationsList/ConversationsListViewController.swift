@@ -14,7 +14,6 @@ class ConversationsListViewController: UIViewController{
     override func viewDidLoad(){
         super.viewDidLoad()
         title = "Tinkoff Chat"
-        
         conversationsTable.dataSource = self
         conversationsTable.delegate = self
         
@@ -49,7 +48,7 @@ extension ConversationsListViewController: UITableViewDataSource {
     }
  
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: "Keks", for: indexPath) as? ConversationsTableViewCell else {
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "ConversationsCell", for: indexPath) as? ConversationsTableViewCell else {
             return UITableViewCell()
         }
         
