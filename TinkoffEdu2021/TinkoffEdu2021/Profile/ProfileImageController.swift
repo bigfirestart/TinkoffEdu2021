@@ -9,7 +9,7 @@ import Foundation
 import UIKit
 
 
-extension ViewController {
+extension ProfileViewController {
     
     @objc func profileImgTap(_ sender: UITapGestureRecognizer){
         let ac = UIAlertController(title: "Select image", message: nil, preferredStyle: .actionSheet)
