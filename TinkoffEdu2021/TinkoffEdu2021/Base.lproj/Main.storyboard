@@ -153,7 +153,7 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="MD" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="55" translatesAutoresizingMaskIntoConstraints="NO" id="5ob-6p-dzD">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="MD" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="55" translatesAutoresizingMaskIntoConstraints="NO" id="5ob-6p-dzD" customClass="ProfileUILabel" customModule="Tinkoff_Edu" customModuleProvider="target">
                                 <rect key="frame" x="76" y="96" width="168" height="168"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="120"/>
                                 <nil key="textColor"/>

@@ -17,7 +17,6 @@ class SettingsViewController: UIViewController {
     @IBOutlet weak var nightThemeLabel: UILabel!
     
     
-    //check for weak
     var themeDelegate: ThemesPickerDelegate?
     
     //var themeHandler: ((Theme) -> ())?

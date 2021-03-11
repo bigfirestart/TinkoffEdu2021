@@ -12,7 +12,7 @@ import Foundation
 class ProfileViewController: UIViewController, UIImagePickerControllerDelegate & UINavigationControllerDelegate {
     @IBOutlet weak var profileImg: UIImageView?
     @IBOutlet weak var profileEditBtn: UIButton?
-    @IBOutlet weak var profileSymbolsLabel: UILabel?
+    @IBOutlet weak var profileSymbolsLabel: ProfileUILabel?
     //@IBOutlet weak var backBtn: UIButton!
     
     
@@ -38,6 +38,8 @@ class ProfileViewController: UIViewController, UIImagePickerControllerDelegate &
         let profileImgGesture = UITapGestureRecognizer(target: self, action: #selector(profileImgTap(_:)))
         profileImg?.addGestureRecognizer(profileImgGesture)
         
+        profileSymbolsLabel?.textColor = .black
+        
         //backBtn.addTarget(self, action: #selector(closeModal), for: .touchUpInside)
     }
     
@@ -54,3 +56,4 @@ class ProfileViewController: UIViewController, UIImagePickerControllerDelegate &
 
 }
 
+class ProfileUILabel: UILabel {}

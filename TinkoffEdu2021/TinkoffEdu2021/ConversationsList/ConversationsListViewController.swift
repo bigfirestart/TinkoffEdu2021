@@ -30,7 +30,6 @@ class ConversationsListViewController: UIViewController{
         title = "Tinkoff Chat"
         conversationsTable.dataSource = self
         conversationsTable.delegate = self
-        
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

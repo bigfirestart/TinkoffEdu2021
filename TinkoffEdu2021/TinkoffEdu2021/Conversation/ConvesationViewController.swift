@@ -24,6 +24,7 @@ class ConversationViewController: UIViewController {
         
         conversationTable.dataSource = self
         conversationTable.register(ConversationTableViewCell.self, forCellReuseIdentifier: "ConversationCell")
+    
     }
 }
 
