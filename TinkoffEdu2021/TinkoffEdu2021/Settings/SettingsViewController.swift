@@ -16,9 +16,10 @@ class SettingsViewController: UIViewController {
     @IBOutlet weak var dayThemeLabel: UILabel!
     @IBOutlet weak var nightThemeLabel: UILabel!
     
-    
+    //может возникнуть retain cycle если themeDelegate будет ссылаться на SettingsViewController
     var themeDelegate: ThemesPickerDelegate?
     
+    //может возникнуть цикл если будем использовать self
     //var themeHandler: ((Theme) -> ())?
     
     
