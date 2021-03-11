@@ -33,12 +33,12 @@ class ConversationsTableViewCell: UITableViewCell {
             lastMessageLabel.text = config.message
         }
         
-        if config.online {
-            self.backgroundColor = UIColor(red: 255/255, green: 252/255, blue: 243/255, alpha: 1)
-        }
-        else{
-            self.backgroundColor = .white
-        }
+//        if config.online {
+//            self.backgroundColor = UIColor(red: 255/255, green: 252/255, blue: 243/255, alpha: 1)
+//        }
+//        else{
+//            self.backgroundColor = .white
+//        }
         
         if config.hasUnreadMessages {
             lastMessageLabel.font = UIFont.boldSystemFont(ofSize: lastMessageLabel.font.pointSize)
@@ -57,11 +57,23 @@ class ConversationsTableViewCell: UITableViewCell {
             if format.string(from: lastMessageDate) == format.string(from: Date()) {
                 format.dateFormat = "HH:mm"
             }
+            else {
+                format.dateFormat = "dd MMM"
+            }
+            
     
             lastMessageDateLabel.text = format.string(from: lastMessageDate)
         }
         else {
             lastMessageDateLabel.text = "..."
         }
+    }
+    
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        backgroundColor = nil
+        userNameLabel.text = nil
+        lastMessageDateLabel.text = nil
+        lastMessageLabel.text = nil
     }
 }

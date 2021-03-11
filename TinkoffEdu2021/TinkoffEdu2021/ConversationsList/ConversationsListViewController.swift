@@ -13,10 +13,36 @@ class ConversationsListViewController: UIViewController{
     
     override func viewDidLoad(){
         super.viewDidLoad()
+        
+        switch UserDefaults.standard.object(forKey: "Theme") as? String {
+            case "Classic":
+                ThemeManager.apply(.classic, application: UIApplication.shared)
+            case "Day":
+                ThemeManager.apply(.day, application: UIApplication.shared)
+            case "Night":
+                ThemeManager.apply(.night, application: UIApplication.shared)
+            case .none:
+                break
+            case .some(_):
+                break
+        }
+       
         title = "Tinkoff Chat"
         conversationsTable.dataSource = self
         conversationsTable.delegate = self
         
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "SegueToThemes" {
+            guard let settings = segue.destination as? SettingsViewController else { return }
+            
+            settings.themeDelegate = self
+//            settings.themeHandler = { (theme: Theme) -> () in
+//                ThemeManager.apply(theme, application: UIApplication.shared)
+//                print(theme)
+//            }
+        }
     }
 }
 
@@ -80,3 +106,11 @@ extension ConversationsListViewController: UITableViewDelegate {
         navigationController?.pushViewController(conversationViewController, animated: true)
     }
 }
+
+
+extension ConversationsListViewController: ThemesPickerDelegate {
+    func didChangeTheme(_ theme: Theme) {
+        ThemeManager.apply(theme, application: UIApplication.shared)
+    }
+}
+

@@ -9,7 +9,8 @@
 /* Begin PBXBuildFile section */
 		E728021A25F80867007ED613 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E728021925F80867007ED613 /* SettingsViewController.swift */; };
 		E728021F25F81760007ED613 /* SettingsExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E728021E25F81760007ED613 /* SettingsExtensions.swift */; };
-		E728022425F818F5007ED613 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = E728022325F818F5007ED613 /* Colors.swift */; };
+		E728022925F927FB007ED613 /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = E728022825F927FB007ED613 /* Theme.swift */; };
+		E728023725FA1581007ED613 /* ThemeManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E728023625FA1581007ED613 /* ThemeManager.swift */; };
 		E78B27D225E54D1500FA709C /* ProfileImageController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E78B27D125E54D1500FA709C /* ProfileImageController.swift */; };
 		E78B27E325EF770700FA709C /* ConversationsListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E78B27E225EF770700FA709C /* ConversationsListViewController.swift */; };
 		E78B27EE25EF7F5100FA709C /* ConvesationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E78B27ED25EF7F5100FA709C /* ConvesationViewController.swift */; };
@@ -49,7 +50,8 @@
 /* Begin PBXFileReference section */
 		E728021925F80867007ED613 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		E728021E25F81760007ED613 /* SettingsExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsExtensions.swift; sourceTree = "<group>"; };
-		E728022325F818F5007ED613 /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
+		E728022825F927FB007ED613 /* Theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
+		E728023625FA1581007ED613 /* ThemeManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeManager.swift; sourceTree = "<group>"; };
 		E78B27D125E54D1500FA709C /* ProfileImageController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileImageController.swift; sourceTree = "<group>"; };
 		E78B27E225EF770700FA709C /* ConversationsListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConversationsListViewController.swift; sourceTree = "<group>"; };
 		E78B27ED25EF7F5100FA709C /* ConvesationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConvesationViewController.swift; sourceTree = "<group>"; };
@@ -107,6 +109,15 @@
 			path = Settings;
 			sourceTree = "<group>";
 		};
+		E728023525FA1551007ED613 /* Theaming */ = {
+			isa = PBXGroup;
+			children = (
+				E728022825F927FB007ED613 /* Theme.swift */,
+				E728023625FA1581007ED613 /* ThemeManager.swift */,
+			);
+			path = Theaming;
+			sourceTree = "<group>";
+		};
 		E78B27E725EF771F00FA709C /* ConversationsList */ = {
 			isa = PBXGroup;
 			children = (
@@ -159,6 +170,7 @@
 		E7C95A5225D83F2B00DCB3B2 /* TinkoffEdu2021 */ = {
 			isa = PBXGroup;
 			children = (
+				E728023525FA1551007ED613 /* Theaming */,
 				E728021825F8084E007ED613 /* Settings */,
 				E78B27E925EF777A00FA709C /* Conversation */,
 				E78B27E825EF773D00FA709C /* Profile */,
@@ -195,7 +207,6 @@
 			children = (
 				E7C95AA425D8490600DCB3B2 /* Logger.swift */,
 				E78B282225F0CF7400FA709C /* Mock.swift */,
-				E728022325F818F5007ED613 /* Colors.swift */,
 			);
 			path = Tools;
 			sourceTree = "<group>";
@@ -332,13 +343,14 @@
 				E78B281325F024A600FA709C /* ConversationTableViewCell.swift in Sources */,
 				E78B282325F0CF7600FA709C /* Mock.swift in Sources */,
 				E7C95A5825D83F2B00DCB3B2 /* ProfileViewController.swift in Sources */,
-				E728022425F818F5007ED613 /* Colors.swift in Sources */,
 				E728021F25F81760007ED613 /* SettingsExtensions.swift in Sources */,
 				E78B27E325EF770700FA709C /* ConversationsListViewController.swift in Sources */,
 				E78B281825F03AA600FA709C /* ConversationsTableViewCell.swift in Sources */,
 				E78B282825F11EA500FA709C /* ConversationCellConfiguration.swift in Sources */,
 				E78B27D225E54D1500FA709C /* ProfileImageController.swift in Sources */,
+				E728022925F927FB007ED613 /* Theme.swift in Sources */,
 				E7C95A5425D83F2B00DCB3B2 /* AppDelegate.swift in Sources */,
+				E728023725FA1581007ED613 /* ThemeManager.swift in Sources */,
 				E78B27EE25EF7F5100FA709C /* ConvesationViewController.swift in Sources */,
 				E78B27FC25EFF9D000FA709C /* ConversationsCellConfiguration.swift in Sources */,
 				E7C95AA525D8490600DCB3B2 /* Logger.swift in Sources */,

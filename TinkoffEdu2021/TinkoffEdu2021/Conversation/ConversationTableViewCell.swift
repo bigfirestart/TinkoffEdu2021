@@ -9,8 +9,11 @@ import Foundation
 import UIKit
 
 class ConversationTableViewCell: UITableViewCell {
-    let messageLabel = UILabel()
+    let messageLabel = TheamedUILabel()
     let bubbleBackgroundView = UIView()
+    
+    static var leftBubbleColor = UIColor(red: 223/255, green: 223/255, blue: 223/255, alpha: 1)
+    static var rigthBubbleColor = UIColor(red: 220/255, green: 247/255, blue: 197/255, alpha: 1)
     
     
     var leadingConstraint: NSLayoutConstraint? = nil
@@ -26,12 +29,12 @@ class ConversationTableViewCell: UITableViewCell {
         }
         
         if config.isIncoming {
-            bubbleBackgroundView.backgroundColor = UIColor(red: 223/255, green: 223/255, blue: 223/255, alpha: 1)
+            bubbleBackgroundView.backgroundColor = ConversationTableViewCell.leftBubbleColor
             leadingConstraint?.isActive = true
             trailingConstraint?.isActive = false
         }
         else {
-            bubbleBackgroundView.backgroundColor = UIColor(red: 220/255, green: 247/255, blue: 197/255, alpha: 1)
+            bubbleBackgroundView.backgroundColor = ConversationTableViewCell.rigthBubbleColor
             leadingConstraint?.isActive = false
             trailingConstraint?.isActive = true
         }
@@ -40,7 +43,6 @@ class ConversationTableViewCell: UITableViewCell {
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
-        
         //bubble
         bubbleBackgroundView.translatesAutoresizingMaskIntoConstraints = false
         bubbleBackgroundView.layer.cornerRadius = 10

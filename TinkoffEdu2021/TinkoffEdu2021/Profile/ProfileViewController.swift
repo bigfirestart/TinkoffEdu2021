@@ -13,7 +13,7 @@ class ProfileViewController: UIViewController, UIImagePickerControllerDelegate &
     @IBOutlet weak var profileImg: UIImageView?
     @IBOutlet weak var profileEditBtn: UIButton?
     @IBOutlet weak var profileSymbolsLabel: UILabel?
-    @IBOutlet weak var backBtn: UIButton!
+    //@IBOutlet weak var backBtn: UIButton!
     
     
     var imagePicker = UIImagePickerController()
@@ -38,7 +38,7 @@ class ProfileViewController: UIViewController, UIImagePickerControllerDelegate &
         let profileImgGesture = UITapGestureRecognizer(target: self, action: #selector(profileImgTap(_:)))
         profileImg?.addGestureRecognizer(profileImgGesture)
         
-        backBtn.addTarget(self, action: #selector(closeModal), for: .touchUpInside)
+        //backBtn.addTarget(self, action: #selector(closeModal), for: .touchUpInside)
     }
     
     override func viewDidAppear(_ animated: Bool) {
