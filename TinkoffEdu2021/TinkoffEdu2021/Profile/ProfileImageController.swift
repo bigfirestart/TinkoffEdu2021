@@ -39,16 +39,10 @@ extension ProfileViewController {
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         picker.dismiss(animated: true, completion: nil)
         if let image = info[.originalImage] as? UIImage {
+            startEdit()
             profileImg?.image = image
-            profileSymbolsLabel?.isHidden = true
-        }
-    }
-    
-    func getProfileEditBtnFrame() -> String {
-        if let frame = self.profileEditBtn?.frame {
-             return "\(frame)"
-        } else {
-            return "None"
+            enableSaveBtn()
+            savedState.isImgChanged = true
         }
     }
 }

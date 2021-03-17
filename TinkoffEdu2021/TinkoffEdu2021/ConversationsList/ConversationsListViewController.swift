@@ -26,7 +26,7 @@ class ConversationsListViewController: UIViewController{
             case .some(_):
                 break
         }
-       
+        
         title = "Tinkoff Chat"
         conversationsTable.dataSource = self
         conversationsTable.delegate = self
