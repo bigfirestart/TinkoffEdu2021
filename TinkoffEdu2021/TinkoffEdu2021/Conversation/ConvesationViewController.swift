@@ -10,10 +10,9 @@ import UIKit
 class ConversationViewController: UIViewController {
     var conversationTable =  UITableView()
     
-    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         view.addSubview(conversationTable)
         
         conversationTable.separatorStyle = UITableViewCell.SeparatorStyle.none
@@ -25,6 +24,7 @@ class ConversationViewController: UIViewController {
         
         conversationTable.dataSource = self
         conversationTable.register(ConversationTableViewCell.self, forCellReuseIdentifier: "ConversationCell")
+    
     }
 }
 
