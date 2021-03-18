@@ -18,20 +18,20 @@ struct ProfileViewControllerState {
 extension ProfileViewController {
     func saveState() {
         state.fioText = fioUITextField.text ?? ""
-        state.aboutText = aboutUITextField.text ?? ""
+        state.aboutText = aboutUITextView.text ?? ""
         state.img = profileImg.image ?? UIImage()
     }
     
     func restoreSavedState() {
         fioUITextField.text = state.fioText
-        aboutUITextField.text = state.aboutText
+        aboutUITextView.text = state.aboutText
         profileImg.image = state.img
         
     }
     
     func stopEdit() {
         fioUITextField.isUserInteractionEnabled = false
-        aboutUITextField.isUserInteractionEnabled = false
+        aboutUITextView.isUserInteractionEnabled = false
         profileEditBtn.setTitle("Edit", for: .normal)
         saveGCDBtn.isHidden = true
         saveOperationsBtn.isHidden = true
@@ -41,7 +41,7 @@ extension ProfileViewController {
     func startEdit() {
         saveState()
         fioUITextField.isUserInteractionEnabled = true
-        aboutUITextField.isUserInteractionEnabled = true
+        aboutUITextView.isUserInteractionEnabled = true
         profileEditBtn.setTitle("Cancel", for: .normal)
         fioUITextField.becomeFirstResponder()
         saveGCDBtn.isHidden = false
@@ -92,7 +92,7 @@ extension ProfileViewController {
     }
     
     func saveGDC() {
-        let profile = Profile(name: fioUITextField.text ?? "", info: aboutUITextField.text ?? "")
+        let profile = Profile(name: fioUITextField.text ?? "", info: aboutUITextView.text ?? "")
         if let img = profileImg.image {
             saveProfileGDC(profile: profile,img: img)
         }
@@ -102,7 +102,7 @@ extension ProfileViewController {
     }
     
     func saveOperations() {
-        let profile = Profile(name: fioUITextField.text ?? "", info: aboutUITextField.text ?? "")
+        let profile = Profile(name: fioUITextField.text ?? "", info: aboutUITextView.text ?? "")
         let queue = OperationQueue()
         let operation = ProfileStorageAsyncOperation(profile: profile, profileImg: nil, profileVC: self)
         if let img = profileImg.image {

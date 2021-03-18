@@ -9,13 +9,14 @@ import UIKit
 import Foundation
 
 
-class ProfileViewController: UIViewController, UIImagePickerControllerDelegate & UINavigationControllerDelegate {
+class ProfileViewController: UIViewController, UIImagePickerControllerDelegate , UITextViewDelegate,  UINavigationControllerDelegate {
     @IBOutlet weak var cancelModalLabel: UILabel!
     @IBOutlet weak var profileImg: UIImageView!
     @IBOutlet weak var profileEditBtn: UIButton!
     @IBOutlet weak var saveGCDBtn: UIButton!
     @IBOutlet weak var saveOperationsBtn: UIButton!
-    @IBOutlet weak var aboutUITextField: UITextField!
+    
+    @IBOutlet weak var aboutUITextView: UITextView!
     @IBOutlet weak var fioUITextField: UITextField!
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     
@@ -42,12 +43,12 @@ class ProfileViewController: UIViewController, UIImagePickerControllerDelegate &
         saveOperationsBtn.isHidden = true
         
         fioUITextField.isUserInteractionEnabled = false
-        aboutUITextField.isUserInteractionEnabled = false
+        aboutUITextView.isUserInteractionEnabled = false
         profileEditBtn.addTarget(self, action: #selector(editButtonClick), for: .touchUpInside)
         saveGCDBtn.addTarget(self, action: #selector(onGDCSaveClick), for: .touchUpInside)
         saveOperationsBtn.addTarget(self, action: #selector(onOperationSaveClick), for: .touchUpInside)
         fioUITextField.addTarget(self, action: #selector(textFieldChanged), for: .editingChanged)
-        aboutUITextField.addTarget(self, action: #selector(textFieldChanged), for: .editingChanged)
+        aboutUITextView.delegate = self
         
         getProfileGDC()
         
@@ -63,9 +64,13 @@ class ProfileViewController: UIViewController, UIImagePickerControllerDelegate &
         dismiss(animated: true, completion: nil)
     }
     
+    func textViewDidChange(_ textView: UITextView) {
+        textFieldChanged()
+    }
+    
     func setProfile(resProfile: Profile?, resImg: UIImage?){
         fioUITextField.text = resProfile?.name
-        aboutUITextField.text = resProfile?.info
+        aboutUITextView.text = resProfile?.info
 
         if let img = resImg {
             profileImg.image = img
