@@ -17,15 +17,16 @@ struct ProfileViewControllerState {
 
 extension ProfileViewController {
     func saveState() {
-        savedState.fioText = fioUITextField.text ?? ""
-        savedState.aboutText = aboutUITextField.text ?? ""
-        savedState.img = profileImg.image ?? UIImage()
+        state.fioText = fioUITextField.text ?? ""
+        state.aboutText = aboutUITextField.text ?? ""
+        state.img = profileImg.image ?? UIImage()
     }
     
     func restoreSavedState() {
-        fioUITextField.text = savedState.fioText
-        aboutUITextField.text = savedState.aboutText
-        profileImg.image = savedState.img
+        fioUITextField.text = state.fioText
+        aboutUITextField.text = state.aboutText
+        profileImg.image = state.img
+        
     }
     
     func stopEdit() {
@@ -36,6 +37,7 @@ extension ProfileViewController {
         saveOperationsBtn.isHidden = true
         isInEditMode = false
     }
+    
     func startEdit() {
         saveState()
         fioUITextField.isUserInteractionEnabled = true
@@ -52,31 +54,32 @@ extension ProfileViewController {
     @objc func editButtonClick(){
         if isInEditMode {
             stopEdit()
-            restoreSavedState()
+            self.restoreSavedState()
         }
         else {
             startEdit()
         }
         
     }
-    
-    @objc func onSaveClick() {
-        //saving here
-        activityIndicator.isHidden = false
+    func profileControllerSavePrepare() {
         activityIndicator.startAnimating()
+        activityIndicator.isHidden = false
+        activityIndicator.hidesWhenStopped = true
         
-        let profile = Profile(name: fioUITextField.text ?? "", info: aboutUITextField.text ?? "")
-        DataSavingManager.saveProfile(profile: profile)
+        saveGCDBtn.isEnabled = false
+        saveOperationsBtn.isEnabled = false
         
-        if let img = profileImg.image {
-            if savedState.isImgChanged{
-                DataSavingManager.saveProfileImg(image: img)
-            }
-        }
+        profileEditBtn.isEnabled = false
+    }
     
-        self.stopEdit()
-        self.activityIndicator.stopAnimating()
-        
+    @objc func onGDCSaveClick() {
+        profileControllerSavePrepare()
+        saveGDC()
+    }
+    
+    @objc func onOperationSaveClick() {
+        profileControllerSavePrepare()
+        saveOperations()
     }
     
     @objc func textFieldChanged() {
@@ -86,6 +89,54 @@ extension ProfileViewController {
     @objc func enableSaveBtn() {
         saveGCDBtn.isEnabled = true
         saveOperationsBtn.isEnabled = true
+    }
+    
+    func saveGDC() {
+        let profile = Profile(name: fioUITextField.text ?? "", info: aboutUITextField.text ?? "")
+        if let img = profileImg.image {
+            saveProfileGDC(profile: profile,img: img)
+        }
+        else {
+            saveProfileGDC(profile: profile,img: nil)
+        }
+    }
+    
+    func saveOperations() {
+        let profile = Profile(name: fioUITextField.text ?? "", info: aboutUITextField.text ?? "")
+        let queue = OperationQueue()
+        let operation = ProfileStorageAsyncOperation(profile: profile, profileImg: nil, profileVC: self)
+        if let img = profileImg.image {
+            operation.profileImg = img
+        }
+        queue.addOperation(operation)
+    }
+    
+    func successSaveAfter(){
+        self.stopEdit()
+    
+        let alert = UIAlertController(title: "Данные сохранены", message: "",  preferredStyle: UIAlertController.Style.alert)
+        alert.addAction(UIAlertAction(title: "Ok", style: UIAlertAction.Style.default, handler: nil))
+        self.present(alert, animated: true, completion: nil)
+        
+        self.activityIndicator.stopAnimating()
+        self.profileEditBtn.isEnabled = true
+    }
+    
+    func faltureSaveAfter(errorText: String, isGDC: Bool){
+        let alert = UIAlertController(title: errorText, message: "",  preferredStyle: UIAlertController.Style.alert)
+        alert.addAction(UIAlertAction(title: "Ok", style: UIAlertAction.Style.default, handler: nil))
+        if isGDC {
+            alert.addAction(UIAlertAction(title: "Повторить",
+                                          style: UIAlertAction.Style.default,
+                                          handler: {_ in self.saveGDC()}))
+        }
+        else {
+            alert.addAction(UIAlertAction(title: "Повторить",
+                                          style: UIAlertAction.Style.default,
+                                          handler: {_ in self.saveOperations()}))
+        }
+    
+        self.present(alert, animated: true, completion: nil)
     }
 }
 

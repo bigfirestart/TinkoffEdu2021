@@ -11,8 +11,10 @@
 		E728021F25F81760007ED613 /* SettingsExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E728021E25F81760007ED613 /* SettingsExtensions.swift */; };
 		E728022925F927FB007ED613 /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = E728022825F927FB007ED613 /* Theme.swift */; };
 		E728023725FA1581007ED613 /* ThemeManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E728023625FA1581007ED613 /* ThemeManager.swift */; };
-		E733DBE9260264E600239A17 /* GCDFileManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E733DBE8260264E600239A17 /* GCDFileManager.swift */; };
 		E733DBEE2602847900239A17 /* ProfileEdit.swift in Sources */ = {isa = PBXBuildFile; fileRef = E733DBED2602847900239A17 /* ProfileEdit.swift */; };
+		E74AC26E2603944500EC7B5E /* ProfileInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = E74AC26D2603944500EC7B5E /* ProfileInfo.swift */; };
+		E74AC273260398CD00EC7B5E /* StorageOperations.swift in Sources */ = {isa = PBXBuildFile; fileRef = E74AC272260398CD00EC7B5E /* StorageOperations.swift */; };
+		E74AC28F2603D64400EC7B5E /* StorageGDC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E74AC28E2603D64400EC7B5E /* StorageGDC.swift */; };
 		E78B27D225E54D1500FA709C /* ProfileImageController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E78B27D125E54D1500FA709C /* ProfileImageController.swift */; };
 		E78B27E325EF770700FA709C /* ConversationsListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E78B27E225EF770700FA709C /* ConversationsListViewController.swift */; };
 		E78B27EE25EF7F5100FA709C /* ConvesationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E78B27ED25EF7F5100FA709C /* ConvesationViewController.swift */; };
@@ -54,8 +56,10 @@
 		E728021E25F81760007ED613 /* SettingsExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsExtensions.swift; sourceTree = "<group>"; };
 		E728022825F927FB007ED613 /* Theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
 		E728023625FA1581007ED613 /* ThemeManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeManager.swift; sourceTree = "<group>"; };
-		E733DBE8260264E600239A17 /* GCDFileManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GCDFileManager.swift; sourceTree = "<group>"; };
 		E733DBED2602847900239A17 /* ProfileEdit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileEdit.swift; sourceTree = "<group>"; };
+		E74AC26D2603944500EC7B5E /* ProfileInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileInfo.swift; sourceTree = "<group>"; };
+		E74AC272260398CD00EC7B5E /* StorageOperations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageOperations.swift; sourceTree = "<group>"; };
+		E74AC28E2603D64400EC7B5E /* StorageGDC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageGDC.swift; sourceTree = "<group>"; };
 		E78B27D125E54D1500FA709C /* ProfileImageController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileImageController.swift; sourceTree = "<group>"; };
 		E78B27E225EF770700FA709C /* ConversationsListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConversationsListViewController.swift; sourceTree = "<group>"; };
 		E78B27ED25EF7F5100FA709C /* ConvesationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConvesationViewController.swift; sourceTree = "<group>"; };
@@ -137,8 +141,10 @@
 			children = (
 				E7C95A5725D83F2B00DCB3B2 /* ProfileViewController.swift */,
 				E78B27D125E54D1500FA709C /* ProfileImageController.swift */,
-				E733DBE8260264E600239A17 /* GCDFileManager.swift */,
 				E733DBED2602847900239A17 /* ProfileEdit.swift */,
+				E74AC26D2603944500EC7B5E /* ProfileInfo.swift */,
+				E74AC272260398CD00EC7B5E /* StorageOperations.swift */,
+				E74AC28E2603D64400EC7B5E /* StorageGDC.swift */,
 			);
 			path = Profile;
 			sourceTree = "<group>";
@@ -348,19 +354,21 @@
 			files = (
 				E78B281325F024A600FA709C /* ConversationTableViewCell.swift in Sources */,
 				E78B282325F0CF7600FA709C /* Mock.swift in Sources */,
+				E74AC273260398CD00EC7B5E /* StorageOperations.swift in Sources */,
 				E7C95A5825D83F2B00DCB3B2 /* ProfileViewController.swift in Sources */,
 				E728021F25F81760007ED613 /* SettingsExtensions.swift in Sources */,
 				E733DBEE2602847900239A17 /* ProfileEdit.swift in Sources */,
 				E78B27E325EF770700FA709C /* ConversationsListViewController.swift in Sources */,
+				E74AC26E2603944500EC7B5E /* ProfileInfo.swift in Sources */,
 				E78B281825F03AA600FA709C /* ConversationsTableViewCell.swift in Sources */,
 				E78B282825F11EA500FA709C /* ConversationCellConfiguration.swift in Sources */,
 				E78B27D225E54D1500FA709C /* ProfileImageController.swift in Sources */,
-				E733DBE9260264E600239A17 /* GCDFileManager.swift in Sources */,
 				E728022925F927FB007ED613 /* Theme.swift in Sources */,
 				E7C95A5425D83F2B00DCB3B2 /* AppDelegate.swift in Sources */,
 				E728023725FA1581007ED613 /* ThemeManager.swift in Sources */,
 				E78B27EE25EF7F5100FA709C /* ConvesationViewController.swift in Sources */,
 				E78B27FC25EFF9D000FA709C /* ConversationsCellConfiguration.swift in Sources */,
+				E74AC28F2603D64400EC7B5E /* StorageGDC.swift in Sources */,
 				E7C95AA525D8490600DCB3B2 /* Logger.swift in Sources */,
 				E728021A25F80867007ED613 /* SettingsViewController.swift in Sources */,
 			);

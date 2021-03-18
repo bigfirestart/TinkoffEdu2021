@@ -129,8 +129,9 @@
                                     <constraint firstAttribute="height" constant="40" id="qHY-xI-1tx"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="19"/>
-                                <state key="normal" title="Edit">
-                                    <color key="titleColor" red="0.0" green="0.47843137254901957" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="Edit"/>
+                                <state key="disabled">
+                                    <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                             </button>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="ФИО" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="sO6-lg-fh6">
@@ -187,7 +188,7 @@
                                 </constraints>
                             </activityIndicatorView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Cancel" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wjx-s9-0KR">
-                                <rect key="frame" x="257" y="5" width="53" height="21"/>
+                                <rect key="frame" x="247" y="10" width="53" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -200,7 +201,7 @@
                             <constraint firstItem="ch1-Q4-OAa" firstAttribute="top" secondItem="nEV-iZ-pHk" secondAttribute="bottom" constant="20" id="718-bt-ORP"/>
                             <constraint firstItem="5Pf-Y9-IFk" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="7CJ-Rq-IIs"/>
                             <constraint firstItem="nEV-iZ-pHk" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="934-ZR-Tya"/>
-                            <constraint firstItem="wjx-s9-0KR" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="5" id="A6b-c3-i94"/>
+                            <constraint firstItem="wjx-s9-0KR" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="10" id="A6b-c3-i94"/>
                             <constraint firstItem="5Pf-Y9-IFk" firstAttribute="width" secondItem="NJG-2M-wB8" secondAttribute="width" id="C0Y-VT-RyN"/>
                             <constraint firstItem="Dht-Bw-4yo" firstAttribute="top" secondItem="sO6-lg-fh6" secondAttribute="bottom" constant="20" id="HCh-LF-cpw"/>
                             <constraint firstItem="wjx-s9-0KR" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="6Tk-OE-BBY" secondAttribute="leading" symbolic="YES" id="RdW-oe-fDV"/>
@@ -217,7 +218,7 @@
                             <constraint firstItem="sO6-lg-fh6" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="o5p-gI-l8h"/>
                             <constraint firstItem="Dht-Bw-4yo" firstAttribute="height" secondItem="sO6-lg-fh6" secondAttribute="height" multiplier="2" id="qa6-x7-7rT"/>
                             <constraint firstItem="Dht-Bw-4yo" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="r8B-aZ-qGz"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="wjx-s9-0KR" secondAttribute="trailing" constant="10" id="sdE-rX-Lgp"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="wjx-s9-0KR" secondAttribute="trailing" constant="20" id="sdE-rX-Lgp"/>
                             <constraint firstItem="NJG-2M-wB8" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" multiplier="0.8" id="xEz-GQ-ZbM"/>
                         </constraints>
                     </view>

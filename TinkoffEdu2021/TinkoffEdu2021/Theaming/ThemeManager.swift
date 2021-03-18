@@ -17,6 +17,7 @@ struct ThemeManager {
         UITableView.appearance().backgroundColor = theme.appTheme.backgroundColor
         UITableView.appearance().tintColor = theme.appTheme.navColor
         UITextView.appearance().backgroundColor = theme.appTheme.backgroundColor
+        UIActivityIndicatorView.appearance().color = theme.appTheme.textColor
         
         //nav
         UINavigationBar.appearance().barTintColor = theme.appTheme.navColor

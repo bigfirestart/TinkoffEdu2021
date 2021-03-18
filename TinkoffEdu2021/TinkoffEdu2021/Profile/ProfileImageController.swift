@@ -42,7 +42,7 @@ extension ProfileViewController {
             startEdit()
             profileImg?.image = image
             enableSaveBtn()
-            savedState.isImgChanged = true
+            state.isImgChanged = true
         }
     }
 }

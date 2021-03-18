@@ -21,7 +21,7 @@ class ProfileViewController: UIViewController, UIImagePickerControllerDelegate &
     
     var imagePicker = UIImagePickerController()
     var isInEditMode = false
-    var savedState = ProfileViewControllerState(fioText: "", aboutText: "", img: UIImage(), isImgChanged: false)
+    var state = ProfileViewControllerState(fioText: "", aboutText: "", img: UIImage(), isImgChanged: false)
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -33,7 +33,7 @@ class ProfileViewController: UIViewController, UIImagePickerControllerDelegate &
         profileImg?.addGestureRecognizer(profileImgGesture)
         
         activityIndicator.isHidden = true
-        activityIndicator.hidesWhenStopped = true
+    
         
         // buttons and textfields
         saveGCDBtn.layer.cornerRadius = 14
@@ -44,22 +44,15 @@ class ProfileViewController: UIViewController, UIImagePickerControllerDelegate &
         fioUITextField.isUserInteractionEnabled = false
         aboutUITextField.isUserInteractionEnabled = false
         profileEditBtn.addTarget(self, action: #selector(editButtonClick), for: .touchUpInside)
-        saveGCDBtn.addTarget(self, action: #selector(onSaveClick), for: .touchUpInside)
+        saveGCDBtn.addTarget(self, action: #selector(onGDCSaveClick), for: .touchUpInside)
+        saveOperationsBtn.addTarget(self, action: #selector(onOperationSaveClick), for: .touchUpInside)
         fioUITextField.addTarget(self, action: #selector(textFieldChanged), for: .editingChanged)
         aboutUITextField.addTarget(self, action: #selector(textFieldChanged), for: .editingChanged)
         
+        getProfileGDC()
+        
         isInEditMode = false
         self.hideKeyboardWhenTappedAround()
-        
-        //getting data
-        if let profile = DataSavingManager.getProfile(){
-            fioUITextField.text = profile.name
-            aboutUITextField.text = profile.info
-        }
-        
-        if let img = DataSavingManager.getProfileImg() {
-            profileImg.image = img
-        }
         
         
         cancelModalLabel.isUserInteractionEnabled = true
@@ -68,6 +61,15 @@ class ProfileViewController: UIViewController, UIImagePickerControllerDelegate &
     
     @objc func closeModal(sender: UIButton){
         dismiss(animated: true, completion: nil)
+    }
+    
+    func setProfile(resProfile: Profile?, resImg: UIImage?){
+        fioUITextField.text = resProfile?.name
+        aboutUITextField.text = resProfile?.info
+
+        if let img = resImg {
+            profileImg.image = img
+        }
     }
 }
 class ProfileUILabel: UILabel {}
