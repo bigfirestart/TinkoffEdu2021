@@ -42,7 +42,7 @@ class ProfileStorageAsyncOperation: Operation {
                     try data.write(to: path)
                 }
                 catch {
-                    DispatchQueue.main.async {
+                    OperationQueue.main.addOperation {
                         self.profileVC.faltureSaveAfter(errorText: error.localizedDescription, isGDC: false)
                     }
                 }
@@ -55,13 +55,12 @@ class ProfileStorageAsyncOperation: Operation {
                 try profileJson.write(to: path, atomically: true, encoding: .utf8)
             }
             catch {
-                DispatchQueue.main.async {
+                OperationQueue.main.addOperation {
                     self.profileVC.faltureSaveAfter(errorText: error.localizedDescription, isGDC: false)
                 }
             }
         }
-        
-        DispatchQueue.main.async {
+        OperationQueue.main.addOperation {
             self.profileVC.successSaveAfter()
         }
     }

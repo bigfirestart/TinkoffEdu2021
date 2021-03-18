@@ -14,7 +14,7 @@ extension ProfileViewController{
         let documentDirectory = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first
         let profileJson = profile.decode() ?? ""
         DispatchQueue.global().async {
-            sleep(1)
+            //sleep(1)
             
             //saving img
             if let data = img?.pngData() {
