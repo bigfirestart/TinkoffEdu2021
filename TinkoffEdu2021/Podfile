@@ -8,5 +8,6 @@ target 'TinkoffEdu2021' do
   # Pods for TinkoffEdu2021
 
   pod 'Firebase/Firestore', '7.8'
+  pod 'SwiftLint'
 
 end

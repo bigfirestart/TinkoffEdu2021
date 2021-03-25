@@ -21,14 +21,14 @@ extension ProfileViewController {
         state.aboutText = aboutUITextView.text ?? ""
         state.img = profileImg.image ?? UIImage()
     }
-    
+
     func restoreSavedState() {
         fioUITextField.text = state.fioText
         aboutUITextView.text = state.aboutText
         profileImg.image = state.img
-        
+
     }
-    
+
     func stopEdit() {
         fioUITextField.isUserInteractionEnabled = false
         aboutUITextView.isUserInteractionEnabled = false
@@ -37,7 +37,7 @@ extension ProfileViewController {
         saveOperationsBtn.isHidden = true
         isInEditMode = false
     }
-    
+
     func startEdit() {
         saveState()
         fioUITextField.isUserInteractionEnabled = true
@@ -50,38 +50,37 @@ extension ProfileViewController {
         saveOperationsBtn.isEnabled = false
         isInEditMode = true
     }
-    
-    @objc func editButtonClick(){
+
+    @objc func editButtonClick() {
         if isInEditMode {
             stopEdit()
             self.restoreSavedState()
-        }
-        else {
+        } else {
             startEdit()
         }
-        
+
     }
     func profileControllerSavePrepare() {
         activityIndicator.startAnimating()
         activityIndicator.isHidden = false
         activityIndicator.hidesWhenStopped = true
-        
+
         saveGCDBtn.isEnabled = false
         saveOperationsBtn.isEnabled = false
-        
+
         profileEditBtn.isEnabled = false
     }
-    
+
     @objc func onGDCSaveClick() {
         profileControllerSavePrepare()
         saveGDC()
     }
-    
+
     @objc func onOperationSaveClick() {
         profileControllerSavePrepare()
         saveOperations()
     }
-    
+
     @objc func textFieldChanged() {
         saveGCDBtn.isEnabled = true
         saveOperationsBtn.isEnabled = true
@@ -90,17 +89,16 @@ extension ProfileViewController {
         saveGCDBtn.isEnabled = true
         saveOperationsBtn.isEnabled = true
     }
-    
+
     func saveGDC() {
         let profile = Profile(name: fioUITextField.text ?? "", info: aboutUITextView.text ?? "")
         if let img = profileImg.image {
-            saveProfileGDC(profile: profile,img: img)
-        }
-        else {
-            saveProfileGDC(profile: profile,img: nil)
+            saveProfileGDC(profile: profile, img: img)
+        } else {
+            saveProfileGDC(profile: profile, img: nil)
         }
     }
-    
+
     func saveOperations() {
         let profile = Profile(name: fioUITextField.text ?? "", info: aboutUITextView.text ?? "")
         let queue = OperationQueue()
@@ -110,32 +108,31 @@ extension ProfileViewController {
         }
         queue.addOperation(operation)
     }
-    
-    func successSaveAfter(){
+
+    func successSaveAfter() {
         self.stopEdit()
-    
-        let alert = UIAlertController(title: "Данные сохранены", message: "",  preferredStyle: UIAlertController.Style.alert)
+
+        let alert = UIAlertController(title: "Данные сохранены", message: "", preferredStyle: UIAlertController.Style.alert)
         alert.addAction(UIAlertAction(title: "Ok", style: UIAlertAction.Style.default, handler: nil))
         self.present(alert, animated: true, completion: nil)
-        
+
         self.activityIndicator.stopAnimating()
         self.profileEditBtn.isEnabled = true
     }
-    
-    func faltureSaveAfter(errorText: String, isGDC: Bool){
-        let alert = UIAlertController(title: errorText, message: "",  preferredStyle: UIAlertController.Style.alert)
+
+    func faltureSaveAfter(errorText: String, isGDC: Bool) {
+        let alert = UIAlertController(title: errorText, message: "", preferredStyle: UIAlertController.Style.alert)
         alert.addAction(UIAlertAction(title: "Ok", style: UIAlertAction.Style.default, handler: nil))
         if isGDC {
             alert.addAction(UIAlertAction(title: "Повторить",
                                           style: UIAlertAction.Style.default,
                                           handler: {_ in self.saveGDC()}))
-        }
-        else {
+        } else {
             alert.addAction(UIAlertAction(title: "Повторить",
                                           style: UIAlertAction.Style.default,
                                           handler: {_ in self.saveOperations()}))
         }
-    
+
         self.present(alert, animated: true, completion: nil)
     }
 }
@@ -146,7 +143,7 @@ extension UIViewController {
         tap.cancelsTouchesInView = false
         view.addGestureRecognizer(tap)
     }
-    
+
     @objc func dismissKeyboard() {
         view.endEditing(true)
     }

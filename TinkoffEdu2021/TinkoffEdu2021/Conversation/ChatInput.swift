@@ -9,7 +9,7 @@ import Foundation
 import UIKit
 
 extension ConversationViewController {
-    @objc func sendMessageButtonClicked(){
+    @objc func sendMessageButtonClicked() {
         view.endEditing(true)
         if let text = messageTextField.text {
             if text != "" {
@@ -18,18 +18,18 @@ extension ConversationViewController {
             }
         }
     }
-    @objc func keyboardWillHide(){
+    @objc func keyboardWillHide() {
         self.view.frame.origin.y = 0
     }
-    
-    @objc func keyboardWillShow(_ notification: Notification){
+
+    @objc func keyboardWillShow(_ notification: Notification) {
         if let keyboardFrame: NSValue = notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue {
                let keyboardRectangle = keyboardFrame.cgRectValue
                let keyboardHeight = keyboardRectangle.height
                self.view.frame.origin.y = -1 * keyboardHeight
         }
     }
-    
+
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         textField.resignFirstResponder()
         sendMessageButtonClicked()

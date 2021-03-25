@@ -8,8 +8,8 @@
 import Foundation
 
 class Mock {
+    // swiftlint:disable:next line_length
     static var sampleText = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
-    
 
     static var onlineConversationsList = [
         ConversationsCellConfiguration(
@@ -88,9 +88,9 @@ class Mock {
             date: Calendar.current.date(byAdding: .weekOfMonth, value: -30, to: Date()),
             online: false,
             hasUnreadMessages: false
-        ),
+        )
     ]
-    
+
     static var historyConversationsList = [
         ConversationsCellConfiguration(
             name: "Fredi keks",
@@ -168,10 +168,9 @@ class Mock {
             date: nil,
             online: true,
             hasUnreadMessages: false
-        ),
+        )
     ]
-    
-    
+
     static var messages = [
         ConversationCellConfiguration(
             text: nil,
@@ -284,6 +283,6 @@ class Mock {
         ConversationCellConfiguration(
             text: "ok",
             isIncoming: false
-        ),
+        )
     ]
 }

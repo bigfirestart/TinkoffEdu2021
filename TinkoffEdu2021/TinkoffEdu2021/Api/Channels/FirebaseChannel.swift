@@ -18,17 +18,17 @@ struct Channel {
 func getChannels(completion: @escaping(([Channel]) -> Void)) {
     let reference =  Firestore.firestore().collection("channels")
 
-    reference.addSnapshotListener { snapshot, error in
+    reference.addSnapshotListener { snapshot, _ in
         var channels: [Channel] = []
-        if let documents = snapshot?.documents{
-            for document in documents{
+        if let documents = snapshot?.documents {
+            for document in documents {
                 let data = document.data()
-                
+
                 let identifier = document.documentID
                 let name = data["name"] as? String
                 let lastMessage = data["lastMessage"] as? String
                 let lastActivity = (data["lastActivity"] as? Timestamp)?.dateValue()
-                
+
                 channels.append(Channel(identifier: identifier, name: name ?? "Sample Name", lastMessage: lastMessage, lastActivity: lastActivity))
             }
         }
@@ -37,11 +37,10 @@ func getChannels(completion: @escaping(([Channel]) -> Void)) {
         }
         completion(channels)
     }
-    
+
 }
 
-func createChannel(channelName: String){
+func createChannel(channelName: String) {
     let reference =  Firestore.firestore().collection("channels")
-    reference.addDocument(data: ["name" : channelName, "lastActivity": Date()])
+    reference.addDocument(data: ["name": channelName, "lastActivity": Date()])
 }
-

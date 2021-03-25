@@ -8,53 +8,49 @@
 import Foundation
 import UIKit
 
-
 class ProfileStorageAsyncOperation: Operation {
     var isReadOperation: Bool = false
     var profile: Profile
     var profileImg: UIImage?
     var profileVC: ProfileViewController
-    
+
     override var isAsynchronous: Bool { true }
-    
+
     init(profile: Profile, profileImg: UIImage?, profileVC: ProfileViewController) {
         self.profile = profile
         self.profileImg = profileImg
         self.profileVC = profileVC
     }
-    
+
     override func start() {
-        if isReadOperation{
+        if isReadOperation {
             getProfile()
             getProfileImg()
-        }
-        else {
+        } else {
             saveProfile()
         }
     }
-    func saveProfile(){
+    func saveProfile() {
         let documentDirectory = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first
         let profileJson = profile.decode() ?? ""
-        
+
         if let data = profileImg?.pngData() {
             if let path = documentDirectory?.appendingPathComponent("profile.png") {
                 do {
                     try data.write(to: path)
-                }
-                catch {
+                } catch {
                     OperationQueue.main.addOperation {
                         self.profileVC.faltureSaveAfter(errorText: error.localizedDescription, isGDC: false)
                     }
                 }
             }
         }
-        
-        //saving json
+
+        // saving json
         if let path = documentDirectory?.appendingPathComponent("profile.json") {
             do {
                 try profileJson.write(to: path, atomically: true, encoding: .utf8)
-            }
-            catch {
+            } catch {
                 OperationQueue.main.addOperation {
                     self.profileVC.faltureSaveAfter(errorText: error.localizedDescription, isGDC: false)
                 }
@@ -69,16 +65,15 @@ class ProfileStorageAsyncOperation: Operation {
         if let path = documentDirectory?.appendingPathComponent("profile.json") {
             do {
                 let profileString = try String(contentsOf: path, encoding: .utf8)
-                if let profile = Profile.endcode(jsonProfile: profileString){
+                if let profile = Profile.endcode(jsonProfile: profileString) {
                     self.profile = profile
                 }
-            }
-            catch {}
+            } catch {}
         }
     }
-    func getProfileImg(){
+    func getProfileImg() {
         let documentDirectory = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first
-        if let path = documentDirectory?.appendingPathComponent("profile.png"){
+        if let path = documentDirectory?.appendingPathComponent("profile.png") {
             self.profileImg = UIImage(contentsOfFile: path.path)
         }
     }

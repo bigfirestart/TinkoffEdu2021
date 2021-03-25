@@ -8,67 +8,58 @@
 import Foundation
 import UIKit
 
-
 class ConversationsTableViewCell: UITableViewCell {
-    
+
     @IBOutlet weak var userNameLabel: UILabel!
     @IBOutlet weak var lastMessageDateLabel: UILabel!
     @IBOutlet weak var lastMessageLabel: UILabel!
-    
-    func configure(with config: ConversationsCellConfiguration){
-        
+
+    func configure(with config: ConversationsCellConfiguration) {
+
         if config.name == nil {
             userNameLabel.text = "..."
-        }
-        else {
+        } else {
             userNameLabel.text = config.name
         }
 
-    
         if config.message == nil {
             lastMessageLabel.text = "No messages yet"
             lastMessageLabel.font = UIFont.italicSystemFont(ofSize: lastMessageLabel.font.pointSize)
-        }
-        else {
+        } else {
             lastMessageLabel.text = config.message
         }
-        
+
 //        if config.online {
 //            self.backgroundColor = UIColor(red: 255/255, green: 252/255, blue: 243/255, alpha: 1)
 //        }
 //        else{
 //            self.backgroundColor = .white
 //        }
-        
+
         if config.hasUnreadMessages {
             lastMessageLabel.font = UIFont.boldSystemFont(ofSize: lastMessageLabel.font.pointSize)
-        }
-        else {
+        } else {
             lastMessageLabel.font = UIFont.systemFont(ofSize: lastMessageLabel.font.pointSize)
         }
-        
-        
+
         if let lastMessageDate = config.date {
-            
+
             let format = DateFormatter()
             format.dateFormat = "dd.MM"
-            
-            //check is day is same
+
+            // check is day is same
             if format.string(from: lastMessageDate) == format.string(from: Date()) {
                 format.dateFormat = "HH:mm"
-            }
-            else {
+            } else {
                 format.dateFormat = "dd MMM"
             }
-            
-    
+
             lastMessageDateLabel.text = format.string(from: lastMessageDate)
-        }
-        else {
+        } else {
             lastMessageDateLabel.text = "..."
         }
     }
-    
+
     override func prepareForReuse() {
         super.prepareForReuse()
         backgroundColor = nil

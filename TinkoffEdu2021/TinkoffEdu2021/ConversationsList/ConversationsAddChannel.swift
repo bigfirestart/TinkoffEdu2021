@@ -9,12 +9,12 @@ import Foundation
 import UIKit
 
 extension ConversationsListViewController {
-    @objc func addChannelClicked(){
+    @objc func addChannelClicked() {
         let alert = UIAlertController(title: "Create new channel", message: "", preferredStyle: .alert)
         alert.addTextField(configurationHandler: {_ in })
         alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
         alert.addAction(UIAlertAction(title: "Add", style: .default, handler: { [weak alert] (_) in
-            if let text = alert?.textFields?[0].text{
+            if let text = alert?.textFields?[0].text {
                 createChannel(channelName: text)
             }
         }))

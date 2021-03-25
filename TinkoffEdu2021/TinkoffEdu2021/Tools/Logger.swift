@@ -1,14 +1,14 @@
 import Foundation
 
-class Logger{
-    
+class Logger {
+
     public static func logOn() -> Bool {
-        if let logOn = ProcessInfo.processInfo.environment["logOn"]{
+        if let logOn = ProcessInfo.processInfo.environment["logOn"] {
             return logOn=="true"
         }
         return false
     }
-    
+
     public static func info(message: String) {
         if logOn() {
             let format = DateFormatter()
@@ -16,9 +16,8 @@ class Logger{
             print(format.string(from: Date())  + " : " + message)
         }
     }
-    
+
     public static func stateChangeLog(fromState: String, toState: String, methodName: String) {
         Logger.info(message: "Application moved from \(fromState) to \(toState): \(methodName)")
     }
 }
-

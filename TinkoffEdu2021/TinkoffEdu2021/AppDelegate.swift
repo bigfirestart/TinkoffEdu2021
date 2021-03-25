@@ -8,7 +8,6 @@
 import UIKit
 import Firebase
 
-
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
@@ -16,17 +15,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
-        
+
         FirebaseApp.configure()
-        //check is theme setted
-        if (UserDefaults.standard.object(forKey: "Theme") == nil) {
+        // check is theme setted
+        if UserDefaults.standard.object(forKey: "Theme") == nil {
             UserDefaults.standard.setValue("Classic", forKey: "Theme")
         }
-        
-        if (UserDefaults.standard.object(forKey: "UserApiId") == nil) {
+
+        if UserDefaults.standard.object(forKey: "UserApiId") == nil {
             UserDefaults.standard.setValue(UUID().uuidString, forKey: "UserApiId")
         }
-       
+
         return true
     }
 }
