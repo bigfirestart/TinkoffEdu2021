@@ -54,7 +54,7 @@ class ConversationViewController: UIViewController, UITextFieldDelegate {
 
     func scrollToBottom() {
         if self.messages.count > 0 {
-            let indexPath = IndexPath(row: self.messages.count-1, section: 0)
+            let indexPath = IndexPath(row: self.messages.count - 1, section: 0)
             self.conversationTable.scrollToRow(at: indexPath, at: .bottom, animated: true)
         }
     }

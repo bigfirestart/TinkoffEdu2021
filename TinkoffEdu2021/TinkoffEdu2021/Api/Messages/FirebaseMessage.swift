@@ -9,7 +9,7 @@ struct Message {
 }
 
 func getChannelMessages(documentId: String, completion: @escaping(([Message]) -> Void)) {
-    let reference =  Firestore.firestore().collection("channels").document(documentId).collection("messages")
+    let reference = Firestore.firestore().collection("channels").document(documentId).collection("messages")
 
     reference.addSnapshotListener { snapshot, _ in
         var messages: [Message] = []
@@ -31,7 +31,7 @@ func getChannelMessages(documentId: String, completion: @escaping(([Message]) ->
 }
 
 func addMessageToChannel(documentId: String, message: String) {
-    let reference =  Firestore.firestore().collection("channels").document(documentId).collection("messages")
+    let reference = Firestore.firestore().collection("channels").document(documentId).collection("messages")
     if let userId = UserDefaults.standard.object(forKey: "UserApiId") {
         reference.addDocument(data: ["content": message,
                                      "created": Date(),

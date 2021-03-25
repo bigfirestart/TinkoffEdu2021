@@ -50,7 +50,7 @@ extension ProfileViewController {
             if let path = documentDirectory?.appendingPathComponent("profile.json") {
                 do {
                     let profileString = try String(contentsOf: path, encoding: .utf8)
-                    profile=Profile.endcode(jsonProfile: profileString)
+                    profile = Profile.endcode(jsonProfile: profileString)
                 } catch {
                     profile = nil
                 }

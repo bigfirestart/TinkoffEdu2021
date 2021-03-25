@@ -13,8 +13,8 @@ class ConversationTableViewCell: UITableViewCell {
     let userLabel = TheamedUILabel()
     let bubbleBackgroundView = UIView()
 
-    static var leftBubbleColor = UIColor(red: 223/255, green: 223/255, blue: 223/255, alpha: 1)
-    static var rigthBubbleColor = UIColor(red: 220/255, green: 247/255, blue: 197/255, alpha: 1)
+    static var leftBubbleColor = UIColor(red: 223 / 255, green: 223 / 255, blue: 223 / 255, alpha: 1)
+    static var rigthBubbleColor = UIColor(red: 220 / 255, green: 247 / 255, blue: 197 / 255, alpha: 1)
 
     var leadingConstraint: NSLayoutConstraint?
     var trailingConstraint: NSLayoutConstraint?

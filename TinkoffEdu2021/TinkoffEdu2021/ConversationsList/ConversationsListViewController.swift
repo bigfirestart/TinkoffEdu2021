@@ -31,16 +31,16 @@ class ConversationsListViewController: UIViewController {
         addChannelBtn.addTarget(self, action: #selector(addChannelClicked), for: .touchUpInside)
 
         switch UserDefaults.standard.object(forKey: "Theme") as? String {
-            case "Classic":
-                ThemeManager.apply(.classic, application: UIApplication.shared)
-            case "Day":
-                ThemeManager.apply(.day, application: UIApplication.shared)
-            case "Night":
-                ThemeManager.apply(.night, application: UIApplication.shared)
-            case .none:
-                break
-            case .some:
-                break
+        case "Classic":
+            ThemeManager.apply(.classic, application: UIApplication.shared)
+        case "Day":
+            ThemeManager.apply(.day, application: UIApplication.shared)
+        case "Night":
+            ThemeManager.apply(.night, application: UIApplication.shared)
+        case .none:
+            break
+        case .some:
+            break
         }
 
         title = "Tinkoff Chat"
@@ -79,7 +79,8 @@ extension ConversationsListViewController: UITableViewDataSource {
 
 extension ConversationsListViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let conversationViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "ConversationViewController") as? ConversationViewController
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let conversationViewController = storyboard.instantiateViewController(withIdentifier: "ConversationViewController") as? ConversationViewController
         conversationViewController?.channelConf = channels[indexPath.row]
         navigationController?.pushViewController(conversationViewController ?? ConversationViewController(), animated: true)
     }

@@ -73,7 +73,7 @@ class UIButtonWithSelectBorder: UIButton {
     override var isSelected: Bool {
         didSet {
             if isSelected {
-                self.layer.borderColor = UIColor(red: 0, green: 122/255, blue: 1, alpha: 1).cgColor
+                self.layer.borderColor = UIColor(red: 0, green: 122 / 255, blue: 1, alpha: 1).cgColor
             } else {
                 self.layer.borderColor = self.layer.backgroundColor
             }

@@ -25,7 +25,7 @@ class ProfileViewController: UIViewController, UIImagePickerControllerDelegate, 
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        profileImg?.layer.cornerRadius = (profileImg?.frame.height ?? 1)/2
+        profileImg?.layer.cornerRadius = (profileImg?.frame.height ?? 1) / 2
         profileEditBtn?.layer.cornerRadius = 14
 
         profileImg?.isUserInteractionEnabled = true
@@ -54,7 +54,7 @@ class ProfileViewController: UIViewController, UIImagePickerControllerDelegate, 
         self.hideKeyboardWhenTappedAround()
 
         cancelModalLabel.isUserInteractionEnabled = true
-        cancelModalLabel.addGestureRecognizer(UITapGestureRecognizer.init(target: self, action: #selector(closeModal)))
+        cancelModalLabel.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(closeModal)))
     }
 
     @objc func closeModal(sender: UIButton) {
