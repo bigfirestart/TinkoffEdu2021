@@ -8,6 +8,7 @@
 import Foundation
 
 struct ConversationsCellConfiguration {
+    var channelId: String? = nil
     var name: String?
     var message: String?
     var date: Date?

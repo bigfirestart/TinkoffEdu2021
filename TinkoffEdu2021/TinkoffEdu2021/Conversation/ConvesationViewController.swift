@@ -8,23 +8,51 @@
 import UIKit
 
 class ConversationViewController: UIViewController {
-    var conversationTable =  UITableView()
+    @IBOutlet weak var conversationTable: UITableView!
+   
+    @IBOutlet weak var messageTextField: UITextField!
+    
+    @IBOutlet weak var messageSendBtn: UIButton!
+    
+    var channelConf: ConversationsCellConfiguration? = nil
+    var messages: [ConversationCellConfiguration] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        view.addSubview(conversationTable)
-        
+        if let channel = channelConf {
+            title = channel.name
+            getChannelMessages(documentId: channel.channelId ?? "", completion: { [weak self] messages in
+                self?.messages = []
+                for message in messages {
+                    let text = message.senderName + ": \n" + message.content
+                    if let userId = UserDefaults.standard.object(forKey: "UserApiId"){
+                        self?.messages.append(ConversationCellConfiguration(text: text,
+                                                                            isIncoming: message.senderId != userId as? String))
+                    }
+
+                }
+                DispatchQueue.main.async {
+                    self?.conversationTable.reloadData()
+                    self?.scrollToBottom()
+                }
+            })
+        }
+       
         conversationTable.separatorStyle = UITableViewCell.SeparatorStyle.none
-        conversationTable.translatesAutoresizingMaskIntoConstraints = false
-        conversationTable.topAnchor.constraint(equalTo: view.topAnchor).isActive = true
-        conversationTable.leftAnchor.constraint(equalTo: view.leftAnchor).isActive = true
-        conversationTable.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
-        conversationTable.rightAnchor.constraint(equalTo: view.rightAnchor).isActive = true
+        messageSendBtn.addTarget(self, action: #selector(sendMessageButtonClicked), for: .touchUpInside)
         
         conversationTable.dataSource = self
         conversationTable.register(ConversationTableViewCell.self, forCellReuseIdentifier: "ConversationCell")
     
+    }
+    
+    
+    func scrollToBottom(){
+        if self.messages.count > 0 {
+            let indexPath = IndexPath(row: self.messages.count-1, section: 0)
+            self.conversationTable.scrollToRow(at: indexPath, at: .bottom, animated: true)
+        }
     }
 }
 
@@ -34,7 +62,7 @@ extension ConversationViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return Mock.messages.count
+        return messages.count
     }
     
     
@@ -44,8 +72,11 @@ extension ConversationViewController: UITableViewDataSource {
             return UITableViewCell()
         }
         
-        cell.configure(with: Mock.messages[indexPath.row])
+        cell.configure(with: messages[indexPath.row])
         
         return cell
     }
 }
+
+class ConversationBackView: UIView { }
+class UISeparatorView: UIView {}

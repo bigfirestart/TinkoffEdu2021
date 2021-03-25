@@ -34,6 +34,10 @@ struct ThemeManager {
         //conversation list
         ConversationsTableViewCell.appearance().backgroundColor = theme.appTheme.backgroundColor
         
+        ChatInputStackView.appearance().backgroundColor = theme.appTheme.navColor
+        ConversationBackView.appearance().backgroundColor = theme.appTheme.navColor
+        UISeparatorView.appearance().backgroundColor = theme.appTheme.backgroundColor
+        
         if #available(iOS 13.0, *) {
             application.keyWindow?.overrideUserInterfaceStyle = theme.appTheme.userIntefaceStyle
         }

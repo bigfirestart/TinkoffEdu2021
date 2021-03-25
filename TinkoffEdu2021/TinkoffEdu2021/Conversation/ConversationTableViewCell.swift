@@ -10,6 +10,7 @@ import UIKit
 
 class ConversationTableViewCell: UITableViewCell {
     let messageLabel = TheamedUILabel()
+    let userLabel = TheamedUILabel()
     let bubbleBackgroundView = UIView()
     
     static var leftBubbleColor = UIColor(red: 223/255, green: 223/255, blue: 223/255, alpha: 1)
@@ -23,6 +24,7 @@ class ConversationTableViewCell: UITableViewCell {
     func configure(with config: ConversationCellConfiguration){
         if config.text == nil {
             messageLabel.text = "..."
+            userLabel.text = "User"
         }
         else {
             messageLabel.text = config.text
@@ -50,27 +52,25 @@ class ConversationTableViewCell: UITableViewCell {
         
         //message
         addSubview(messageLabel)
-        if Int.random(in: 0..<2) == 0 {
-            messageLabel.text = "ok"
-        }
-        else {
-            messageLabel.text = Mock.sampleText
-        }
+        addSubview(userLabel)
+        
        
         messageLabel.numberOfLines = 0
         messageLabel.translatesAutoresizingMaskIntoConstraints = false
+        
     
         
         let constraints = [
             messageLabel.topAnchor.constraint(equalTo: topAnchor, constant: 32),
             messageLabel.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -16),
             messageLabel.widthAnchor.constraint(lessThanOrEqualTo: widthAnchor, multiplier: 0.75, constant: -64),
-           // messageLabel.widthAnchor.constraint(equalTo: widthAnchor, multiplier: 0.75, constant: -32),
+            
             
             bubbleBackgroundView.topAnchor.constraint(equalTo: messageLabel.topAnchor, constant: -16),
             bubbleBackgroundView.leadingAnchor.constraint(equalTo: messageLabel.leadingAnchor, constant: -16),
             bubbleBackgroundView.bottomAnchor.constraint(equalTo: messageLabel.bottomAnchor, constant: 16),
-            bubbleBackgroundView.trailingAnchor.constraint(equalTo: messageLabel.trailingAnchor, constant: 16)
+            bubbleBackgroundView.trailingAnchor.constraint(equalTo: messageLabel.trailingAnchor, constant: 16),
+            
         ]
         
         NSLayoutConstraint.activate(constraints)
@@ -87,3 +87,5 @@ class ConversationTableViewCell: UITableViewCell {
         fatalError("init(coder:) has not been implemented")
     }
 }
+
+class ChatInputStackView: UIStackView {}

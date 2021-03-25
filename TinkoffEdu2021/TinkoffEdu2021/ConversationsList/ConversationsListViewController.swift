@@ -7,12 +7,27 @@
 
 import UIKit
 import Foundation
+import Firebase
 
 class ConversationsListViewController: UIViewController{
     @IBOutlet weak var conversationsTable: UITableView!
+    @IBOutlet weak var addChannelBtn: UIButton!
+    var channels: [ConversationsCellConfiguration] = []
     
     override func viewDidLoad(){
         super.viewDidLoad()
+        
+        getChannels(completion: { [weak self] channels in
+            self?.channels = []
+            for channel in channels{
+                self?.channels.append(ConversationsCellConfiguration(channelId: channel.identifier ,name: channel.name, message: channel.lastMessage, date: channel.lastActivity, online: false, hasUnreadMessages: false))
+            }
+            DispatchQueue.main.async {
+                self?.conversationsTable.reloadData()
+            }
+        })
+        
+        addChannelBtn.addTarget(self, action: #selector(addChannelClicked), for: .touchUpInside)
         
         switch UserDefaults.standard.object(forKey: "Theme") as? String {
             case "Classic":
@@ -27,6 +42,8 @@ class ConversationsListViewController: UIViewController{
                 break
         }
         
+        
+        
         title = "Tinkoff Chat"
         conversationsTable.dataSource = self
         conversationsTable.delegate = self
@@ -37,54 +54,25 @@ class ConversationsListViewController: UIViewController{
             guard let settings = segue.destination as? SettingsViewController else { return }
             
             settings.themeDelegate = self
-//            settings.themeHandler = { (theme: Theme) -> () in
-//                ThemeManager.apply(theme, application: UIApplication.shared)
-//                print(theme)
-//            }
         }
     }
 }
 
 extension ConversationsListViewController: UITableViewDataSource {
-    func numberOfSections(in tableView: UITableView) -> Int {
-        return 2
-    }
-    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        switch section {
-            case 0:
-                return Mock.onlineConversationsList.count
-            case 1:
-                return Mock.historyConversationsList.count
-            default:
-                return 0
-        }
+        return self.channels.count
+   
     }
     
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        switch section {
-            case 0:
-                return "Online"
-            case 1:
-                return "History"
-            default:
-                return ""
-        }
+        return "Channels"
     }
  
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "ConversationsCell", for: indexPath) as? ConversationsTableViewCell else {
             return UITableViewCell()
         }
-        
-        switch indexPath.section {
-            case 0:
-                cell.configure(with: Mock.onlineConversationsList[indexPath.row])
-            case 1:
-                cell.configure(with: Mock.historyConversationsList[indexPath.row])
-            default:
-                break
-        }
+        cell.configure(with: channels[indexPath.row])
        
         return cell
     }
@@ -92,17 +80,9 @@ extension ConversationsListViewController: UITableViewDataSource {
 
 extension ConversationsListViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let conversationViewController = ConversationViewController()
-        switch indexPath.section {
-            case 0:
-                conversationViewController.title = Mock.onlineConversationsList[indexPath.row].name
-            case 1:
-                conversationViewController.title = Mock.historyConversationsList[indexPath.row].name
-            default:
-                break
-        }
-       
-        navigationController?.pushViewController(conversationViewController, animated: true)
+        let conversationViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "ConversationViewController") as? ConversationViewController
+        conversationViewController?.channelConf = channels[indexPath.row]
+        navigationController?.pushViewController(conversationViewController ?? ConversationViewController(), animated: true)
     }
 }
 

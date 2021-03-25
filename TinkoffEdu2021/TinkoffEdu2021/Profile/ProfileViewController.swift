@@ -8,7 +8,6 @@
 import UIKit
 import Foundation
 
-
 class ProfileViewController: UIViewController, UIImagePickerControllerDelegate , UITextViewDelegate,  UINavigationControllerDelegate {
     @IBOutlet weak var cancelModalLabel: UILabel!
     @IBOutlet weak var profileImg: UIImageView!
