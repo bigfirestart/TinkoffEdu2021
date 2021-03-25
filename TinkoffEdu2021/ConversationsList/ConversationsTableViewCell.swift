@@ -15,9 +15,9 @@ class ConversationsTableViewCell: UITableViewCell {
     @IBOutlet weak var lastMessageLabel: UILabel!
 
     func configure(with config: ConversationsCellConfiguration) {
-        
+
         self.selectionStyle = .none
-        
+
         if config.name == nil {
             userNameLabel.text = "..."
         } else {

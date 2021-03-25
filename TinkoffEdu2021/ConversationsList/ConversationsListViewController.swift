@@ -68,7 +68,8 @@ extension ConversationsListViewController: UITableViewDataSource {
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: "ConversationsCell", for: indexPath) as? ConversationsTableViewCell else {
+        let tableCell =  tableView.dequeueReusableCell(withIdentifier: "ConversationsCell", for: indexPath)
+        guard let cell = tableCell as? ConversationsTableViewCell else {
             return UITableViewCell()
         }
         cell.configure(with: channels[indexPath.row])
@@ -80,9 +81,10 @@ extension ConversationsListViewController: UITableViewDataSource {
 extension ConversationsListViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        let conversationViewController = storyboard.instantiateViewController(withIdentifier: "ConversationViewController") as? ConversationViewController
-        conversationViewController?.channelConf = channels[indexPath.row]
-        navigationController?.pushViewController(conversationViewController ?? ConversationViewController(), animated: true)
+        let viewController = storyboard.instantiateViewController(withIdentifier: "ConversationViewController")
+        let conversationVC = viewController as? ConversationViewController ?? ConversationViewController()
+        conversationVC.channelConf = channels[indexPath.row]
+        navigationController?.pushViewController(conversationVC, animated: true)
     }
 }
 

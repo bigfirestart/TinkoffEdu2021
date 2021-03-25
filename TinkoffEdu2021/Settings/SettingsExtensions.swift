@@ -34,7 +34,8 @@ extension SettingsViewController {
         dialogRightSample.widthAnchor.constraint(equalToConstant: 117).isActive = true
         dialogRightSample.heightAnchor.constraint(equalToConstant: 25).isActive = true
         dialogRightSample.layer.cornerRadius = 10
-        dialogRightSample.trailingAnchor.constraint(equalTo: parentBtnView.trailingAnchor, constant: -27).isActive = true
+        let trail = dialogRightSample.trailingAnchor.constraint(equalTo: parentBtnView.trailingAnchor, constant: -27)
+        trail.isActive = true
         dialogRightSample.bottomAnchor.constraint(equalTo: parentBtnView.bottomAnchor, constant: -10).isActive = true
 
         dialogRightSample.isUserInteractionEnabled = false

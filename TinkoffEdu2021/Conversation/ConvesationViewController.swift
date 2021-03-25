@@ -19,10 +19,10 @@ class ConversationViewController: UIViewController, UITextFieldDelegate {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
-
-        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
+        let nameShow = UIResponder.keyboardWillShowNotification
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: nameShow, object: nil)
+        let nameHide = UIResponder.keyboardWillHideNotification
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name: nameHide, object: nil)
 
         if let channel = channelConf {
             title = channel.name
@@ -31,8 +31,9 @@ class ConversationViewController: UIViewController, UITextFieldDelegate {
                 for message in messages {
                     let text = message.senderName + ": \n" + message.content
                     if let userId = UserDefaults.standard.object(forKey: "UserApiId") {
-                        self?.messages.append(ConversationCellConfiguration(text: text,
-                                                                            isIncoming: message.senderId != userId as? String))
+                        let conf = ConversationCellConfiguration(text: text,
+                                                                 isIncoming: message.senderId != userId as? String)
+                        self?.messages.append(conf)
                     }
 
                 }
@@ -70,8 +71,8 @@ extension ConversationViewController: UITableViewDataSource {
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: "ConversationCell", for: indexPath) as? ConversationTableViewCell else {
+        let usualCell = tableView.dequeueReusableCell(withIdentifier: "ConversationCell", for: indexPath)
+        guard let cell = usualCell as? ConversationTableViewCell else {
             return UITableViewCell()
         }
 

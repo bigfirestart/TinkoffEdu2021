@@ -16,12 +16,11 @@ func getChannelMessages(documentId: String, completion: @escaping(([Message]) ->
         if let documents = snapshot?.documents {
             for message in documents {
                 let data = message.data()
-                let content = data["content"] as? String
-                let created = (data["created"] as? Timestamp)?.dateValue()
-                let senderId = data["senderId"] as? String
-                let senderName = data["senderName"] as? String
-
-                messages.append(Message(content: content ?? "...", created: created ?? Date(), senderId: senderId ?? "", senderName: senderName ?? "Unknown"))
+                let content = data["content"] as? String ?? "..."
+                let created = (data["created"] as? Timestamp)?.dateValue() ?? Date()
+                let senderId = data["senderId"] as? String ?? ""
+                let senderName = data["senderName"] as? String ?? "Unknown"
+                messages.append(Message(content: content, created: created, senderId: senderId, senderName: senderName))
             }
         }
         messages = messages.sorted(by: {$0.created < $1.created })

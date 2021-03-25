@@ -25,11 +25,12 @@ func getChannels(completion: @escaping(([Channel]) -> Void)) {
                 let data = document.data()
 
                 let identifier = document.documentID
-                let name = data["name"] as? String
+                let name = data["name"] as? String ?? "Sample Name"
                 let lastMessage = data["lastMessage"] as? String
                 let lastActivity = (data["lastActivity"] as? Timestamp)?.dateValue()
-
-                channels.append(Channel(identifier: identifier, name: name ?? "Sample Name", lastMessage: lastMessage, lastActivity: lastActivity))
+                // swiftlint:disable:next line_length
+                let channel = Channel(identifier: identifier, name: name, lastMessage: lastMessage, lastActivity: lastActivity)
+                channels.append(channel)
             }
         }
         if let oldDate = Calendar.current.date(byAdding: .year, value: -18, to: Date()) {

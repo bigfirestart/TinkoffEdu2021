@@ -111,8 +111,8 @@ extension ProfileViewController {
 
     func successSaveAfter() {
         self.stopEdit()
-
-        let alert = UIAlertController(title: "Данные сохранены", message: "", preferredStyle: UIAlertController.Style.alert)
+        let style = UIAlertController.Style.alert
+        let alert = UIAlertController(title: "Данные сохранены", message: "", preferredStyle: style)
         alert.addAction(UIAlertAction(title: "Ok", style: UIAlertAction.Style.default, handler: nil))
         self.present(alert, animated: true, completion: nil)
 

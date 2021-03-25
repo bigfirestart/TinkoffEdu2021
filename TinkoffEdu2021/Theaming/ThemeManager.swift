@@ -22,7 +22,8 @@ struct ThemeManager {
         // nav
         UINavigationBar.appearance().barTintColor = theme.appTheme.navColor
         UINavigationBar.appearance().tintColor = theme.appTheme.textColor
-        UINavigationBar.appearance().titleTextAttributes = [NSAttributedString.Key.foregroundColor: theme.appTheme.textColor]
+        let ttAColor = [NSAttributedString.Key.foregroundColor: theme.appTheme.textColor]
+        UINavigationBar.appearance().titleTextAttributes = ttAColor
         UINavigationBar.appearance().largeTitleTextAttributes = [.foregroundColor: theme.appTheme.textColor]
 
         // conversation
