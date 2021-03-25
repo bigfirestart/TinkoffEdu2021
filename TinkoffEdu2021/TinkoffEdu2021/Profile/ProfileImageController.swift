@@ -34,21 +34,22 @@ extension ProfileViewController {
             imagePicker.sourceType = .camera
             present(imagePicker, animated: true, completion: nil)
         }
+        else{
+            DispatchQueue.main.async {
+                let alert = UIAlertController(title: "Камера недоступна", message: "",  preferredStyle: UIAlertController.Style.alert)
+                alert.addAction(UIAlertAction(title: "Ok", style: UIAlertAction.Style.default, handler: nil))
+                self.present(alert, animated: true, completion: nil)
+            }
+        }
     }
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         picker.dismiss(animated: true, completion: nil)
         if let image = info[.originalImage] as? UIImage {
+            startEdit()
             profileImg?.image = image
-            profileSymbolsLabel?.isHidden = true
-        }
-    }
-    
-    func getProfileEditBtnFrame() -> String {
-        if let frame = self.profileEditBtn?.frame {
-             return "\(frame)"
-        } else {
-            return "None"
+            enableSaveBtn()
+            state.isImgChanged = true
         }
     }
 }

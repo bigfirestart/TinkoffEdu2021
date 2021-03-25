@@ -9,28 +9,23 @@ import UIKit
 import Foundation
 
 
-class ProfileViewController: UIViewController, UIImagePickerControllerDelegate & UINavigationControllerDelegate {
-    @IBOutlet weak var profileImg: UIImageView?
-    @IBOutlet weak var profileEditBtn: UIButton?
-    @IBOutlet weak var profileSymbolsLabel: ProfileUILabel?
-    //@IBOutlet weak var backBtn: UIButton!
+class ProfileViewController: UIViewController, UIImagePickerControllerDelegate , UITextViewDelegate,  UINavigationControllerDelegate {
+    @IBOutlet weak var cancelModalLabel: UILabel!
+    @IBOutlet weak var profileImg: UIImageView!
+    @IBOutlet weak var profileEditBtn: UIButton!
+    @IBOutlet weak var saveGCDBtn: UIButton!
+    @IBOutlet weak var saveOperationsBtn: UIButton!
     
+    @IBOutlet weak var aboutUITextView: UITextView!
+    @IBOutlet weak var fioUITextField: UITextField!
+    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     
     var imagePicker = UIImagePickerController()
-
-    required init?(coder aDecoder: NSCoder) {
-        super.init(coder: aDecoder)
-        
-        // тут view ещё не загружен
-        Logger.info(message: "init frame - \(getProfileEditBtnFrame())")
-    }
+    var isInEditMode = false
+    var state = ProfileViewControllerState(fioText: "", aboutText: "", img: UIImage(), isImgChanged: false)
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        // тут view из сториборда
-        Logger.info(message: "viewDidLoad frame - \(getProfileEditBtnFrame())")
-        
         profileImg?.layer.cornerRadius = (profileImg?.frame.height ?? 1)/2
         profileEditBtn?.layer.cornerRadius = 14
         
@@ -38,22 +33,48 @@ class ProfileViewController: UIViewController, UIImagePickerControllerDelegate &
         let profileImgGesture = UITapGestureRecognizer(target: self, action: #selector(profileImgTap(_:)))
         profileImg?.addGestureRecognizer(profileImgGesture)
         
-        profileSymbolsLabel?.textColor = .black
-        
-        //backBtn.addTarget(self, action: #selector(closeModal), for: .touchUpInside)
-    }
+        activityIndicator.isHidden = true
     
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
         
-        // тут view перерисовался под наше устройство, поэтому отличается
-        Logger.info(message: "viewDidAppear frame - \(getProfileEditBtnFrame())")
+        // buttons and textfields
+        saveGCDBtn.layer.cornerRadius = 14
+        saveGCDBtn.isHidden = true
+        saveOperationsBtn.layer.cornerRadius = 14
+        saveOperationsBtn.isHidden = true
+        
+        fioUITextField.isUserInteractionEnabled = false
+        aboutUITextView.isUserInteractionEnabled = false
+        profileEditBtn.addTarget(self, action: #selector(editButtonClick), for: .touchUpInside)
+        saveGCDBtn.addTarget(self, action: #selector(onGDCSaveClick), for: .touchUpInside)
+        saveOperationsBtn.addTarget(self, action: #selector(onOperationSaveClick), for: .touchUpInside)
+        fioUITextField.addTarget(self, action: #selector(textFieldChanged), for: .editingChanged)
+        aboutUITextView.delegate = self
+        
+        getProfileGDC()
+        
+        isInEditMode = false
+        self.hideKeyboardWhenTappedAround()
+        
+        
+        cancelModalLabel.isUserInteractionEnabled = true
+        cancelModalLabel.addGestureRecognizer(UITapGestureRecognizer.init(target: self, action: #selector(closeModal)))
     }
     
     @objc func closeModal(sender: UIButton){
         dismiss(animated: true, completion: nil)
     }
+    
+    func textViewDidChange(_ textView: UITextView) {
+        textFieldChanged()
+    }
+    
+    func setProfile(resProfile: Profile?, resImg: UIImage?){
+        fioUITextField.text = resProfile?.name
+        aboutUITextView.text = resProfile?.info
 
+        if let img = resImg {
+            profileImg.image = img
+        }
+    }
 }
-
 class ProfileUILabel: UILabel {}
