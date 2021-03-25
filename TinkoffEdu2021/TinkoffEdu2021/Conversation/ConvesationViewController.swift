@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ConversationViewController: UIViewController {
+class ConversationViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var conversationTable: UITableView!
    
     @IBOutlet weak var messageTextField: UITextField!
@@ -19,6 +19,10 @@ class ConversationViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil);
+
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil);
         
         if let channel = channelConf {
             title = channel.name
@@ -44,7 +48,8 @@ class ConversationViewController: UIViewController {
         
         conversationTable.dataSource = self
         conversationTable.register(ConversationTableViewCell.self, forCellReuseIdentifier: "ConversationCell")
-    
+        
+        messageTextField.delegate = self
     }
     
     
