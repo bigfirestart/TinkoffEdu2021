@@ -28,8 +28,10 @@ func getChannels(completion: @escaping(([Channel]) -> Void)) {
                 let name = data["name"] as? String ?? "Sample Name"
                 let lastMessage = data["lastMessage"] as? String
                 let lastActivity = (data["lastActivity"] as? Timestamp)?.dateValue()
-                // swiftlint:disable:next line_length
-                let channel = Channel(identifier: identifier, name: name, lastMessage: lastMessage, lastActivity: lastActivity)
+                let channel = Channel(identifier: identifier,
+                                      name: name,
+                                      lastMessage: lastMessage,
+                                      lastActivity: lastActivity)
                 channels.append(channel)
             }
         }

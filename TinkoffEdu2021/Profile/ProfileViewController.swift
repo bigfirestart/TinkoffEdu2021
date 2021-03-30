@@ -7,8 +7,10 @@
 
 import UIKit
 import Foundation
-// swiftlint:disable:next line_length
-class ProfileViewController: UIViewController, UIImagePickerControllerDelegate, UITextViewDelegate, UINavigationControllerDelegate {
+class ProfileViewController: UIViewController,
+                             UIImagePickerControllerDelegate,
+                             UITextViewDelegate,
+                             UINavigationControllerDelegate {
     @IBOutlet weak var cancelModalLabel: UILabel!
     @IBOutlet weak var profileImg: UIImageView!
     @IBOutlet weak var profileEditBtn: UIButton!

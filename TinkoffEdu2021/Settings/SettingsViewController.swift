@@ -27,12 +27,15 @@ class SettingsViewController: UIViewController {
 
         setThemeButtonsStartState()
 
-        // swiftlint:disable:next line_length
-        themePreviewBtnAddSubviews(parentBtnView: classicThemeBtn, leftColor: UIColor(red: 233 / 255, green: 233 / 255, blue: 233 / 255, alpha: 1), rightColor: UIColor(red: 220 / 255, green: 247 / 255, blue: 197 / 255, alpha: 1))
-        // swiftlint:disable:next line_length
-        themePreviewBtnAddSubviews(parentBtnView: dayThemeBtn, leftColor: UIColor(red: 234 / 255, green: 235 / 255, blue: 237 / 255, alpha: 1), rightColor: UIColor(red: 67 / 255, green: 137 / 255, blue: 249 / 255, alpha: 1))
-        // swiftlint:disable:next line_length
-        themePreviewBtnAddSubviews(parentBtnView: nightThemeBtn, leftColor: UIColor(red: 92 / 255, green: 92 / 255, blue: 92 / 255, alpha: 1), rightColor: UIColor(red: 46 / 255, green: 46 / 255, blue: 46 / 255, alpha: 1))
+        themePreviewBtnAddSubviews(parentBtnView: classicThemeBtn,
+                                   leftColor: UIColor(red: 233 / 255, green: 233 / 255, blue: 233 / 255, alpha: 1),
+                                   rightColor: UIColor(red: 220 / 255, green: 247 / 255, blue: 197 / 255, alpha: 1))
+        themePreviewBtnAddSubviews(parentBtnView: dayThemeBtn,
+                                   leftColor: UIColor(red: 234 / 255, green: 235 / 255, blue: 237 / 255, alpha: 1),
+                                   rightColor: UIColor(red: 67 / 255, green: 137 / 255, blue: 249 / 255, alpha: 1))
+        themePreviewBtnAddSubviews(parentBtnView: nightThemeBtn,
+                                   leftColor: UIColor(red: 92 / 255, green: 92 / 255, blue: 92 / 255, alpha: 1),
+                                   rightColor: UIColor(red: 46 / 255, green: 46 / 255, blue: 46 / 255, alpha: 1))
 
         classicThemeBtn.addTarget(self, action: #selector(classicThemeTap(_ :)), for: .touchUpInside)
         let classicTap = UITapGestureRecognizer(target: self, action: #selector(classicThemeTap(_ :)))

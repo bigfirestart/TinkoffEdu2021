@@ -20,8 +20,12 @@ class ConversationsListViewController: UIViewController {
         getChannels(completion: { [weak self] channels in
             self?.channels = []
             for channel in channels {
-                // swiftlint:disable:next line_length
-                self?.channels.append(ConversationsCellConfiguration(channelId: channel.identifier, name: channel.name, message: channel.lastMessage, date: channel.lastActivity, online: false, hasUnreadMessages: false))
+                self?.channels.append(ConversationsCellConfiguration(channelId: channel.identifier,
+                                                                     name: channel.name,
+                                                                     message: channel.lastMessage,
+                                                                     date: channel.lastActivity,
+                                                                     online: false,
+                                                                     hasUnreadMessages: false))
             }
             DispatchQueue.main.async {
                 self?.conversationsTable.reloadData()
