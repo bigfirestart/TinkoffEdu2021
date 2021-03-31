@@ -13,7 +13,9 @@ class ConversationsListViewController: UIViewController {
     @IBOutlet weak var conversationsTable: UITableView!
     @IBOutlet weak var addChannelBtn: UIButton!
     var channels: [ConversationsCellConfiguration] = []
-
+    
+    var coreDataStack = CoreDataStack()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -27,10 +29,27 @@ class ConversationsListViewController: UIViewController {
                                                                      online: false,
                                                                      hasUnreadMessages: false))
             }
+            
+            self?.coreDataStack.performSave { context in
+                var dbChannels: [DBChannel] = []
+                for channel in channels {
+                    let dbchannel = DBChannel(identifier: channel.identifier,
+                                              name: channel.name,
+                                              lastMessage: channel.lastMessage,
+                                              lastActivity: channel.lastActivity,
+                                              in: context)
+                    dbChannels.append(dbchannel)
+                }
+            }
+            self?.coreDataStack.printChannelsInfo()
+            
             DispatchQueue.main.async {
                 self?.conversationsTable.reloadData()
             }
         })
+        
+        // MARK: CoreData
+        coreDataStack.enableObservers()
 
         addChannelBtn.addTarget(self, action: #selector(addChannelClicked), for: .touchUpInside)
 
@@ -72,7 +91,7 @@ extension ConversationsListViewController: UITableViewDataSource {
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let tableCell =  tableView.dequeueReusableCell(withIdentifier: "ConversationsCell", for: indexPath)
+        let tableCell = tableView.dequeueReusableCell(withIdentifier: "ConversationsCell", for: indexPath)
         guard let cell = tableCell as? ConversationsTableViewCell else {
             return UITableViewCell()
         }

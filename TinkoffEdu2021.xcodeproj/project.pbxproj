@@ -8,11 +8,14 @@
 
 /* Begin PBXBuildFile section */
 		45E0DBA749BE962A83020BA5 /* Pods_TinkoffEdu2021.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 233234376A1C82DC57D4B96E /* Pods_TinkoffEdu2021.framework */; };
+		E72363962614CE7A00EAE761 /* Chat.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = E72363942614CE7A00EAE761 /* Chat.xcdatamodeld */; };
+		E72363AA2614E9FF00EAE761 /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = E72363A92614E9FF00EAE761 /* CoreDataStack.swift */; };
 		E728021A25F80867007ED613 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E728021925F80867007ED613 /* SettingsViewController.swift */; };
 		E728021F25F81760007ED613 /* SettingsExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E728021E25F81760007ED613 /* SettingsExtensions.swift */; };
 		E728022925F927FB007ED613 /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = E728022825F927FB007ED613 /* Theme.swift */; };
 		E728023725FA1581007ED613 /* ThemeManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E728023625FA1581007ED613 /* ThemeManager.swift */; };
 		E733DBEE2602847900239A17 /* ProfileEdit.swift in Sources */ = {isa = PBXBuildFile; fileRef = E733DBED2602847900239A17 /* ProfileEdit.swift */; };
+		E7456B36261501B6001DBF3F /* ObjectsExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7456B35261501B6001DBF3F /* ObjectsExtensions.swift */; };
 		E74AC26E2603944500EC7B5E /* ProfileInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = E74AC26D2603944500EC7B5E /* ProfileInfo.swift */; };
 		E74AC273260398CD00EC7B5E /* StorageOperations.swift in Sources */ = {isa = PBXBuildFile; fileRef = E74AC272260398CD00EC7B5E /* StorageOperations.swift */; };
 		E74AC28F2603D64400EC7B5E /* StorageGDC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E74AC28E2603D64400EC7B5E /* StorageGDC.swift */; };
@@ -58,11 +61,14 @@
 		1F68F86084AACB7103BC4CA6 /* Pods-TinkoffEdu2021.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TinkoffEdu2021.release.xcconfig"; path = "Target Support Files/Pods-TinkoffEdu2021/Pods-TinkoffEdu2021.release.xcconfig"; sourceTree = "<group>"; };
 		233234376A1C82DC57D4B96E /* Pods_TinkoffEdu2021.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TinkoffEdu2021.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		82704D0FC77FB6A7CF9764C3 /* Pods-TinkoffEdu2021.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TinkoffEdu2021.debug.xcconfig"; path = "Target Support Files/Pods-TinkoffEdu2021/Pods-TinkoffEdu2021.debug.xcconfig"; sourceTree = "<group>"; };
+		E72363952614CE7A00EAE761 /* Chat.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Chat.xcdatamodel; sourceTree = "<group>"; };
+		E72363A92614E9FF00EAE761 /* CoreDataStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
 		E728021925F80867007ED613 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		E728021E25F81760007ED613 /* SettingsExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsExtensions.swift; sourceTree = "<group>"; };
 		E728022825F927FB007ED613 /* Theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
 		E728023625FA1581007ED613 /* ThemeManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeManager.swift; sourceTree = "<group>"; };
 		E733DBED2602847900239A17 /* ProfileEdit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileEdit.swift; sourceTree = "<group>"; };
+		E7456B35261501B6001DBF3F /* ObjectsExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObjectsExtensions.swift; sourceTree = "<group>"; };
 		E74AC26D2603944500EC7B5E /* ProfileInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileInfo.swift; sourceTree = "<group>"; };
 		E74AC272260398CD00EC7B5E /* StorageOperations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageOperations.swift; sourceTree = "<group>"; };
 		E74AC28E2603D64400EC7B5E /* StorageGDC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageGDC.swift; sourceTree = "<group>"; };
@@ -132,6 +138,16 @@
 				233234376A1C82DC57D4B96E /* Pods_TinkoffEdu2021.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		E72363932614CE4100EAE761 /* CoreData */ = {
+			isa = PBXGroup;
+			children = (
+				E72363942614CE7A00EAE761 /* Chat.xcdatamodeld */,
+				E72363A92614E9FF00EAE761 /* CoreDataStack.swift */,
+				E7456B35261501B6001DBF3F /* ObjectsExtensions.swift */,
+			);
+			path = CoreData;
 			sourceTree = "<group>";
 		};
 		E728021825F8084E007ED613 /* Settings */ = {
@@ -213,6 +229,7 @@
 		E7C95A5225D83F2B00DCB3B2 /* TinkoffEdu2021 */ = {
 			isa = PBXGroup;
 			children = (
+				E72363932614CE4100EAE761 /* CoreData */,
 				E7F7031A260BAA550081AEA0 /* Api */,
 				E728023525FA1551007ED613 /* Theaming */,
 				E728021825F8084E007ED613 /* Settings */,
@@ -477,12 +494,15 @@
 				E733DBEE2602847900239A17 /* ProfileEdit.swift in Sources */,
 				E78B27E325EF770700FA709C /* ConversationsListViewController.swift in Sources */,
 				E74AC26E2603944500EC7B5E /* ProfileInfo.swift in Sources */,
+				E72363962614CE7A00EAE761 /* Chat.xcdatamodeld in Sources */,
 				E78B281825F03AA600FA709C /* ConversationsTableViewCell.swift in Sources */,
 				E78B282825F11EA500FA709C /* ConversationCellConfiguration.swift in Sources */,
 				E78B27D225E54D1500FA709C /* ProfileImageController.swift in Sources */,
 				E728022925F927FB007ED613 /* Theme.swift in Sources */,
 				E7C95A5425D83F2B00DCB3B2 /* AppDelegate.swift in Sources */,
 				E728023725FA1581007ED613 /* ThemeManager.swift in Sources */,
+				E7456B36261501B6001DBF3F /* ObjectsExtensions.swift in Sources */,
+				E72363AA2614E9FF00EAE761 /* CoreDataStack.swift in Sources */,
 				E78B27EE25EF7F5100FA709C /* ConvesationViewController.swift in Sources */,
 				E7F70328260BDEB20081AEA0 /* ConversationsAddChannel.swift in Sources */,
 				E7F70323260BADCB0081AEA0 /* FirebaseChannel.swift in Sources */,
@@ -817,6 +837,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		E72363942614CE7A00EAE761 /* Chat.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				E72363952614CE7A00EAE761 /* Chat.xcdatamodel */,
+			);
+			currentVersion = E72363952614CE7A00EAE761 /* Chat.xcdatamodel */;
+			path = Chat.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = E7C95A4825D83F2B00DCB3B2 /* Project object */;
 }

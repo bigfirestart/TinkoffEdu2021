@@ -16,6 +16,7 @@ class ConversationViewController: UIViewController, UITextFieldDelegate {
 
     var channelConf: ConversationsCellConfiguration?
     var messages: [ConversationCellConfiguration] = []
+    var coreDataStack = CoreDataStack()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -37,6 +38,19 @@ class ConversationViewController: UIViewController, UITextFieldDelegate {
                     }
 
                 }
+                
+                self?.coreDataStack.performSave { context in
+                    var dbMessages: [DBMessage] = []
+                    for message in messages {
+                        dbMessages.append(DBMessage(content: message.content,
+                                                    created: message.created,
+                                                    senderId: message.senderId,
+                                                    senderName: message.senderName,
+                                                    in: context))
+                    }
+                }
+                self?.coreDataStack.printMessagesInfo()
+
                 DispatchQueue.main.async {
                     self?.conversationTable.reloadData()
                     self?.scrollToBottom()
