@@ -18,12 +18,8 @@ class ConversationsTableViewCell: UITableViewCell {
 
         self.selectionStyle = .none
 
-        if config.name == nil {
-            userNameLabel.text = "..."
-        } else {
-            userNameLabel.text = config.name
-        }
-
+        userNameLabel.text = config.name
+       
         if config.message == nil {
             lastMessageLabel.text = "No messages yet"
             lastMessageLabel.font = UIFont.italicSystemFont(ofSize: lastMessageLabel.font.pointSize)

@@ -8,8 +8,8 @@
 import Foundation
 
 struct ConversationsCellConfiguration {
-    var channelId: String?
-    var name: String?
+    var channelId: String
+    var name: String
     var message: String?
     var date: Date?
     var online: Bool

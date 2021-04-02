@@ -20,9 +20,14 @@ extension DBChannel {
 }
 
 extension DBMessage {
-    convenience init( content: String, created: Date, senderId: String,
-                      senderName: String, in context: NSManagedObjectContext) {
+    convenience init(identifier: String,
+                     content: String,
+                     created: Date,
+                     senderId: String,
+                     senderName: String,
+                     in context: NSManagedObjectContext) {
         self.init(context: context)
+        self.identifier = identifier
         self.content = content
         self.created = created
         self.senderId = senderId

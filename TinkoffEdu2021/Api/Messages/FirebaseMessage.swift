@@ -2,6 +2,7 @@ import Foundation
 import Firebase
 
 struct Message {
+    let identifier: String
     let content: String
     let created: Date
     let senderId: String
@@ -15,12 +16,17 @@ func getChannelMessages(documentId: String, completion: @escaping(([Message]) ->
         var messages: [Message] = []
         if let documents = snapshot?.documents {
             for message in documents {
+                let identifier = message.documentID
                 let data = message.data()
                 let content = data["content"] as? String ?? "..."
                 let created = (data["created"] as? Timestamp)?.dateValue() ?? Date()
                 let senderId = data["senderId"] as? String ?? ""
                 let senderName = data["senderName"] as? String ?? "Unknown"
-                messages.append(Message(content: content, created: created, senderId: senderId, senderName: senderName))
+                messages.append(Message(identifier: identifier,
+                                        content: content,
+                                        created: created,
+                                        senderId: senderId,
+                                        senderName: senderName))
             }
         }
         messages = messages.sorted(by: {$0.created < $1.created })

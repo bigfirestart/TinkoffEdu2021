@@ -31,14 +31,12 @@ class ConversationsListViewController: UIViewController {
             }
             
             self?.coreDataStack.performSave { context in
-                var dbChannels: [DBChannel] = []
                 for channel in channels {
-                    let dbchannel = DBChannel(identifier: channel.identifier,
+                     _ = DBChannel(identifier: channel.identifier,
                                               name: channel.name,
                                               lastMessage: channel.lastMessage,
                                               lastActivity: channel.lastActivity,
                                               in: context)
-                    dbChannels.append(dbchannel)
                 }
             }
             self?.coreDataStack.printChannelsInfo()
@@ -106,6 +104,7 @@ extension ConversationsListViewController: UITableViewDelegate {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let viewController = storyboard.instantiateViewController(withIdentifier: "ConversationViewController")
         let conversationVC = viewController as? ConversationViewController ?? ConversationViewController()
+        conversationVC.coreDataStack = self.coreDataStack
         conversationVC.channelConf = channels[indexPath.row]
         navigationController?.pushViewController(conversationVC, animated: true)
     }
