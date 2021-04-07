@@ -9,14 +9,9 @@ import Foundation
 
 class CDMessageController {
     static func dbSaveMessages(coreDataStack: CoreDataStack,
-                               channel: ConversationsCellConfiguration,
+                               channel: DBChannel,
                                messages: [Message]) {
         coreDataStack.performSave { context in
-            let dbchannel = DBChannel(identifier: channel.channelId,
-                                      name: channel.name,
-                                      lastMessage: channel.message,
-                                      lastActivity: channel.date,
-                                      in: context)
             for message in messages {
                 let msg = DBMessage(identifier: message.identifier,
                                     content: message.content,
@@ -24,7 +19,7 @@ class CDMessageController {
                                     senderId: message.senderId,
                                     senderName: message.senderName,
                                     in: context)
-                dbchannel.addToMessages(msg)
+                channel.addToMessages(msg)
             }
         }
     }

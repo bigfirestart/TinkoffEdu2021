@@ -7,6 +7,7 @@
 
 import Foundation
 import Firebase
+import CoreData
 
 struct Channel {
     let identifier: String
@@ -15,11 +16,11 @@ struct Channel {
     let lastActivity: Date?
 }
 
-func getChannels(completion: @escaping(([Channel]) -> Void)) {
+func getChannels(context: NSManagedObjectContext, completion: @escaping(([DBChannel]) -> Void)) {
     let reference = Firestore.firestore().collection("channels")
 
     reference.addSnapshotListener { snapshot, _ in
-        var channels: [Channel] = []
+        var channels: [DBChannel] = []
         if let documents = snapshot?.documents {
             for document in documents {
                 let data = document.data()
@@ -28,10 +29,14 @@ func getChannels(completion: @escaping(([Channel]) -> Void)) {
                 let name = data["name"] as? String ?? "Sample Name"
                 let lastMessage = data["lastMessage"] as? String
                 let lastActivity = (data["lastActivity"] as? Timestamp)?.dateValue()
-                let channel = Channel(identifier: identifier,
+                
+                
+                let channel = DBChannel(identifier: identifier,
                                       name: name,
                                       lastMessage: lastMessage,
-                                      lastActivity: lastActivity)
+                                      lastActivity: lastActivity,
+                                      in: context)
+                
                 channels.append(channel)
             }
         }

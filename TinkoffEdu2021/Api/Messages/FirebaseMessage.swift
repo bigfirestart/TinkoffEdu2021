@@ -22,6 +22,7 @@ func getChannelMessages(documentId: String, completion: @escaping(([Message]) ->
                 let created = (data["created"] as? Timestamp)?.dateValue() ?? Date()
                 let senderId = data["senderId"] as? String ?? ""
                 let senderName = data["senderName"] as? String ?? "Unknown"
+                
                 messages.append(Message(identifier: identifier,
                                         content: content,
                                         created: created,

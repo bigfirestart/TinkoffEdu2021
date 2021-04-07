@@ -14,7 +14,7 @@ class ConversationViewController: UIViewController, UITextFieldDelegate {
 
     @IBOutlet weak var messageSendBtn: UIButton!
 
-    var channelConf: ConversationsCellConfiguration?
+    var channelConf: DBChannel?
     var messagesConfigs: [ConversationCellConfiguration] = []
     var coreDataStack: CoreDataStack?
 
@@ -25,31 +25,32 @@ class ConversationViewController: UIViewController, UITextFieldDelegate {
         let nameHide = UIResponder.keyboardWillHideNotification
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name: nameHide, object: nil)
 
-        if let channel = channelConf {
-            title = channel.name
-            getChannelMessages(documentId: channel.channelId, completion: { [weak self] messages in
-                self?.messagesConfigs = []
-                for message in messages {
-                    let text = message.senderName + ": \n" + message.content
-                    if let userId = UserDefaults.standard.object(forKey: "UserApiId") {
-                        let conf = ConversationCellConfiguration(text: text,
-                                                                 isIncoming: message.senderId != userId as? String)
-                        self?.messagesConfigs.append(conf)
-                    }
-
-                }
-                
-                CDMessageController.dbSaveMessages(coreDataStack: self?.coreDataStack ?? CoreDataStack(),
-                                                   channel: channel,
-                                                   messages: messages)
-                self?.coreDataStack?.printMessagesInfo()
-                self?.coreDataStack?.printChannelsInfo()
-                DispatchQueue.main.async {
-                    self?.conversationTable.reloadData()
-                    self?.scrollToBottom()
-                }
-            })
-        }
+//        if let channel = channelConf {
+//            title = channel.name
+//            getChannelMessages(documentId: channel.identifier ?? "",
+//                               completion: { [weak self] messages in
+//                self?.messagesConfigs = []
+//                for message in messages {
+//                    let text = message.senderName + ": \n" + message.content
+//                    if let userId = UserDefaults.standard.object(forKey: "UserApiId") {
+//                        let conf = ConversationCellConfiguration(text: text,
+//                                                                 isIncoming: message.senderId != userId as? String)
+//                        self?.messagesConfigs.append(conf)
+//                    }
+//
+//                }
+//                
+//                CDMessageController.dbSaveMessages(coreDataStack: self?.coreDataStack ?? CoreDataStack(),
+//                                                   channel: channel,
+//                                                   messages: messages)
+//                self?.coreDataStack?.printMessagesInfo()
+//                self?.coreDataStack?.printChannelsInfo()
+//                DispatchQueue.main.async {
+//                    self?.conversationTable.reloadData()
+//                    self?.scrollToBottom()
+//                }
+//            })
+//        }
 
         conversationTable.separatorStyle = UITableViewCell.SeparatorStyle.none
         messageSendBtn.addTarget(self, action: #selector(sendMessageButtonClicked), for: .touchUpInside)

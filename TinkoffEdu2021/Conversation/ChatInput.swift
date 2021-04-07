@@ -13,7 +13,7 @@ extension ConversationViewController {
         view.endEditing(true)
         if let text = messageTextField.text {
             if text != "" {
-                addMessageToChannel(documentId: channelConf?.channelId ?? "", message: text)
+                addMessageToChannel(documentId: channelConf?.identifier ?? "", message: text)
                 messageTextField.text = ""
             }
         }

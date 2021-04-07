@@ -17,19 +17,19 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="pSk-Ce-Sgt">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="70" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="pSk-Ce-Sgt">
                                 <rect key="frame" x="0.0" y="22" width="375" height="667"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="ConversationsCell" id="OHv-VE-hhS" customClass="ConversationsTableViewCell" customModule="Tinkoff_Edu" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="375" height="73.5"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="ConversationsCell" rowHeight="68" id="OHv-VE-hhS" customClass="ConversationsTableViewCell" customModule="Tinkoff_Edu" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="68"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="OHv-VE-hhS" id="iaE-Jx-Ror">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="73.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="68"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="3Zu-w6-hgF">
-                                                    <rect key="frame" x="19" y="3.5" width="337.5" height="66.5"/>
+                                                    <rect key="frame" x="19" y="1.5" width="337.5" height="65.5"/>
                                                     <subviews>
                                                         <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="RfO-6u-RAP">
                                                             <rect key="frame" x="0.0" y="0.0" width="336" height="31.5"/>
@@ -54,7 +54,7 @@
                                                             </constraints>
                                                         </stackView>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="justified" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9AX-0N-x0U" customClass="TheamedUILabel" customModule="Tinkoff_Edu" customModuleProvider="target">
-                                                            <rect key="frame" x="0.0" y="41.5" width="336" height="25"/>
+                                                            <rect key="frame" x="0.0" y="41.5" width="336" height="24"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
@@ -67,7 +67,6 @@
                                                 </stackView>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="3Zu-w6-hgF" firstAttribute="height" secondItem="iaE-Jx-Ror" secondAttribute="height" multiplier="0.9" id="cUK-0Q-woE"/>
                                                 <constraint firstItem="3Zu-w6-hgF" firstAttribute="centerY" secondItem="iaE-Jx-Ror" secondAttribute="centerY" id="iIB-pe-guL"/>
                                                 <constraint firstItem="3Zu-w6-hgF" firstAttribute="centerX" secondItem="iaE-Jx-Ror" secondAttribute="centerX" id="iNd-lW-isE"/>
                                                 <constraint firstItem="3Zu-w6-hgF" firstAttribute="width" secondItem="iaE-Jx-Ror" secondAttribute="width" multiplier="0.9" id="l5r-ng-ah1"/>
