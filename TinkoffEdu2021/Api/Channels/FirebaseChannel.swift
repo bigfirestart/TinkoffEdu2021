@@ -49,3 +49,8 @@ func createChannel(channelName: String) {
         reference.addDocument(data: ["name": channelName, "lastActivity": Date()])
     }
 }
+
+func deleteChannel(id: String) {
+    let reference = Firestore.firestore().collection("channels")
+    reference.document(id).delete()
+}

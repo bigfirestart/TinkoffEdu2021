@@ -30,15 +30,8 @@ class ConversationsListViewController: UIViewController {
                                                                      hasUnreadMessages: false))
             }
             
-            self?.coreDataStack.performSave { context in
-                for channel in channels {
-                     _ = DBChannel(identifier: channel.identifier,
-                                              name: channel.name,
-                                              lastMessage: channel.lastMessage,
-                                              lastActivity: channel.lastActivity,
-                                              in: context)
-                }
-            }
+            CDChannelController.dbSaveChannels(coreDataStack: self?.coreDataStack ?? CoreDataStack(),
+                                               channels: channels)
             self?.coreDataStack.printChannelsInfo()
             
             DispatchQueue.main.async {
@@ -96,6 +89,15 @@ extension ConversationsListViewController: UITableViewDataSource {
         cell.configure(with: channels[indexPath.row])
 
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            let id = channels[indexPath.row].channelId
+            channels.remove(at: indexPath.row)
+            tableView.deleteRows(at: [indexPath], with: .fade)
+            deleteChannel(id: id)
+        }
     }
 }
 

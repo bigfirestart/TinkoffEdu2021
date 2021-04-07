@@ -39,27 +39,11 @@ class ConversationViewController: UIViewController, UITextFieldDelegate {
 
                 }
                 
-                self?.coreDataStack?.performSave { context in
-                    let dbchannel = DBChannel(identifier: channel.channelId,
-                                              name: channel.name,
-                                              lastMessage: channel.message,
-                                              lastActivity: channel.date,
-                                              in: context)
-                    print("Count \(messages.count)")
-                    for message in messages {
-                        let msg = DBMessage(identifier: message.identifier,
-                                            content: message.content,
-                                            created: message.created,
-                                            senderId: message.senderId,
-                                            senderName: message.senderName,
-                                            in: context)
-                        dbchannel.addToMessages(msg)
-                    }
-                }
-                
+                CDMessageController.dbSaveMessages(coreDataStack: self?.coreDataStack ?? CoreDataStack(),
+                                                   channel: channel,
+                                                   messages: messages)
                 self?.coreDataStack?.printMessagesInfo()
                 self?.coreDataStack?.printChannelsInfo()
-                
                 DispatchQueue.main.async {
                     self?.conversationTable.reloadData()
                     self?.scrollToBottom()

@@ -19,6 +19,8 @@
 		E74AC26E2603944500EC7B5E /* ProfileInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = E74AC26D2603944500EC7B5E /* ProfileInfo.swift */; };
 		E74AC273260398CD00EC7B5E /* StorageOperations.swift in Sources */ = {isa = PBXBuildFile; fileRef = E74AC272260398CD00EC7B5E /* StorageOperations.swift */; };
 		E74AC28F2603D64400EC7B5E /* StorageGDC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E74AC28E2603D64400EC7B5E /* StorageGDC.swift */; };
+		E7641E3B261DFC69008C3D15 /* CDChannelController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7641E3A261DFC69008C3D15 /* CDChannelController.swift */; };
+		E7641E40261DFDE9008C3D15 /* CDMessageController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7641E3F261DFDE9008C3D15 /* CDMessageController.swift */; };
 		E78B27D225E54D1500FA709C /* ProfileImageController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E78B27D125E54D1500FA709C /* ProfileImageController.swift */; };
 		E78B27E325EF770700FA709C /* ConversationsListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E78B27E225EF770700FA709C /* ConversationsListViewController.swift */; };
 		E78B27EE25EF7F5100FA709C /* ConvesationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E78B27ED25EF7F5100FA709C /* ConvesationViewController.swift */; };
@@ -72,6 +74,8 @@
 		E74AC26D2603944500EC7B5E /* ProfileInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileInfo.swift; sourceTree = "<group>"; };
 		E74AC272260398CD00EC7B5E /* StorageOperations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageOperations.swift; sourceTree = "<group>"; };
 		E74AC28E2603D64400EC7B5E /* StorageGDC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageGDC.swift; sourceTree = "<group>"; };
+		E7641E3A261DFC69008C3D15 /* CDChannelController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CDChannelController.swift; sourceTree = "<group>"; };
+		E7641E3F261DFDE9008C3D15 /* CDMessageController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CDMessageController.swift; sourceTree = "<group>"; };
 		E78B27D125E54D1500FA709C /* ProfileImageController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileImageController.swift; sourceTree = "<group>"; };
 		E78B27E225EF770700FA709C /* ConversationsListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConversationsListViewController.swift; sourceTree = "<group>"; };
 		E78B27ED25EF7F5100FA709C /* ConvesationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConvesationViewController.swift; sourceTree = "<group>"; };
@@ -146,6 +150,8 @@
 				E72363942614CE7A00EAE761 /* Chat.xcdatamodeld */,
 				E72363A92614E9FF00EAE761 /* CoreDataStack.swift */,
 				E7456B35261501B6001DBF3F /* ObjectsExtensions.swift */,
+				E7641E3A261DFC69008C3D15 /* CDChannelController.swift */,
+				E7641E3F261DFDE9008C3D15 /* CDMessageController.swift */,
 			);
 			path = CoreData;
 			sourceTree = "<group>";
@@ -494,6 +500,7 @@
 				E733DBEE2602847900239A17 /* ProfileEdit.swift in Sources */,
 				E78B27E325EF770700FA709C /* ConversationsListViewController.swift in Sources */,
 				E74AC26E2603944500EC7B5E /* ProfileInfo.swift in Sources */,
+				E7641E40261DFDE9008C3D15 /* CDMessageController.swift in Sources */,
 				E72363962614CE7A00EAE761 /* Chat.xcdatamodeld in Sources */,
 				E78B281825F03AA600FA709C /* ConversationsTableViewCell.swift in Sources */,
 				E78B282825F11EA500FA709C /* ConversationCellConfiguration.swift in Sources */,
@@ -504,6 +511,7 @@
 				E7456B36261501B6001DBF3F /* ObjectsExtensions.swift in Sources */,
 				E72363AA2614E9FF00EAE761 /* CoreDataStack.swift in Sources */,
 				E78B27EE25EF7F5100FA709C /* ConvesationViewController.swift in Sources */,
+				E7641E3B261DFC69008C3D15 /* CDChannelController.swift in Sources */,
 				E7F70328260BDEB20081AEA0 /* ConversationsAddChannel.swift in Sources */,
 				E7F70323260BADCB0081AEA0 /* FirebaseChannel.swift in Sources */,
 				E78B27FC25EFF9D000FA709C /* ConversationsCellConfiguration.swift in Sources */,
