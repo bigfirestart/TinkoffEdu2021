@@ -69,8 +69,6 @@ class ConversationsListViewController: UIViewController, NSFetchedResultsControl
         
         // MARK: CoreData
         ChatFireStoreAPI(coreDataStack: coreDataStack).getChannels()
-        
-        // coreDataStack.enableObservers()
 
         addChannelBtn.addTarget(self, action: #selector(addChannelClicked), for: .touchUpInside)
 

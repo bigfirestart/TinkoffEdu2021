@@ -88,7 +88,15 @@ class ChatFireStoreAPI {
                 snapshot?.documentChanges.forEach { diff in
                     let identifier = diff.document.documentID
                     if diff.type == .removed {
-                        
+                        let request: NSFetchRequest<DBMessage>  = DBMessage.fetchRequest()
+                        request.predicate = NSPredicate(format: "identifier == %@", identifier)
+                        do {
+                            let result = try context.fetch(request)
+                            context.delete(result[0])
+                            
+                        } catch {
+                            fatalError("No delinion fetch")
+                        }
                     } else {
                         let data = diff.document.data()
                         let content = data["content"] as? String ?? "..."
