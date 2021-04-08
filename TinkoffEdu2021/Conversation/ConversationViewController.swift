@@ -68,18 +68,18 @@ class ConversationViewController: UIViewController,
                     at indexPath: IndexPath?,
                     for type: NSFetchedResultsChangeType,
                     newIndexPath: IndexPath?) {
-//        guard let indexPath = indexPath else { return }
-//        guard let newIndexPath = newIndexPath else { return }
+        guard let indexPath = indexPath else { return }
+        guard let newIndexPath = newIndexPath else { return }
         switch type {
         case .insert:
-            conversationTable.insertRows(at: [newIndexPath!], with: .automatic)
+            conversationTable.insertRows(at: [newIndexPath], with: .automatic)
         case .move:
-            conversationTable.deleteRows(at: [indexPath!], with: .automatic)
-            conversationTable.insertRows(at: [newIndexPath!], with: .automatic)
+            conversationTable.deleteRows(at: [indexPath], with: .automatic)
+            conversationTable.insertRows(at: [newIndexPath], with: .automatic)
         case .delete:
-            conversationTable.deleteRows(at: [indexPath!], with: .automatic)
+            conversationTable.deleteRows(at: [indexPath], with: .automatic)
         case .update:
-            conversationTable.reloadRows(at: [indexPath!], with: .automatic)
+            conversationTable.reloadRows(at: [indexPath], with: .automatic)
         @unknown default:
             fatalError("Unnown type")
         }
@@ -95,13 +95,13 @@ class ConversationViewController: UIViewController,
         UIView.performWithoutAnimation {
             self.conversationTable.endUpdates()
         }
-       // self.scrollToBottom()
+        self.scrollToBottom()
     }
 
     func scrollToBottom() {
         guard let chnl = channel else { fatalError("Channel Missing") }
         if let msgCount = coreDataStack?.getCountOfMessagesInChannels(channel: chnl) {
-            if msgCount > 0 {
+            if msgCount > 0 && (conversationTable.numberOfRows(inSection: 0) == msgCount ) {
                 let indexPath = IndexPath(row: msgCount - 1, section: 0)
                 self.conversationTable.scrollToRow(at: indexPath, at: .bottom, animated: false)
             }
