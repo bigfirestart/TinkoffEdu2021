@@ -13,7 +13,6 @@ import CoreData
 class ConversationsListViewController: UIViewController, NSFetchedResultsControllerDelegate {
     @IBOutlet weak var conversationsTable: UITableView!
     @IBOutlet weak var addChannelBtn: UIButton!
-    var channels: [ConversationsCellConfiguration] = []
     var coreDataStack = CoreDataStack()
     
     var fetchedResultsController: NSFetchedResultsController<DBChannel>?
@@ -69,7 +68,7 @@ class ConversationsListViewController: UIViewController, NSFetchedResultsControl
         super.viewDidLoad()
         
         // MARK: CoreData
-        getChannels()
+        ChatFireStoreAPI(coreDataStack: coreDataStack).getChannels()
         
         // coreDataStack.enableObservers()
 
@@ -109,10 +108,10 @@ extension ConversationsListViewController: UITableViewDelegate {
         let conversationVC = viewController as? ConversationViewController ?? ConversationViewController()
         conversationVC.coreDataStack = self.coreDataStack
         
-        if let frc = self.fetchedResultsController {
-            conversationVC.channelConf = frc.object(at: indexPath)
-            navigationController?.pushViewController(conversationVC, animated: true)
-        }
+        guard let frc = self.fetchedResultsController else { fatalError("Fetch Missing")}
+        conversationVC.channel = frc.object(at: indexPath)
+        navigationController?.pushViewController(conversationVC, animated: true)
+      
     }
 }
 

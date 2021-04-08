@@ -8,11 +8,11 @@
 import UIKit
 import CoreData
 
-class ConversationsTableViewDataSource: NSObject, UITableViewDataSource {
-    let fetchedResultsController: NSFetchedResultsController<DBChannel>
+class ConversationTableViewDataSource: NSObject, UITableViewDataSource {
+    let fetchedResultsController: NSFetchedResultsController<DBMessage>
     let coreDataStack: CoreDataStack
     
-    init(coreDataStack: CoreDataStack, fetchedResultsController: NSFetchedResultsController<DBChannel>) {
+    init(coreDataStack: CoreDataStack, fetchedResultsController: NSFetchedResultsController<DBMessage>) {
         self.fetchedResultsController = fetchedResultsController
         self.coreDataStack = coreDataStack
         
@@ -32,8 +32,8 @@ class ConversationsTableViewDataSource: NSObject, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let tableCell = tableView.dequeueReusableCell(withIdentifier: "ConversationsCell", for: indexPath)
-        guard let cell = tableCell as? ConversationsTableViewCell else {
+        let tableCell = tableView.dequeueReusableCell(withIdentifier: "ConversationCell", for: indexPath)
+        guard let cell = tableCell as? ConversationTableViewCell else {
             return UITableViewCell()
         }
         cell.configure(with: fetchedResultsController.object(at: indexPath))

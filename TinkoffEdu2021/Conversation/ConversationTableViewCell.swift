@@ -19,22 +19,24 @@ class ConversationTableViewCell: UITableViewCell {
     var incomingMessage: [NSLayoutConstraint] = []
     var outcommingMessage: [NSLayoutConstraint] = []
 
-    func configure(with config: ConversationCellConfiguration) {
-        if config.text == nil {
+    func configure(with config: DBMessage) {
+        if config.content == nil {
             messageLabel.text = "..."
             userLabel.text = "User"
         } else {
-            messageLabel.text = config.text
+            messageLabel.text = config.content
         }
-
-        if config.isIncoming {
-            bubbleBackgroundView.backgroundColor = ConversationTableViewCell.leftBubbleColor
-            NSLayoutConstraint.deactivate(outcommingMessage)
-            NSLayoutConstraint.activate(incomingMessage)
-        } else {
-            bubbleBackgroundView.backgroundColor = ConversationTableViewCell.rigthBubbleColor
-            NSLayoutConstraint.deactivate(incomingMessage)
-            NSLayoutConstraint.activate(outcommingMessage)
+        if let userId = UserDefaults.standard.object(forKey: "UserApiId") {
+            let isIncoming = config.senderId != userId as? String
+            if isIncoming {
+                bubbleBackgroundView.backgroundColor = ConversationTableViewCell.leftBubbleColor
+                NSLayoutConstraint.deactivate(outcommingMessage)
+                NSLayoutConstraint.activate(incomingMessage)
+            } else {
+                bubbleBackgroundView.backgroundColor = ConversationTableViewCell.rigthBubbleColor
+                NSLayoutConstraint.deactivate(incomingMessage)
+                NSLayoutConstraint.activate(outcommingMessage)
+            }
         }
     }
 
