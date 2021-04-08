@@ -68,18 +68,26 @@ class ConversationViewController: UIViewController,
                     at indexPath: IndexPath?,
                     for type: NSFetchedResultsChangeType,
                     newIndexPath: IndexPath?) {
-        guard let indexPath = indexPath else { return }
-        guard let newIndexPath = newIndexPath else { return }
         switch type {
         case .insert:
-            conversationTable.insertRows(at: [newIndexPath], with: .automatic)
+            if let index = newIndexPath {
+                conversationTable.insertRows(at: [index], with: .automatic)
+            }
         case .move:
-            conversationTable.deleteRows(at: [indexPath], with: .automatic)
-            conversationTable.insertRows(at: [newIndexPath], with: .automatic)
+            if let index = indexPath {
+                if let newIndex = newIndexPath {
+                    conversationTable.deleteRows(at: [index], with: .automatic)
+                    conversationTable.insertRows(at: [newIndex], with: .automatic)
+                }
+            }
         case .delete:
-            conversationTable.deleteRows(at: [indexPath], with: .automatic)
+            if let index = indexPath {
+                conversationTable.deleteRows(at: [index], with: .automatic)
+            }
         case .update:
-            conversationTable.reloadRows(at: [indexPath], with: .automatic)
+            if let index = indexPath {
+                conversationTable.reloadRows(at: [index], with: .automatic)
+            }
         @unknown default:
             fatalError("Unnown type")
         }
