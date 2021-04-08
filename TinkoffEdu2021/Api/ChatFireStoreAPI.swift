@@ -24,7 +24,9 @@ class ChatFireStoreAPI {
             self.coreDataStack.performSave(block: { (context) in
                 snapshot?.documentChanges.forEach { diff in
                     let identifier = diff.document.documentID
-                    if diff.type == .removed {
+                    let data = diff.document.data()
+                    switch diff.type {
+                    case .removed:
                         let request: NSFetchRequest<DBChannel>  = DBChannel.fetchRequest()
                         request.predicate = NSPredicate(format: "identifier == %@", identifier)
                         do {
@@ -34,8 +36,7 @@ class ChatFireStoreAPI {
                         } catch {
                             fatalError("No delinion fetch")
                         }
-                    } else {
-                        let data = diff.document.data()
+                    case .added:
                         let name = data["name"] as? String ?? "Sample Name"
                         let lastMessage = data["lastMessage"] as? String
                         let lastActivity = (data["lastActivity"] as? Timestamp)?.dateValue()
@@ -44,7 +45,20 @@ class ChatFireStoreAPI {
                                                 lastMessage: lastMessage,
                                                 lastActivity: lastActivity,
                                                 in: context)
+                    case .modified:
+                        let lastMessage = data["lastMessage"] as? String
+                        let lastActivity = (data["lastActivity"] as? Timestamp)?.dateValue()
+                        let request: NSFetchRequest<DBChannel>  = DBChannel.fetchRequest()
+                        request.predicate = NSPredicate(format: "identifier == %@", identifier)
+                        do {
+                            let result = try context.fetch(request)
+                            result[0].lastActivity = lastActivity
+                            result[0].lastMessage = lastMessage
+                            
+                        } catch {
+                            fatalError("No delinion fetch")
                         }
+                    }
                     }
                 })
             }
@@ -92,9 +106,7 @@ class ChatFireStoreAPI {
                         request.predicate = NSPredicate(format: "identifier == %@", channelId)
                         do {
                             let res = try context.fetch(request)
-                            if res.count > 0 {
-                                res[0].addToMessages(msg)
-                            }
+                            res[0].addToMessages(msg)
                         } catch {
                             assertionFailure(error.localizedDescription)
                         }

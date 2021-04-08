@@ -53,7 +53,6 @@ class CoreDataStack {
         request.predicate = NSPredicate(format: "channel == %@", channel)
         do {
             let result = try container.newBackgroundContext().fetch(request)
-            print(result.count)
             return result.count
         } catch {
             fatalError("crashed channels count")

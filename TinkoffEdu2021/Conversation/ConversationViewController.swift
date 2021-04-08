@@ -50,9 +50,9 @@ class ConversationViewController: UIViewController,
         
         guard let cds = coreDataStack else { fatalError("CoreDataStack Missing") }
         guard let id = channel?.identifier else { fatalError("Channel Missing") }
-        print(id)
         
         ChatFireStoreAPI(coreDataStack: cds).getChannelMessages(channelId: id)
+        
         conversationTable.dataSource = tableViewDataSource
         
         conversationTable.separatorStyle = UITableViewCell.SeparatorStyle.none
@@ -95,15 +95,15 @@ class ConversationViewController: UIViewController,
         UIView.performWithoutAnimation {
             self.conversationTable.endUpdates()
         }
-        self.scrollToBottom()
+       // self.scrollToBottom()
     }
 
     func scrollToBottom() {
         guard let chnl = channel else { fatalError("Channel Missing") }
         if let msgCount = coreDataStack?.getCountOfMessagesInChannels(channel: chnl) {
-            if  msgCount > 0 {
+            if msgCount > 0 {
                 let indexPath = IndexPath(row: msgCount - 1, section: 0)
-                self.conversationTable.scrollToRow(at: indexPath, at: .bottom, animated: true)
+                self.conversationTable.scrollToRow(at: indexPath, at: .bottom, animated: false)
             }
         }
     }

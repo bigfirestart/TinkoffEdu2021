@@ -10,7 +10,6 @@ import UIKit
 
 class ConversationTableViewCell: UITableViewCell {
     let messageLabel = TheamedUILabel()
-    let userLabel = TheamedUILabel()
     let bubbleBackgroundView = UIView()
 
     static var leftBubbleColor = UIColor(red: 223 / 255, green: 223 / 255, blue: 223 / 255, alpha: 1)
@@ -20,12 +19,10 @@ class ConversationTableViewCell: UITableViewCell {
     var outcommingMessage: [NSLayoutConstraint] = []
 
     func configure(with config: DBMessage) {
-        if config.content == nil {
-            messageLabel.text = "..."
-            userLabel.text = "User"
-        } else {
-            messageLabel.text = config.content
-        }
+        let sender = config.senderName ?? "Unknown"
+        let msg = config.content ?? "..."
+        messageLabel.text = "\(sender):\n\(msg)"
+        
         if let userId = UserDefaults.standard.object(forKey: "UserApiId") {
             let isIncoming = config.senderId != userId as? String
             if isIncoming {
@@ -51,7 +48,6 @@ class ConversationTableViewCell: UITableViewCell {
 
         // message
         addSubview(messageLabel)
-        addSubview(userLabel)
 
         messageLabel.numberOfLines = 0
         messageLabel.translatesAutoresizingMaskIntoConstraints = false
