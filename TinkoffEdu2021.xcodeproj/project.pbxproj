@@ -307,8 +307,8 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = E7C95A7A25D83F2F00DCB3B2 /* Build configuration list for PBXNativeTarget "TinkoffEdu2021" */;
 			buildPhases = (
-				E7F70498260CE0E90081AEA0 /* ShellScript */,
 				7ED34B32C7132FDDD575214A /* [CP] Check Pods Manifest.lock */,
+				E7F70498260CE0E90081AEA0 /* ShellScript */,
 				E7C95A4C25D83F2B00DCB3B2 /* Sources */,
 				E7C95A4D25D83F2B00DCB3B2 /* Frameworks */,
 				E7C95A4E25D83F2B00DCB3B2 /* Resources */,
