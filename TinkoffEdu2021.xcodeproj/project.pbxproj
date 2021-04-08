@@ -16,12 +16,11 @@
 		E728022925F927FB007ED613 /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = E728022825F927FB007ED613 /* Theme.swift */; };
 		E728023725FA1581007ED613 /* ThemeManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E728023625FA1581007ED613 /* ThemeManager.swift */; };
 		E733DBEE2602847900239A17 /* ProfileEdit.swift in Sources */ = {isa = PBXBuildFile; fileRef = E733DBED2602847900239A17 /* ProfileEdit.swift */; };
+		E73ECF54261E769B00970DD5 /* ApiChannel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E73ECF53261E769B00970DD5 /* ApiChannel.swift */; };
 		E7456B36261501B6001DBF3F /* ObjectsExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7456B35261501B6001DBF3F /* ObjectsExtensions.swift */; };
 		E74AC26E2603944500EC7B5E /* ProfileInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = E74AC26D2603944500EC7B5E /* ProfileInfo.swift */; };
 		E74AC273260398CD00EC7B5E /* StorageOperations.swift in Sources */ = {isa = PBXBuildFile; fileRef = E74AC272260398CD00EC7B5E /* StorageOperations.swift */; };
 		E74AC28F2603D64400EC7B5E /* StorageGDC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E74AC28E2603D64400EC7B5E /* StorageGDC.swift */; };
-		E7641E3B261DFC69008C3D15 /* CDChannelController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7641E3A261DFC69008C3D15 /* CDChannelController.swift */; };
-		E7641E40261DFDE9008C3D15 /* CDMessageController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7641E3F261DFDE9008C3D15 /* CDMessageController.swift */; };
 		E78B27D225E54D1500FA709C /* ProfileImageController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E78B27D125E54D1500FA709C /* ProfileImageController.swift */; };
 		E78B27E325EF770700FA709C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E78B27E225EF770700FA709C /* ViewController.swift */; };
 		E78B27EE25EF7F5100FA709C /* ConversationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E78B27ED25EF7F5100FA709C /* ConversationViewController.swift */; };
@@ -72,12 +71,11 @@
 		E728022825F927FB007ED613 /* Theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
 		E728023625FA1581007ED613 /* ThemeManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeManager.swift; sourceTree = "<group>"; };
 		E733DBED2602847900239A17 /* ProfileEdit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileEdit.swift; sourceTree = "<group>"; };
+		E73ECF53261E769B00970DD5 /* ApiChannel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiChannel.swift; sourceTree = "<group>"; };
 		E7456B35261501B6001DBF3F /* ObjectsExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObjectsExtensions.swift; sourceTree = "<group>"; };
 		E74AC26D2603944500EC7B5E /* ProfileInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileInfo.swift; sourceTree = "<group>"; };
 		E74AC272260398CD00EC7B5E /* StorageOperations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageOperations.swift; sourceTree = "<group>"; };
 		E74AC28E2603D64400EC7B5E /* StorageGDC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageGDC.swift; sourceTree = "<group>"; };
-		E7641E3A261DFC69008C3D15 /* CDChannelController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CDChannelController.swift; sourceTree = "<group>"; };
-		E7641E3F261DFDE9008C3D15 /* CDMessageController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CDMessageController.swift; sourceTree = "<group>"; };
 		E78B27D125E54D1500FA709C /* ProfileImageController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileImageController.swift; sourceTree = "<group>"; };
 		E78B27E225EF770700FA709C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		E78B27ED25EF7F5100FA709C /* ConversationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConversationViewController.swift; sourceTree = "<group>"; };
@@ -149,7 +147,6 @@
 		E72363932614CE4100EAE761 /* CoreData */ = {
 			isa = PBXGroup;
 			children = (
-				E72B620D261E04D7005A6311 /* Models */,
 				E72363942614CE7A00EAE761 /* Chat.xcdatamodeld */,
 				E72363A92614E9FF00EAE761 /* CoreDataStack.swift */,
 				E7456B35261501B6001DBF3F /* ObjectsExtensions.swift */,
@@ -175,31 +172,6 @@
 			path = Theaming;
 			sourceTree = "<group>";
 		};
-		E72B620D261E04D7005A6311 /* Models */ = {
-			isa = PBXGroup;
-			children = (
-				E72B624B261E0840005A6311 /* Message */,
-				E72B621E261E0518005A6311 /* Channel */,
-			);
-			path = Models;
-			sourceTree = "<group>";
-		};
-		E72B621E261E0518005A6311 /* Channel */ = {
-			isa = PBXGroup;
-			children = (
-				E7641E3A261DFC69008C3D15 /* CDChannelController.swift */,
-			);
-			path = Channel;
-			sourceTree = "<group>";
-		};
-		E72B624B261E0840005A6311 /* Message */ = {
-			isa = PBXGroup;
-			children = (
-				E7641E3F261DFDE9008C3D15 /* CDMessageController.swift */,
-			);
-			path = Message;
-			sourceTree = "<group>";
-		};
 		E78B27E725EF771F00FA709C /* ConversationsList */ = {
 			isa = PBXGroup;
 			children = (
@@ -208,6 +180,7 @@
 				E78B281725F03AA500FA709C /* TableViewCell.swift */,
 				E7F70327260BDEB20081AEA0 /* AddChannel.swift */,
 				E706DC15261E430F008EC502 /* DataSource.swift */,
+				E73ECF53261E769B00970DD5 /* ApiChannel.swift */,
 			);
 			path = ConversationsList;
 			sourceTree = "<group>";
@@ -527,7 +500,6 @@
 				E733DBEE2602847900239A17 /* ProfileEdit.swift in Sources */,
 				E78B27E325EF770700FA709C /* ViewController.swift in Sources */,
 				E74AC26E2603944500EC7B5E /* ProfileInfo.swift in Sources */,
-				E7641E40261DFDE9008C3D15 /* CDMessageController.swift in Sources */,
 				E72363962614CE7A00EAE761 /* Chat.xcdatamodeld in Sources */,
 				E78B281825F03AA600FA709C /* TableViewCell.swift in Sources */,
 				E78B282825F11EA500FA709C /* ConversationCellConfiguration.swift in Sources */,
@@ -538,13 +510,13 @@
 				E7456B36261501B6001DBF3F /* ObjectsExtensions.swift in Sources */,
 				E72363AA2614E9FF00EAE761 /* CoreDataStack.swift in Sources */,
 				E78B27EE25EF7F5100FA709C /* ConversationViewController.swift in Sources */,
-				E7641E3B261DFC69008C3D15 /* CDChannelController.swift in Sources */,
 				E7F70328260BDEB20081AEA0 /* AddChannel.swift in Sources */,
 				E7F70323260BADCB0081AEA0 /* FirebaseChannel.swift in Sources */,
 				E78B27FC25EFF9D000FA709C /* CellConfiguration.swift in Sources */,
 				E7F7033F260BEA480081AEA0 /* ChatInput.swift in Sources */,
 				E74AC28F2603D64400EC7B5E /* StorageGDC.swift in Sources */,
 				E7C95AA525D8490600DCB3B2 /* Logger.swift in Sources */,
+				E73ECF54261E769B00970DD5 /* ApiChannel.swift in Sources */,
 				E706DC16261E430F008EC502 /* DataSource.swift in Sources */,
 				E728021A25F80867007ED613 /* SettingsViewController.swift in Sources */,
 			);

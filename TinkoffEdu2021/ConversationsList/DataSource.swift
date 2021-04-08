@@ -10,9 +10,12 @@ import CoreData
 
 class ConversationsTableViewDataSource: NSObject, UITableViewDataSource {
     let fetchedResultsController: NSFetchedResultsController<DBChannel>
+    let coreDataStack: CoreDataStack
     
-    init(fetchedResultsController: NSFetchedResultsController<DBChannel>) {
+    init(coreDataStack: CoreDataStack, fetchedResultsController: NSFetchedResultsController<DBChannel>) {
         self.fetchedResultsController = fetchedResultsController
+        self.coreDataStack = coreDataStack
+        
         do {
             try fetchedResultsController.performFetch()
         } catch {
@@ -37,4 +40,25 @@ class ConversationsTableViewDataSource: NSObject, UITableViewDataSource {
         return cell
     }
     
+    func tableView(_ tableView: UITableView,
+                   commit editingStyle: UITableViewCell.EditingStyle,
+                   forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            if let id = fetchedResultsController.object(at: indexPath).identifier {
+                coreDataStack.performSave(block: { (context) in
+                    let request: NSFetchRequest<DBChannel>  = DBChannel.fetchRequest()
+                    request.predicate = NSPredicate(format: "identifier == %@", id)
+                    do {
+                        let result = try context.fetch(request)
+                        context.delete(result[0])
+                        
+                    } catch {
+                        fatalError("No delinion fetch")
+                    }
+                    
+                })
+                deleteChannel(id: id)
+            }
+        }
+    }
 }

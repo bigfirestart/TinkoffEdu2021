@@ -16,38 +16,6 @@ struct Channel {
     let lastActivity: Date?
 }
 
-func getChannels(context: NSManagedObjectContext, completion: @escaping(([DBChannel]) -> Void)) {
-    let reference = Firestore.firestore().collection("channels")
-
-    reference.addSnapshotListener { snapshot, _ in
-        var channels: [DBChannel] = []
-        if let documents = snapshot?.documents {
-            for document in documents {
-                let data = document.data()
-
-                let identifier = document.documentID
-                let name = data["name"] as? String ?? "Sample Name"
-                let lastMessage = data["lastMessage"] as? String
-                let lastActivity = (data["lastActivity"] as? Timestamp)?.dateValue()
-                
-                
-                let channel = DBChannel(identifier: identifier,
-                                      name: name,
-                                      lastMessage: lastMessage,
-                                      lastActivity: lastActivity,
-                                      in: context)
-                
-                channels.append(channel)
-            }
-        }
-        if let oldDate = Calendar.current.date(byAdding: .year, value: -18, to: Date()) {
-            channels = channels.sorted(by: {$0.lastActivity ?? oldDate > $1.lastActivity ?? oldDate})
-        }
-        completion(channels)
-    }
-
-}
-
 func createChannel(channelName: String) {
     if channelName != "" {
         let reference = Firestore.firestore().collection("channels")

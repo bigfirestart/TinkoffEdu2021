@@ -18,15 +18,17 @@ class ConversationsListViewController: UIViewController, NSFetchedResultsControl
     
     var fetchedResultsController: NSFetchedResultsController<DBChannel>?
     private lazy var tableViewDataSource: UITableViewDataSource = {
+        
+        let context = coreDataStack.container.viewContext
         let request: NSFetchRequest<DBChannel> = DBChannel.fetchRequest()
         request.sortDescriptors = [NSSortDescriptor(key: "lastActivity", ascending: false)]
         let frc = NSFetchedResultsController(fetchRequest: request,
-                                          managedObjectContext: coreDataStack.mainContext,
-                                          sectionNameKeyPath: nil,
-                                          cacheName: nil)
+                                             managedObjectContext: context,
+                                             sectionNameKeyPath: nil,
+                                             cacheName: nil)
         self.fetchedResultsController = frc
         frc.delegate = self
-        return ConversationsTableViewDataSource(fetchedResultsController: frc)
+        return ConversationsTableViewDataSource(coreDataStack: coreDataStack, fetchedResultsController: frc)
     }()
     
     func controller(_ controller: NSFetchedResultsController<NSFetchRequestResult>,
@@ -34,44 +36,42 @@ class ConversationsListViewController: UIViewController, NSFetchedResultsControl
                     at indexPath: IndexPath?,
                     for type: NSFetchedResultsChangeType,
                     newIndexPath: IndexPath?) {
-        if let index = newIndexPath {
-            switch type {
-            case .insert:
-                conversationsTable.insertRows(at: [index], with: .automatic)
-            case .move:
-                conversationsTable.deleteRows(at: [index], with: .automatic)
-                conversationsTable.insertRows(at: [index], with: .automatic)
-            case .delete:
-                conversationsTable.deleteRows(at: [index], with: .automatic)
-            default: break
-            }
+//        guard let indexPath = indexPath else { return }
+//        guard let newIndexPath = newIndexPath else { return }
+        switch type {
+        case .insert:
+            conversationsTable.insertRows(at: [newIndexPath!], with: .automatic)
+        case .move:
+            conversationsTable.deleteRows(at: [indexPath!], with: .automatic)
+            conversationsTable.insertRows(at: [newIndexPath!], with: .automatic)
+        case .delete:
+            conversationsTable.deleteRows(at: [indexPath!], with: .automatic)
+        case .update:
+            conversationsTable.reloadRows(at: [indexPath!], with: .automatic)
+        @unknown default:
+            fatalError("Unnown type")
         }
     }
     
     func controllerWillChangeContent(_ controller: NSFetchedResultsController<NSFetchRequestResult>) {
-        self.conversationsTable.beginUpdates()
+        UIView.performWithoutAnimation {
+            self.conversationsTable.beginUpdates()
+        }
     }
     
     func controllerDidChangeContent(_ controller: NSFetchedResultsController<NSFetchRequestResult>) {
-        self.conversationsTable.endUpdates()
+        UIView.performWithoutAnimation {
+            self.conversationsTable.endUpdates()
+        }
     }
         
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        getChannels(context: coreDataStack.mainContext, completion: { [weak self] channels in
-            CDChannelController.dbSaveChannels(
-                context: self?.coreDataStack.mainContext ?? NSManagedObjectContext(concurrencyType: .mainQueueConcurrencyType),
-                channels: channels)
-            self?.coreDataStack.printChannelsInfo()
-            
-            DispatchQueue.main.async {
-                self?.conversationsTable.reloadData()
-            }
-        })
-        
         // MARK: CoreData
-        coreDataStack.enableObservers()
+        getChannels()
+        
+        // coreDataStack.enableObservers()
 
         addChannelBtn.addTarget(self, action: #selector(addChannelClicked), for: .touchUpInside)
 
