@@ -16,24 +16,30 @@ extension ConversationsListViewController {
         reference.addSnapshotListener { snapshot, _ in
         DispatchQueue.global(qos: .utility).async {
             self.coreDataStack.performSave(block: { (context) in
-                var channels: [DBChannel] = []
-                if let documents = snapshot?.documents {
-                    for document in documents {
-                        let data = document.data()
-
-                        let identifier = document.documentID
+                snapshot?.documentChanges.forEach { diff in
+                    let identifier = diff.document.documentID
+                    if diff.type == .removed {
+                        let request: NSFetchRequest<DBChannel>  = DBChannel.fetchRequest()
+                        request.predicate = NSPredicate(format: "identifier == %@", identifier)
+                        do {
+                            let result = try context.fetch(request)
+                            context.delete(result[0])
+                            
+                        } catch {
+                            fatalError("No delinion fetch")
+                        }
+                    } else {
+                        let data = diff.document.data()
                         let name = data["name"] as? String ?? "Sample Name"
                         let lastMessage = data["lastMessage"] as? String
                         let lastActivity = (data["lastActivity"] as? Timestamp)?.dateValue()
-                        let channel = DBChannel(identifier: identifier,
-                                              name: name,
-                                              lastMessage: lastMessage,
-                                              lastActivity: lastActivity,
-                                              in: context)
-                        channels.append(channel)
+                        _ = DBChannel(identifier: identifier,
+                                                name: name,
+                                                lastMessage: lastMessage,
+                                                lastActivity: lastActivity,
+                                                in: context)
                     }
                 }
-                print(self.coreDataStack.getChannelsCount())
             })
         }
     }

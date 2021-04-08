@@ -45,18 +45,6 @@ class ConversationsTableViewDataSource: NSObject, UITableViewDataSource {
                    forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
             if let id = fetchedResultsController.object(at: indexPath).identifier {
-                coreDataStack.performSave(block: { (context) in
-                    let request: NSFetchRequest<DBChannel>  = DBChannel.fetchRequest()
-                    request.predicate = NSPredicate(format: "identifier == %@", id)
-                    do {
-                        let result = try context.fetch(request)
-                        context.delete(result[0])
-                        
-                    } catch {
-                        fatalError("No delinion fetch")
-                    }
-                    
-                })
                 deleteChannel(id: id)
             }
         }
