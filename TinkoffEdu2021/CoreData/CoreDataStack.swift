@@ -48,13 +48,13 @@ class CoreDataStack {
        
     }
     
-    func getCountOfMessagesInChannels(channelId: String) -> Int {
-        let request: NSFetchRequest<DBChannel> = DBChannel.fetchRequest()
-        request.predicate = NSPredicate(format: "identifier == %@", channelId)
+    func getCountOfMessagesInChannels(channel: DBChannel) -> Int {
+        let request: NSFetchRequest<DBMessage> = DBMessage.fetchRequest()
+        request.predicate = NSPredicate(format: "channel == %@", channel)
         do {
             let result = try container.newBackgroundContext().fetch(request)
-            print(result)
-            return result[0].messages?.count ?? 0
+            print(result.count)
+            return result.count
         } catch {
             fatalError("crashed channels count")
         }

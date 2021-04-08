@@ -99,8 +99,8 @@ class ConversationViewController: UIViewController,
     }
 
     func scrollToBottom() {
-        guard let id = channel?.identifier else { fatalError("Channel Missing") }
-        if let msgCount = coreDataStack?.getCountOfMessagesInChannels(channelId: id) {
+        guard let chnl = channel else { fatalError("Channel Missing") }
+        if let msgCount = coreDataStack?.getCountOfMessagesInChannels(channel: chnl) {
             if  msgCount > 0 {
                 let indexPath = IndexPath(row: msgCount - 1, section: 0)
                 self.conversationTable.scrollToRow(at: indexPath, at: .bottom, animated: true)
