@@ -17,28 +17,7 @@ class ConversationViewController: UIViewController,
 
     @IBOutlet weak var messageSendBtn: UIButton!
 
-    var channel: DBChannel?
-    var coreDataStack: CoreDataStack?
-    
-    var fetchedResultsController: NSFetchedResultsController<DBMessage>?
-    private lazy var tableViewDataSource: UITableViewDataSource = {
-        
-        guard let context = coreDataStack?.container.viewContext
-            else { fatalError("CoreDataStack missing") }
-        let request: NSFetchRequest<DBMessage> = DBMessage.fetchRequest()
-        request.predicate = NSPredicate(format: "channel == %@", self.channel ?? DBChannel())
-        request.sortDescriptors = [NSSortDescriptor(key: "created", ascending: true)]
-        let frc = NSFetchedResultsController(fetchRequest: request,
-                                             managedObjectContext: context,
-                                             sectionNameKeyPath: nil,
-                                             cacheName: nil)
-        self.fetchedResultsController = frc
-        frc.delegate = self
-        guard let cds = coreDataStack
-            else { fatalError("CoreDataStack missing") }
-        return ConversationTableViewDataSource(coreDataStack: cds,
-                                                fetchedResultsController: frc)
-    }()
+    var model = ConversationModel()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -48,12 +27,13 @@ class ConversationViewController: UIViewController,
         let nameHide = UIResponder.keyboardWillHideNotification
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name: nameHide, object: nil)
         
-        guard let cds = coreDataStack else { fatalError("CoreDataStack Missing") }
-        guard let id = channel?.identifier else { fatalError("Channel Missing") }
+        guard let cds = model.coreDataStack else { fatalError("CoreDataStack Missing") }
+        guard let id = model.channel?.identifier else { fatalError("Channel Missing") }
         
         ChatFireStoreAPI(coreDataStack: cds).getChannelMessages(channelId: id)
         
-        conversationTable.dataSource = tableViewDataSource
+        conversationTable.dataSource = model.tableViewDataSource
+        model.fetchedResultsController?.delegate = self
         
         conversationTable.separatorStyle = UITableViewCell.SeparatorStyle.none
         messageSendBtn.addTarget(self, action: #selector(sendMessageButtonClicked), for: .touchUpInside)
@@ -107,8 +87,8 @@ class ConversationViewController: UIViewController,
     }
 
     func scrollToBottom() {
-        guard let chnl = channel else { fatalError("Channel Missing") }
-        if let msgCount = coreDataStack?.getCountOfMessagesInChannels(channel: chnl) {
+        guard let chnl = model.channel else { fatalError("Channel Missing") }
+        if let msgCount = model.coreDataStack?.getCountOfMessagesInChannel(channel: chnl) {
             if msgCount > 0 && (conversationTable.numberOfRows(inSection: 0) == msgCount ) {
                 let indexPath = IndexPath(row: msgCount - 1, section: 0)
                 self.conversationTable.scrollToRow(at: indexPath, at: .bottom, animated: false)

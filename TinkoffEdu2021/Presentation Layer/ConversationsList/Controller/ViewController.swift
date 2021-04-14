@@ -13,22 +13,8 @@ import CoreData
 class ConversationsListViewController: UIViewController, NSFetchedResultsControllerDelegate {
     @IBOutlet weak var conversationsTable: UITableView!
     @IBOutlet weak var addChannelBtn: UIButton!
-    var coreDataStack = CoreDataStack()
     
-    var fetchedResultsController: NSFetchedResultsController<DBChannel>?
-    private lazy var tableViewDataSource: UITableViewDataSource = {
-        
-        let context = coreDataStack.container.viewContext
-        let request: NSFetchRequest<DBChannel> = DBChannel.fetchRequest()
-        request.sortDescriptors = [NSSortDescriptor(key: "lastActivity", ascending: false)]
-        let frc = NSFetchedResultsController(fetchRequest: request,
-                                             managedObjectContext: context,
-                                             sectionNameKeyPath: nil,
-                                             cacheName: nil)
-        self.fetchedResultsController = frc
-        frc.delegate = self
-        return ConversationsTableViewDataSource(coreDataStack: coreDataStack, fetchedResultsController: frc)
-    }()
+    var model = ConversationsModel()
     
     func controller(_ controller: NSFetchedResultsController<NSFetchRequestResult>,
                     didChange anObject: Any,
@@ -76,7 +62,7 @@ class ConversationsListViewController: UIViewController, NSFetchedResultsControl
         super.viewDidLoad()
         
         // MARK: CoreData
-        ChatFireStoreAPI(coreDataStack: coreDataStack).getChannels()
+        ChatFireStoreAPI(coreDataStack: model.coreDataStack).getChannels()
 
         addChannelBtn.addTarget(self, action: #selector(addChannelClicked), for: .touchUpInside)
 
@@ -94,7 +80,8 @@ class ConversationsListViewController: UIViewController, NSFetchedResultsControl
         }
 
         title = "Tinkoff Chat"
-        conversationsTable.dataSource = tableViewDataSource
+        conversationsTable.dataSource = model.tableViewDataSource
+        model.fetchedResultsController?.delegate = self
         conversationsTable.delegate = self
     }
 
@@ -112,10 +99,10 @@ extension ConversationsListViewController: UITableViewDelegate {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let viewController = storyboard.instantiateViewController(withIdentifier: "ConversationViewController")
         let conversationVC = viewController as? ConversationViewController ?? ConversationViewController()
-        conversationVC.coreDataStack = self.coreDataStack
+        conversationVC.model.coreDataStack = model.coreDataStack
         
-        guard let frc = self.fetchedResultsController else { fatalError("Fetch Missing")}
-        conversationVC.channel = frc.object(at: indexPath)
+        guard let frc = model.fetchedResultsController else { fatalError("Fetch Missing")}
+        conversationVC.model.channel = frc.object(at: indexPath)
         navigationController?.pushViewController(conversationVC, animated: true)
       
     }

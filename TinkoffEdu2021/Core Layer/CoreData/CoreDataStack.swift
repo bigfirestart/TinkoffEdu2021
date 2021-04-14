@@ -48,7 +48,7 @@ class CoreDataStack {
        
     }
     
-    func getCountOfMessagesInChannels(channel: DBChannel) -> Int {
+    func getCountOfMessagesInChannel(channel: DBChannel) -> Int {
         let request: NSFetchRequest<DBMessage> = DBMessage.fetchRequest()
         request.predicate = NSPredicate(format: "channel == %@", channel)
         do {
