@@ -16,8 +16,8 @@ class ConversationTableViewCell: UITableViewCell {
     static var leftBubbleColor = UIColor(red: 223 / 255, green: 223 / 255, blue: 223 / 255, alpha: 1)
     static var rigthBubbleColor = UIColor(red: 220 / 255, green: 247 / 255, blue: 197 / 255, alpha: 1)
 
-    var leadingConstraint: NSLayoutConstraint?
-    var trailingConstraint: NSLayoutConstraint?
+    var incomingMessage: [NSLayoutConstraint] = []
+    var outcommingMessage: [NSLayoutConstraint] = []
 
     func configure(with config: ConversationCellConfiguration) {
         if config.text == nil {
@@ -29,12 +29,12 @@ class ConversationTableViewCell: UITableViewCell {
 
         if config.isIncoming {
             bubbleBackgroundView.backgroundColor = ConversationTableViewCell.leftBubbleColor
-            leadingConstraint?.isActive = true
-            trailingConstraint?.isActive = false
+            NSLayoutConstraint.deactivate(outcommingMessage)
+            NSLayoutConstraint.activate(incomingMessage)
         } else {
             bubbleBackgroundView.backgroundColor = ConversationTableViewCell.rigthBubbleColor
-            leadingConstraint?.isActive = false
-            trailingConstraint?.isActive = true
+            NSLayoutConstraint.deactivate(incomingMessage)
+            NSLayoutConstraint.activate(outcommingMessage)
         }
     }
 
@@ -53,11 +53,22 @@ class ConversationTableViewCell: UITableViewCell {
 
         messageLabel.numberOfLines = 0
         messageLabel.translatesAutoresizingMaskIntoConstraints = false
-
+        
+        let minFreeWidth = self.frame.width / 2
+        
+        self.incomingMessage = [
+            messageLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 32),
+            messageLabel.trailingAnchor.constraint(lessThanOrEqualTo: trailingAnchor, constant: minFreeWidth * -1)
+        ]
+        self.outcommingMessage = [
+            messageLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -32),
+            messageLabel.leadingAnchor.constraint(greaterThanOrEqualTo: leadingAnchor, constant: minFreeWidth)
+        ]
+        
         let constraints = [
             messageLabel.topAnchor.constraint(equalTo: topAnchor, constant: 32),
             messageLabel.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -16),
-            messageLabel.widthAnchor.constraint(lessThanOrEqualTo: widthAnchor, multiplier: 0.75, constant: -64),
+            // messageLabel.widthAnchor.constraint(lessThanOrEqualTo: widthAnchor, multiplier: 0.75, constant: -64),
 
             bubbleBackgroundView.topAnchor.constraint(equalTo: messageLabel.topAnchor, constant: -16),
             bubbleBackgroundView.leadingAnchor.constraint(equalTo: messageLabel.leadingAnchor, constant: -16),
@@ -67,10 +78,6 @@ class ConversationTableViewCell: UITableViewCell {
         ]
 
         NSLayoutConstraint.activate(constraints)
-
-        leadingConstraint = messageLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 32)
-        trailingConstraint = messageLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -32)
-
     }
 
     required init?(coder: NSCoder) {

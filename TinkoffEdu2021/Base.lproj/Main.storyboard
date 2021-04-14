@@ -31,17 +31,17 @@
                                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="3Zu-w6-hgF">
                                                     <rect key="frame" x="19" y="3.5" width="337.5" height="66.5"/>
                                                     <subviews>
-                                                        <stackView opaque="NO" contentMode="scaleToFill" spacing="267" translatesAutoresizingMaskIntoConstraints="NO" id="RfO-6u-RAP">
+                                                        <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="RfO-6u-RAP">
                                                             <rect key="frame" x="0.0" y="0.0" width="336" height="31.5"/>
                                                             <subviews>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mPA-vq-9Sb" customClass="TheamedUILabel" customModule="Tinkoff_Edu" customModuleProvider="target">
-                                                                    <rect key="frame" x="0.0" y="0.0" width="268.5" height="31.5"/>
+                                                                    <rect key="frame" x="0.0" y="0.0" width="258.5" height="31.5"/>
                                                                     <fontDescription key="fontDescription" type="system" pointSize="26"/>
                                                                     <nil key="textColor"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mwP-Ml-dhk" customClass="TheamedUILabel" customModule="Tinkoff_Edu" customModuleProvider="target">
-                                                                    <rect key="frame" x="336" y="0.0" width="0.0" height="31.5"/>
+                                                                    <rect key="frame" x="268.5" y="0.0" width="67.5" height="31.5"/>
                                                                     <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                                                     <nil key="textColor"/>
                                                                     <nil key="highlightedColor"/>
@@ -50,7 +50,6 @@
                                                             <constraints>
                                                                 <constraint firstItem="mPA-vq-9Sb" firstAttribute="leading" secondItem="RfO-6u-RAP" secondAttribute="leading" id="ouo-gV-M2O"/>
                                                                 <constraint firstItem="mwP-Ml-dhk" firstAttribute="width" secondItem="RfO-6u-RAP" secondAttribute="width" multiplier="0.2" id="q4Z-yy-gbZ"/>
-                                                                <constraint firstItem="mPA-vq-9Sb" firstAttribute="width" secondItem="RfO-6u-RAP" secondAttribute="width" multiplier="0.8" id="qkw-3H-0Pj"/>
                                                                 <constraint firstAttribute="trailing" secondItem="mwP-Ml-dhk" secondAttribute="trailing" id="xKi-mE-ZPF"/>
                                                             </constraints>
                                                         </stackView>
@@ -400,8 +399,8 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="567"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </tableView>
-                            <view alpha="0.90000000000000002" contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="rtU-tT-afy" customClass="UISeparatorView" customModule="Tinkoff_Edu" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="569" width="375" height="33.5"/>
+                            <view alpha="0.90000000000000002" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rtU-tT-afy" customClass="UISeparatorView" customModule="Tinkoff_Edu" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="567" width="375" height="33.5"/>
                             </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="ygf-Y5-r8c"/>

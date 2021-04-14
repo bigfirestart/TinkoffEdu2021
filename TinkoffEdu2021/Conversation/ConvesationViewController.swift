@@ -15,7 +15,8 @@ class ConversationViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var messageSendBtn: UIButton!
 
     var channelConf: ConversationsCellConfiguration?
-    var messages: [ConversationCellConfiguration] = []
+    var messagesConfigs: [ConversationCellConfiguration] = []
+    var coreDataStack: CoreDataStack?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,17 +27,39 @@ class ConversationViewController: UIViewController, UITextFieldDelegate {
 
         if let channel = channelConf {
             title = channel.name
-            getChannelMessages(documentId: channel.channelId ?? "", completion: { [weak self] messages in
-                self?.messages = []
+            getChannelMessages(documentId: channel.channelId, completion: { [weak self] messages in
+                self?.messagesConfigs = []
                 for message in messages {
                     let text = message.senderName + ": \n" + message.content
                     if let userId = UserDefaults.standard.object(forKey: "UserApiId") {
                         let conf = ConversationCellConfiguration(text: text,
                                                                  isIncoming: message.senderId != userId as? String)
-                        self?.messages.append(conf)
+                        self?.messagesConfigs.append(conf)
                     }
 
                 }
+                
+                self?.coreDataStack?.performSave { context in
+                    let dbchannel = DBChannel(identifier: channel.channelId,
+                                              name: channel.name,
+                                              lastMessage: channel.message,
+                                              lastActivity: channel.date,
+                                              in: context)
+                    print("Count \(messages.count)")
+                    for message in messages {
+                        let msg = DBMessage(identifier: message.identifier,
+                                            content: message.content,
+                                            created: message.created,
+                                            senderId: message.senderId,
+                                            senderName: message.senderName,
+                                            in: context)
+                        dbchannel.addToMessages(msg)
+                    }
+                }
+                
+                self?.coreDataStack?.printMessagesInfo()
+                self?.coreDataStack?.printChannelsInfo()
+                
                 DispatchQueue.main.async {
                     self?.conversationTable.reloadData()
                     self?.scrollToBottom()
@@ -54,8 +77,8 @@ class ConversationViewController: UIViewController, UITextFieldDelegate {
     }
 
     func scrollToBottom() {
-        if self.messages.count > 0 {
-            let indexPath = IndexPath(row: self.messages.count - 1, section: 0)
+        if self.messagesConfigs.count > 0 {
+            let indexPath = IndexPath(row: self.messagesConfigs.count - 1, section: 0)
             self.conversationTable.scrollToRow(at: indexPath, at: .bottom, animated: true)
         }
     }
@@ -67,7 +90,7 @@ extension ConversationViewController: UITableViewDataSource {
     }
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return messages.count
+        return messagesConfigs.count
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -76,7 +99,7 @@ extension ConversationViewController: UITableViewDataSource {
             return UITableViewCell()
         }
 
-        cell.configure(with: messages[indexPath.row])
+        cell.configure(with: messagesConfigs[indexPath.row])
 
         return cell
     }

@@ -13,7 +13,9 @@ class ConversationsListViewController: UIViewController {
     @IBOutlet weak var conversationsTable: UITableView!
     @IBOutlet weak var addChannelBtn: UIButton!
     var channels: [ConversationsCellConfiguration] = []
-
+    
+    var coreDataStack = CoreDataStack()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -27,10 +29,25 @@ class ConversationsListViewController: UIViewController {
                                                                      online: false,
                                                                      hasUnreadMessages: false))
             }
+            
+            self?.coreDataStack.performSave { context in
+                for channel in channels {
+                     _ = DBChannel(identifier: channel.identifier,
+                                              name: channel.name,
+                                              lastMessage: channel.lastMessage,
+                                              lastActivity: channel.lastActivity,
+                                              in: context)
+                }
+            }
+            self?.coreDataStack.printChannelsInfo()
+            
             DispatchQueue.main.async {
                 self?.conversationsTable.reloadData()
             }
         })
+        
+        // MARK: CoreData
+        coreDataStack.enableObservers()
 
         addChannelBtn.addTarget(self, action: #selector(addChannelClicked), for: .touchUpInside)
 
@@ -72,7 +89,7 @@ extension ConversationsListViewController: UITableViewDataSource {
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let tableCell =  tableView.dequeueReusableCell(withIdentifier: "ConversationsCell", for: indexPath)
+        let tableCell = tableView.dequeueReusableCell(withIdentifier: "ConversationsCell", for: indexPath)
         guard let cell = tableCell as? ConversationsTableViewCell else {
             return UITableViewCell()
         }
@@ -87,6 +104,7 @@ extension ConversationsListViewController: UITableViewDelegate {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let viewController = storyboard.instantiateViewController(withIdentifier: "ConversationViewController")
         let conversationVC = viewController as? ConversationViewController ?? ConversationViewController()
+        conversationVC.coreDataStack = self.coreDataStack
         conversationVC.channelConf = channels[indexPath.row]
         navigationController?.pushViewController(conversationVC, animated: true)
     }
