@@ -15,7 +15,7 @@ extension ConversationsListViewController: UITableViewDelegate {
         let conversationVC = viewController as? ConversationViewController ?? ConversationViewController()
         conversationVC.model.coreDataStack = model.coreDataStack
         
-        guard let frc = model.fetchedResultsController else { fatalError("Fetch Missing")}
+        guard let frc = model.fetchedResultsController else { return }
         conversationVC.model.channel = frc.object(at: indexPath)
         navigationController?.pushViewController(conversationVC, animated: true)
       

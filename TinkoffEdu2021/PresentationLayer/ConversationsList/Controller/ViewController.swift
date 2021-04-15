@@ -42,7 +42,7 @@ class ConversationsListViewController: UIViewController, NSFetchedResultsControl
                 conversationsTable.reloadRows(at: [index], with: .automatic)
             }
         default:
-            fatalError("Unnown type")
+            return
         }
     }
     

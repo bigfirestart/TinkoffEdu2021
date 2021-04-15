@@ -27,8 +27,8 @@ class ConversationViewController: UIViewController,
         let nameHide = UIResponder.keyboardWillHideNotification
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name: nameHide, object: nil)
         
-        guard let cds = model.coreDataStack else { fatalError("CoreDataStack Missing") }
-        guard let id = model.channel?.identifier else { fatalError("Channel Missing") }
+        guard let cds = model.coreDataStack else { return }
+        guard let id = model.channel?.identifier else { return}
         
         ChatFireStoreAPI(coreDataStack: cds).getChannelMessages(channelId: id)
         
@@ -69,7 +69,7 @@ class ConversationViewController: UIViewController,
                 conversationTable.reloadRows(at: [index], with: .automatic)
             }
         @unknown default:
-            fatalError("Unnown type")
+            return
         }
     }
     
@@ -87,7 +87,7 @@ class ConversationViewController: UIViewController,
     }
 
     func scrollToBottom() {
-        guard let chnl = model.channel else { fatalError("Channel Missing") }
+        guard let chnl = model.channel else { return }
         if let msgCount = model.coreDataStack?.getCountOfMessagesInChannel(channel: chnl) {
             if msgCount > 0 && (conversationTable.numberOfRows(inSection: 0) == msgCount ) {
                 let indexPath = IndexPath(row: msgCount - 1, section: 0)

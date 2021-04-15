@@ -17,7 +17,7 @@ struct ConversationModel {
     lazy var tableViewDataSource: UITableViewDataSource = {
         
         guard let context = coreDataStack?.container.viewContext
-            else { fatalError("CoreDataStack missing") }
+            else { preconditionFailure("CoreDataStack missing") }
         let request: NSFetchRequest<DBMessage> = DBMessage.fetchRequest()
         request.predicate = NSPredicate(format: "channel == %@", self.channel ?? DBChannel())
         request.sortDescriptors = [NSSortDescriptor(key: "created", ascending: true)]
@@ -27,7 +27,7 @@ struct ConversationModel {
                                              cacheName: nil)
         self.fetchedResultsController = frc
         guard let cds = coreDataStack
-            else { fatalError("CoreDataStack missing") }
+            else { preconditionFailure("CoreDataStack missing") }
         return ConversationTableViewDataSource(coreDataStack: cds,
                                                 fetchedResultsController: frc)
     }()

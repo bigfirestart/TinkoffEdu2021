@@ -19,13 +19,13 @@ class ConversationsTableViewDataSource: NSObject, UITableViewDataSource {
         do {
             try fetchedResultsController.performFetch()
         } catch {
-            fatalError("Perform fetch throw \(error)")
+            return
         }
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         guard let sections = self.fetchedResultsController.sections else {
-            fatalError("No sections")
+            return 0
         }
         let sectionInfo = sections[section]
         return sectionInfo.numberOfObjects
