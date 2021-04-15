@@ -15,7 +15,7 @@ class CoreDataStack {
         let container = NSPersistentContainer(name: dataBaseName)
         container.loadPersistentStores { _, error in
             if let error = error as NSError? {
-                fatalError("something went wrong \(error) \(error.userInfo)")
+                preconditionFailure("something went wrong \(error) \(error.userInfo)")
             }
         }
         container.viewContext.automaticallyMergesChangesFromParent = true
@@ -43,7 +43,7 @@ class CoreDataStack {
             let result = try container.newBackgroundContext().fetch(request)
             return result.count
         } catch {
-            fatalError("crashed channels count")
+            preconditionFailure("crashed channels count")
         }
        
     }
@@ -55,7 +55,7 @@ class CoreDataStack {
             let result = try container.newBackgroundContext().fetch(request)
             return result.count
         } catch {
-            fatalError("crashed channels count")
+            preconditionFailure("crashed channels count")
         }
        
     }

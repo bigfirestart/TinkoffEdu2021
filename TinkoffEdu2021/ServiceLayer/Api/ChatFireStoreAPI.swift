@@ -34,7 +34,7 @@ class ChatFireStoreAPI {
                             context.delete(result[0])
                             
                         } catch {
-                            fatalError("No delinion fetch")
+                            preconditionFailure("No delinion fetch")
                         }
                     case .added:
                         let name = data["name"] as? String ?? "Sample Name"
@@ -56,7 +56,7 @@ class ChatFireStoreAPI {
                             result[0].lastMessage = lastMessage
                             
                         } catch {
-                            fatalError("No delinion fetch")
+                            preconditionFailure("No delinion fetch")
                         }
                     }
                     }
@@ -95,7 +95,7 @@ class ChatFireStoreAPI {
                             context.delete(result[0])
                             
                         } catch {
-                            fatalError("No delinion fetch")
+                            preconditionFailure("No delinion fetch")
                         }
                     } else {
                         let data = diff.document.data()
