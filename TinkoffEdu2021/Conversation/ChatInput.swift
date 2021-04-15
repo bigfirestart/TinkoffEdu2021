@@ -13,7 +13,9 @@ extension ConversationViewController {
         view.endEditing(true)
         if let text = messageTextField.text {
             if text != "" {
-                addMessageToChannel(documentId: channelConf?.channelId ?? "", message: text)
+                
+                ChatFireStoreAPI(coreDataStack: self.coreDataStack ?? CoreDataStack())
+                    .addMessageToChannel(documentId: channel?.identifier ?? "", message: text)
                 messageTextField.text = ""
             }
         }
