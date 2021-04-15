@@ -1,15 +1,17 @@
 //
-//  StorageGDC.swift
+//  Storage.swift
 //  TinkoffEdu2021
 //
-//  Created by Кирилл Лукьянов on 18.03.2021.
+//  Created by Кирилл Лукьянов on 15.04.2021.
 //
 
 import Foundation
 import UIKit
 
-extension ProfileViewController {
-    func saveProfileGDC(profile: Profile, img: UIImage?) {
+class GDCStorage {
+    static func saveProfileGDC(profile: Profile,
+                               img: UIImage?,
+                               onComplete: @escaping (Error?) -> Void) {
         let documentDirectory = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first
         let profileJson = profile.decode() ?? ""
         DispatchQueue.global().async {
@@ -22,7 +24,7 @@ extension ProfileViewController {
                         try data.write(to: path)
                     } catch {
                         DispatchQueue.main.async {
-                            self.faltureSaveAfter(errorText: error.localizedDescription, isGDC: true)
+                            onComplete(error)
                         }
                     }
                 }
@@ -37,12 +39,12 @@ extension ProfileViewController {
                 }
             }
             DispatchQueue.main.async {
-                self.successSaveAfter()
+                onComplete(nil)
             }
         }
     }
 
-    func getProfileGDC() {
+    static func getProfileGDC( onComplete: @escaping (Profile?, UIImage?) -> Void ) {
         DispatchQueue.global().async {
             let documentDirectory = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first
             var profile: Profile?
@@ -63,7 +65,7 @@ extension ProfileViewController {
             }
 
             DispatchQueue.main.async {
-                self.setProfile(resProfile: profile, resImg: profileImg)
+                onComplete(profile, profileImg)
             }
         }
     }

@@ -27,7 +27,6 @@ extension ProfileViewController {
         aboutUITextView.isUserInteractionEnabled = false
         profileEditBtn.setTitle("Edit", for: .normal)
         saveGCDBtn.isHidden = true
-        saveOperationsBtn.isHidden = true
         model.isInEditMode = false
     }
 
@@ -39,8 +38,6 @@ extension ProfileViewController {
         fioUITextField.becomeFirstResponder()
         saveGCDBtn.isHidden = false
         saveGCDBtn.isEnabled = false
-        saveOperationsBtn.isHidden = false
-        saveOperationsBtn.isEnabled = false
         model.isInEditMode = true
     }
 
@@ -59,7 +56,6 @@ extension ProfileViewController {
         activityIndicator.hidesWhenStopped = true
 
         saveGCDBtn.isEnabled = false
-        saveOperationsBtn.isEnabled = false
 
         profileEditBtn.isEnabled = false
     }
@@ -69,37 +65,23 @@ extension ProfileViewController {
         saveGDC()
     }
 
-    @objc func onOperationSaveClick() {
-        profileControllerSavePrepare()
-        saveOperations()
-    }
-
     @objc func textFieldChanged() {
         saveGCDBtn.isEnabled = true
-        saveOperationsBtn.isEnabled = true
     }
     @objc func enableSaveBtn() {
         saveGCDBtn.isEnabled = true
-        saveOperationsBtn.isEnabled = true
     }
 
     func saveGDC() {
         let profile = Profile(name: fioUITextField.text ?? "", info: aboutUITextView.text ?? "")
-        if let img = profileImg.image {
-            saveProfileGDC(profile: profile, img: img)
-        } else {
-            saveProfileGDC(profile: profile, img: nil)
-        }
-    }
-
-    func saveOperations() {
-        let profile = Profile(name: fioUITextField.text ?? "", info: aboutUITextView.text ?? "")
-        let queue = OperationQueue()
-        let operation = ProfileStorageAsyncOperation(profile: profile, profileImg: nil, profileVC: self)
-        if let img = profileImg.image {
-            operation.profileImg = img
-        }
-        queue.addOperation(operation)
+        GDCStorage.saveProfileGDC(profile: profile, img: profileImg.image,
+                                  onComplete: { error in
+            if let err = error {
+                self.faltureSaveAfter(errorText: err.localizedDescription)
+            } else {
+                self.successSaveAfter()
+            }
+        })
     }
 
     func successSaveAfter() {
@@ -113,18 +95,12 @@ extension ProfileViewController {
         self.profileEditBtn.isEnabled = true
     }
 
-    func faltureSaveAfter(errorText: String, isGDC: Bool) {
+    func faltureSaveAfter(errorText: String) {
         let alert = UIAlertController(title: errorText, message: "", preferredStyle: UIAlertController.Style.alert)
         alert.addAction(UIAlertAction(title: "Ok", style: UIAlertAction.Style.default, handler: nil))
-        if isGDC {
-            alert.addAction(UIAlertAction(title: "Повторить",
-                                          style: UIAlertAction.Style.default,
-                                          handler: {_ in self.saveGDC()}))
-        } else {
-            alert.addAction(UIAlertAction(title: "Повторить",
-                                          style: UIAlertAction.Style.default,
-                                          handler: {_ in self.saveOperations()}))
-        }
+        alert.addAction(UIAlertAction(title: "Повторить",
+                                      style: UIAlertAction.Style.default,
+                                      handler: {_ in self.saveGDC()}))
 
         self.present(alert, animated: true, completion: nil)
     }

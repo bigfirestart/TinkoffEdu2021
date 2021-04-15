@@ -15,7 +15,6 @@ class ProfileViewController: UIViewController,
     @IBOutlet weak var profileImg: UIImageView!
     @IBOutlet weak var profileEditBtn: UIButton!
     @IBOutlet weak var saveGCDBtn: UIButton!
-    @IBOutlet weak var saveOperationsBtn: UIButton!
 
     @IBOutlet weak var aboutUITextView: UITextView!
     @IBOutlet weak var fioUITextField: UITextField!
@@ -37,18 +36,22 @@ class ProfileViewController: UIViewController,
         // buttons and textfields
         saveGCDBtn.layer.cornerRadius = 14
         saveGCDBtn.isHidden = true
-        saveOperationsBtn.layer.cornerRadius = 14
-        saveOperationsBtn.isHidden = true
 
         fioUITextField.isUserInteractionEnabled = false
         aboutUITextView.isUserInteractionEnabled = false
         profileEditBtn.addTarget(self, action: #selector(editButtonClick), for: .touchUpInside)
         saveGCDBtn.addTarget(self, action: #selector(onGDCSaveClick), for: .touchUpInside)
-        saveOperationsBtn.addTarget(self, action: #selector(onOperationSaveClick), for: .touchUpInside)
         fioUITextField.addTarget(self, action: #selector(textFieldChanged), for: .editingChanged)
         aboutUITextView.delegate = self
 
-        getProfileGDC()
+        GDCStorage.getProfileGDC(onComplete: { profile, img in
+            self.fioUITextField.text = profile?.name
+            self.aboutUITextView.text = profile?.info
+
+            if let img = img {
+                self.profileImg.image = img
+            }
+        })
 
         model.isInEditMode = false
         self.hideKeyboardWhenTappedAround()
@@ -63,15 +66,6 @@ class ProfileViewController: UIViewController,
 
     func textViewDidChange(_ textView: UITextView) {
         textFieldChanged()
-    }
-
-    func setProfile(resProfile: Profile?, resImg: UIImage?) {
-        fioUITextField.text = resProfile?.name
-        aboutUITextView.text = resProfile?.info
-
-        if let img = resImg {
-            profileImg.image = img
-        }
     }
 }
 class ProfileUILabel: UILabel {}
