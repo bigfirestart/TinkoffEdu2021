@@ -21,10 +21,8 @@ class ProfileViewController: UIViewController,
     @IBOutlet weak var fioUITextField: UITextField!
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
 
-    var imagePicker = UIImagePickerController()
-    var isInEditMode = false
-    var state = ProfileViewControllerState(fioText: "", aboutText: "", img: UIImage(), isImgChanged: false)
-
+   var model = ProfileViewModel()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         profileImg?.layer.cornerRadius = (profileImg?.frame.height ?? 1) / 2
@@ -52,7 +50,7 @@ class ProfileViewController: UIViewController,
 
         getProfileGDC()
 
-        isInEditMode = false
+        model.isInEditMode = false
         self.hideKeyboardWhenTappedAround()
 
         cancelModalLabel.isUserInteractionEnabled = true

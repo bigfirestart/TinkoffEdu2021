@@ -9,7 +9,7 @@ import Foundation
 import UIKit
 import CoreData
 
-class ConversationsModel {
+struct ConversationsModel {
     var coreDataStack = CoreDataStack()
     
     var fetchedResultsController: NSFetchedResultsController<DBChannel>?

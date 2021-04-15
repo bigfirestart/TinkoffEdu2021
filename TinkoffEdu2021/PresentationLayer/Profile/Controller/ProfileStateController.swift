@@ -8,24 +8,17 @@
 import Foundation
 import UIKit
 
-struct ProfileViewControllerState {
-    var fioText: String
-    var aboutText: String
-    var img: UIImage
-    var isImgChanged: Bool
-}
-
 extension ProfileViewController {
     func saveState() {
-        state.fioText = fioUITextField.text ?? ""
-        state.aboutText = aboutUITextView.text ?? ""
-        state.img = profileImg.image ?? UIImage()
+        model.state.fioText = fioUITextField.text ?? ""
+        model.state.aboutText = aboutUITextView.text ?? ""
+        model.state.img = profileImg.image ?? UIImage()
     }
 
     func restoreSavedState() {
-        fioUITextField.text = state.fioText
-        aboutUITextView.text = state.aboutText
-        profileImg.image = state.img
+        fioUITextField.text = model.state.fioText
+        aboutUITextView.text = model.state.aboutText
+        profileImg.image = model.state.img
 
     }
 
@@ -35,7 +28,7 @@ extension ProfileViewController {
         profileEditBtn.setTitle("Edit", for: .normal)
         saveGCDBtn.isHidden = true
         saveOperationsBtn.isHidden = true
-        isInEditMode = false
+        model.isInEditMode = false
     }
 
     func startEdit() {
@@ -48,11 +41,11 @@ extension ProfileViewController {
         saveGCDBtn.isEnabled = false
         saveOperationsBtn.isHidden = false
         saveOperationsBtn.isEnabled = false
-        isInEditMode = true
+        model.isInEditMode = true
     }
 
     @objc func editButtonClick() {
-        if isInEditMode {
+        if model.isInEditMode {
             stopEdit()
             self.restoreSavedState()
         } else {

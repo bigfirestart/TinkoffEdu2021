@@ -18,7 +18,7 @@ class SettingsViewController: UIViewController {
 
     // может возникнуть retain cycle если themeDelegate будет ссылаться на SettingsViewController
     weak var themeDelegate: ThemesPickerDelegate?
-
+ 
     // может возникнуть цикл если будем использовать self
     // var themeHandler: ((Theme) -> ())?
 

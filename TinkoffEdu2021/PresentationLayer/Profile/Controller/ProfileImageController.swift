@@ -21,17 +21,17 @@ extension ProfileViewController {
     }
 
     func chooseFromGallery(action: UIAlertAction) {
-        imagePicker.delegate = self
-        imagePicker.mediaTypes = ["public.image"]
-        imagePicker.sourceType = .photoLibrary
-        present(imagePicker, animated: true, completion: nil)
+        model.imagePicker.delegate = self
+        model.imagePicker.mediaTypes = ["public.image"]
+        model.imagePicker.sourceType = .photoLibrary
+        present(model.imagePicker, animated: true, completion: nil)
     }
 
     func takeCameraPhoto(action: UIAlertAction) {
         if UIImagePickerController.isSourceTypeAvailable(.camera) {
-            imagePicker.delegate = self
-            imagePicker.sourceType = .camera
-            present(imagePicker, animated: true, completion: nil)
+            model.imagePicker.delegate = self
+            model.imagePicker.sourceType = .camera
+            present(model.imagePicker, animated: true, completion: nil)
         } else {
             DispatchQueue.main.async {
                 let style = UIAlertController.Style.alert
@@ -48,7 +48,7 @@ extension ProfileViewController {
             startEdit()
             profileImg?.image = image
             enableSaveBtn()
-            state.isImgChanged = true
+            model.state.isImgChanged = true
         }
     }
 }
