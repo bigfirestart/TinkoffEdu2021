@@ -63,11 +63,13 @@ class ApiProfileCollectionViewController: UICollectionViewController, UICollecti
                 print(error)
                 return
             }
-            GDCStorage.saveProfileGDC(profile: nil, img: image, onComplete: {_ in
+            DispatchQueue.main.async {
                 let profileViewController = self.presentingViewController as? ProfileViewController
+                profileViewController?.startEdit()
                 profileViewController?.profileImg.image = image
+                profileViewController?.enableSaveBtn()
                 self.dismiss(animated: true, completion: nil)
-            })
+            }
         })
     }
 }
