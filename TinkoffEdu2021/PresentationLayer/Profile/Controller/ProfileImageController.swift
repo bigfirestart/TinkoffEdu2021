@@ -12,9 +12,9 @@ extension ProfileViewController {
 
     @objc func profileImgTap(_ sender: UITapGestureRecognizer) {
         let alert = UIAlertController(title: "Select image", message: nil, preferredStyle: .actionSheet)
-        let action1 = UIAlertAction(title: "Choose from Gallery", style: .default, handler: chooseFromGallery(action:))
-        alert.addAction(action1)
+        alert.addAction(UIAlertAction(title: "Choose from Gallery", style: .default, handler: chooseFromGallery(action:)))
         alert.addAction(UIAlertAction(title: "Take photo", style: .default, handler: takeCameraPhoto(action:)))
+        alert.addAction(UIAlertAction(title: "Download", style: .default, handler: dowloadImage(action:)))
         alert.addAction(UIAlertAction(title: "Cancel", style: .cancel))
         alert.popoverPresentationController?.barButtonItem = self.navigationItem.rightBarButtonItem
         present(alert, animated: true)
@@ -41,6 +41,15 @@ extension ProfileViewController {
             }
         }
     }
+    
+    func dowloadImage(action: UIAlertAction) {
+        let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+        guard let next = storyBoard.instantiateViewController(withIdentifier: "ApiProfileCollectionViewController") as? ApiProfileCollectionViewController else {
+            return
+        }
+        self.present(next, animated: true, completion: nil)
+    }
+    
     func imagePickerController(_ picker: UIImagePickerController,
                                didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey: Any]) {
         picker.dismiss(animated: true, completion: nil)
