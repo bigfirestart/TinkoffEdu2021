@@ -14,7 +14,11 @@ class ApiProfileCollectionViewController: UICollectionViewController, UICollecti
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        PixabayAPIService.getImageList(completionHandler: { (imageList: [ImageListItem]?, _) in
+        PixabayAPIService.getImageList(completionHandler: { (imageList: [ImageListItem]?, errorString: String?) in
+            if let error = errorString {
+                print(error)
+                return
+            }
             self.imageList = imageList ?? []
             DispatchQueue.main.async {
                 self.collectionView.reloadData()
@@ -30,12 +34,17 @@ class ApiProfileCollectionViewController: UICollectionViewController, UICollecti
         cell.configure()
         
         let url = self.imageList[indexPath.row].previewURL
-        PixabayAPIService.downloadImage(urlString: url, completionHandler: {(image: UIImage?, _) in
+        PixabayAPIService.downloadImage(urlString: url, completionHandler: {(image: UIImage?, errorString: String?) in
+            if let error = errorString {
+                print(error)
+                return
+            }
             if let img = image {
                 DispatchQueue.main.async {
                     cell.setImage(image: img)
                 }
             }
+            
         })
        
         return cell
@@ -49,7 +58,11 @@ class ApiProfileCollectionViewController: UICollectionViewController, UICollecti
     override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         
         let url = self.imageList[indexPath.row].largeImageURL
-        PixabayAPIService.downloadImage(urlString: url, completionHandler: {(image: UIImage?, _) in
+        PixabayAPIService.downloadImage(urlString: url, completionHandler: {(image: UIImage?, errorString: String?) in
+            if let error = errorString {
+                print(error)
+                return
+            }
             GDCStorage.saveProfileGDC(profile: nil, img: image, onComplete: {_ in
                 let profileViewController = self.presentingViewController as? ProfileViewController
                 profileViewController?.profileImg.image = image
