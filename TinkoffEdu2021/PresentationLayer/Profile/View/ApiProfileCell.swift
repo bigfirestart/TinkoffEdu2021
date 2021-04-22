@@ -13,7 +13,7 @@ class ApiProfileCell: UICollectionViewCell {
     
     func configure() {
         self.activityIndicator.isHidden = false
-        self.contentView.backgroundColor = .yellow
+        self.contentView.backgroundColor = .gray
         self.activityIndicator.startAnimating()
     }
     
@@ -25,6 +25,7 @@ class ApiProfileCell: UICollectionViewCell {
     
     override func prepareForReuse() {
         super.prepareForReuse()
+        self.contentView.backgroundColor = .gray
         self.activityIndicator.isHidden = false
         self.activityIndicator.startAnimating()
     }
