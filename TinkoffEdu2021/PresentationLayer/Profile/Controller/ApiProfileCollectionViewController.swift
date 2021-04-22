@@ -14,9 +14,9 @@ class ApiProfileCollectionViewController: UICollectionViewController, UICollecti
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        PixabayAPIService.getImageList(completionHandler: { (imageList: [ImageListItem]?, errorString: String?) in
-            if let error = errorString {
-                print(error)
+        PixabayAPIService.getImageList(completionHandler: { (imageList: [ImageListItem]?, error: Error?) in
+            if let err = error?.localizedDescription {
+                print(err)
                 return
             }
             self.imageList = imageList ?? []
@@ -34,9 +34,9 @@ class ApiProfileCollectionViewController: UICollectionViewController, UICollecti
         cell.configure()
         
         let url = self.imageList[indexPath.row].previewURL
-        PixabayAPIService.downloadImage(urlString: url, completionHandler: {(image: UIImage?, errorString: String?) in
-            if let error = errorString {
-                print(error)
+        PixabayAPIService.downloadImage(urlString: url, completionHandler: {(image: UIImage?, error: Error?) in
+            if let err = error?.localizedDescription {
+                print(err)
                 return
             }
             if let img = image {
@@ -58,9 +58,9 @@ class ApiProfileCollectionViewController: UICollectionViewController, UICollecti
     override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         
         let url = self.imageList[indexPath.row].largeImageURL
-        PixabayAPIService.downloadImage(urlString: url, completionHandler: {(image: UIImage?, errorString: String?) in
-            if let error = errorString {
-                print(error)
+        PixabayAPIService.downloadImage(urlString: url, completionHandler: {(image: UIImage?, error: Error?) in
+            if let err = error?.localizedDescription {
+                print(err)
                 return
             }
             DispatchQueue.main.async {

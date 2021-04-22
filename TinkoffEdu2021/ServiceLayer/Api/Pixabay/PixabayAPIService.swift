@@ -9,7 +9,7 @@ import Foundation
 import UIKit
 
 class PixabayAPIService {
-    static func getImageList(completionHandler: @escaping ([ImageListItem]?, String?) -> Void) {
+    static func getImageList(completionHandler: @escaping ([ImageListItem]?, Error?) -> Void) {
         let requestConfig = RequestFactory.PixabayRequests.searchImages()
         
         RequestSender().send(config: requestConfig) { (result: Result<[ImageListItem], Error>) in
@@ -17,21 +17,21 @@ class PixabayAPIService {
             case .success(let pictures):
                 completionHandler(pictures, nil)
             case .failure(let error):
-                completionHandler(nil, error.localizedDescription)
+                completionHandler(nil, error)
             }
         }
     }
     static func downloadImage(urlString: String,
-                              completionHandler: @escaping (UIImage?, String?) -> Void) {
+                              completionHandler: @escaping (UIImage?, Error?) -> Void) {
            let requestConfig = RequestFactory.PixabayRequests.downloadImage(urlString: urlString)
            
         RequestSender().send(config: requestConfig) { (result: Result<UIImage, Error>) in
-               switch result {
-               case .success(let picture):
-                   completionHandler(picture, nil)
-               case .failure(let error):
-                completionHandler(nil, error.localizedDescription)
-               }
+            switch result {
+            case .success(let picture):
+                completionHandler(picture, nil)
+            case .failure(let error):
+            completionHandler(nil, error)
+            }
            }
        }
 }
