@@ -8,7 +8,7 @@
 import Foundation
 import UIKit
 
-protocol ThemesPickerDelegate: class {
+protocol ThemesPickerDelegate: AnyObject {
     func didChangeTheme(_ : Theme)
 }
 
