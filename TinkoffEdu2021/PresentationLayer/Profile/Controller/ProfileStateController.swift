@@ -28,6 +28,7 @@ extension ProfileViewController {
         profileEditBtn.setTitle("Edit", for: .normal)
         saveGCDBtn.isHidden = true
         model.isInEditMode = false
+        saveGCDBtn.layer.removeAllAnimations()
     }
 
     func startEdit() {
@@ -40,7 +41,31 @@ extension ProfileViewController {
         saveGCDBtn.isEnabled = false
         model.isInEditMode = true
     }
-
+    
+    func shakeAnimation() {
+        let animation1 = CAKeyframeAnimation(keyPath: "transform.rotation.z")
+        animation1.values = [0, -Double.pi / 20, Double.pi / 20, 0]
+        animation1.keyTimes = [0, 0.1, 0.9, 1]
+        animation1.duration = 0.3
+        
+        let animation2 = CAKeyframeAnimation(keyPath: "transform.translation.x")
+        animation2.values = [0, -5, 5, 0]
+        animation2.keyTimes = [0, 0.1, 0.5, 1]
+        animation2.duration = 0.3
+        
+        let animation3 = CAKeyframeAnimation(keyPath: "transform.translation.y")
+        animation3.values = [0, 5, -5, 0]
+        animation3.keyTimes = [0.1, 0.25, 0.9, 1]
+        animation3.duration = 0.3
+        
+        let animation = CAAnimationGroup()
+        animation.animations = [animation1, animation2, animation3]
+        animation.duration = 1.3
+        animation.repeatCount = .infinity
+        saveGCDBtn.layer.add(animation, forKey: nil)
+        
+    }
+    
     @objc func editButtonClick() {
         if model.isInEditMode {
             stopEdit()
@@ -67,6 +92,7 @@ extension ProfileViewController {
 
     @objc func textFieldChanged() {
         saveGCDBtn.isEnabled = true
+        shakeAnimation()
     }
     @objc func enableSaveBtn() {
         saveGCDBtn.isEnabled = true

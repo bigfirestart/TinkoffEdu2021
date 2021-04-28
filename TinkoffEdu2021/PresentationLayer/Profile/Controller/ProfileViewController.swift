@@ -20,7 +20,7 @@ class ProfileViewController: UIViewController,
     @IBOutlet weak var fioUITextField: UITextField!
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
 
-   var model = ProfileViewModel()
+    var model = ProfileViewModel()
     
     override func viewDidLoad() {
         super.viewDidLoad()
