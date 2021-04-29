@@ -1,24 +1,5 @@
 import UIKit
 
-extension SettingsViewController {
-    open override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        super.touchesBegan(touches, with: event)
-        emitter?.startAnimation(touches: touches)
-    }
-    open override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
-        super.touchesEnded(touches, with: event)
-        emitter?.stopAnimation()
-    }
-    override func touchesCancelled(_ touches: Set<UITouch>, with event: UIEvent?) {
-        super.touchesEnded(touches, with: event)
-        emitter?.stopAnimation()
-    }
-    override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
-        super.touchesMoved(touches, with: event)
-        emitter?.moveAnimation(touches: touches)
-    }
-}
-
 class Emitter {
     let particleEmitter = CAEmitterLayer()
     var superView: UIView
