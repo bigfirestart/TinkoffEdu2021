@@ -10,7 +10,7 @@ import UIKit
 import CoreData
 
 struct ConversationsModel {
-    var coreDataStack = CoreDataStack()
+    var coreDataStack: CoreDataStack
     
     var fetchedResultsController: NSFetchedResultsController<DBChannel>?
     lazy var tableViewDataSource: UITableViewDataSource = {

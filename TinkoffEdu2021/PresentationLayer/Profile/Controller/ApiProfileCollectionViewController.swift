@@ -11,10 +11,11 @@ import UIKit
 class ApiProfileCollectionViewController: UICollectionViewController, UICollectionViewDelegateFlowLayout {
     
     private var imageList: [ImageListItem] = []
+    private var pixabayAPIService = PixabayAPIService(requestSender: RequestSender())
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        PixabayAPIService.getImageList(completionHandler: { (imageList: [ImageListItem]?, error: Error?) in
+        pixabayAPIService.getImageList(completionHandler: { (imageList: [ImageListItem]?, error: Error?) in
             if let err = error?.localizedDescription {
                 print(err)
                 return
@@ -34,7 +35,7 @@ class ApiProfileCollectionViewController: UICollectionViewController, UICollecti
         cell.configure()
         
         let url = self.imageList[indexPath.row].previewURL
-        PixabayAPIService.downloadImage(urlString: url, completionHandler: {(image: UIImage?, error: Error?) in
+        pixabayAPIService.downloadImage(urlString: url, completionHandler: {(image: UIImage?, error: Error?) in
             if let err = error?.localizedDescription {
                 print(err)
                 return
@@ -58,7 +59,7 @@ class ApiProfileCollectionViewController: UICollectionViewController, UICollecti
     override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         
         let url = self.imageList[indexPath.row].largeImageURL
-        PixabayAPIService.downloadImage(urlString: url, completionHandler: {(image: UIImage?, error: Error?) in
+        pixabayAPIService.downloadImage(urlString: url, completionHandler: {(image: UIImage?, error: Error?) in
             if let err = error?.localizedDescription {
                 print(err)
                 return

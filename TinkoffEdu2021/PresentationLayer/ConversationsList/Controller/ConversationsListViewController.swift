@@ -14,7 +14,23 @@ class ConversationsListViewController: UIViewController, NSFetchedResultsControl
     @IBOutlet weak var conversationsTable: UITableView!
     @IBOutlet weak var addChannelBtn: UIButton!
     
-    var model = ConversationsModel()
+    var chatFireStoreAPI: ChatFireStoreAPIProtocol
+    var model: ConversationsModel
+    
+    // custom init
+    init(model: ConversationsModel, chatFireStoreAPI: ChatFireStoreAPIProtocol) {
+        self.model = model
+        self.chatFireStoreAPI = chatFireStoreAPI
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    // init from storyboard
+    required init?(coder aDecoder: NSCoder) {
+        print("init from storyboard")
+        self.model = ConversationsModel(coreDataStack: CoreDataStack())
+        self.chatFireStoreAPI = Tinkoff_Edu.ChatFireStoreAPI(coreDataStack: self.model.coreDataStack)
+        super.init(coder: aDecoder)
+    }
     
     func controller(_ controller: NSFetchedResultsController<NSFetchRequestResult>,
                     didChange anObject: Any,
@@ -57,12 +73,15 @@ class ConversationsListViewController: UIViewController, NSFetchedResultsControl
             self.conversationsTable.endUpdates()
         }
     }
-        
+    func getChannels() {
+        self.chatFireStoreAPI.getChannels()
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         // MARK: CoreData
-        ChatFireStoreAPI(coreDataStack: model.coreDataStack).getChannels()
+        getChannels()
 
         addChannelBtn.addTarget(self, action: #selector(addChannelClicked), for: .touchUpInside)
 
@@ -83,6 +102,7 @@ class ConversationsListViewController: UIViewController, NSFetchedResultsControl
         conversationsTable.dataSource = model.tableViewDataSource
         model.fetchedResultsController?.delegate = self
         conversationsTable.delegate = self
+        
     }
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

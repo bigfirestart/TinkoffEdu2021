@@ -24,6 +24,9 @@
 		E728023725FA1581007ED613 /* ThemeManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E728023625FA1581007ED613 /* ThemeManager.swift */; };
 		E733DBEE2602847900239A17 /* ProfileStateController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E733DBED2602847900239A17 /* ProfileStateController.swift */; };
 		E73B5B282642C06800156C34 /* TinkoffEduUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E73B5B272642C06800156C34 /* TinkoffEduUITests.swift */; };
+		E73B5B3A2642C81D00156C34 /* ChatFireStoreAPIProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = E73B5B392642C81D00156C34 /* ChatFireStoreAPIProtocol.swift */; };
+		E73B5B422642DD0900156C34 /* PixabayAPIServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = E73B5B412642DD0900156C34 /* PixabayAPIServiceProtocol.swift */; };
+		E73B5B532642DF2200156C34 /* RequestSenderMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = E73B5B4E2642DEC700156C34 /* RequestSenderMock.swift */; };
 		E7456B36261501B6001DBF3F /* ObjectsExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7456B35261501B6001DBF3F /* ObjectsExtensions.swift */; };
 		E7601F5F2639FC8F00F557BC /* Emitter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7601F5E2639FC8F00F557BC /* Emitter.swift */; };
 		E7601F6A263AA73E00F557BC /* AnimatedSegue.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7601F69263AA73E00F557BC /* AnimatedSegue.swift */; };
@@ -45,7 +48,7 @@
 		E780444A2630C0BD0067763F /* DownloadImageRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = E78044492630C0BD0067763F /* DownloadImageRequest.swift */; };
 		E780444F2630C0CA0067763F /* DownloadImageParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = E780444E2630C0CA0067763F /* DownloadImageParser.swift */; };
 		E78B27D225E54D1500FA709C /* ProfileImageController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E78B27D125E54D1500FA709C /* ProfileImageController.swift */; };
-		E78B27E325EF770700FA709C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E78B27E225EF770700FA709C /* ViewController.swift */; };
+		E78B27E325EF770700FA709C /* ConversationsListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E78B27E225EF770700FA709C /* ConversationsListViewController.swift */; };
 		E78B27EE25EF7F5100FA709C /* ConversationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E78B27ED25EF7F5100FA709C /* ConversationViewController.swift */; };
 		E78B281325F024A600FA709C /* ConversationTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E78B281225F024A600FA709C /* ConversationTableViewCell.swift */; };
 		E78B281825F03AA600FA709C /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E78B281725F03AA500FA709C /* TableViewCell.swift */; };
@@ -98,6 +101,9 @@
 		E73B5B252642C06800156C34 /* TinkoffEduUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TinkoffEduUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E73B5B272642C06800156C34 /* TinkoffEduUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TinkoffEduUITests.swift; sourceTree = "<group>"; };
 		E73B5B292642C06800156C34 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E73B5B392642C81D00156C34 /* ChatFireStoreAPIProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatFireStoreAPIProtocol.swift; sourceTree = "<group>"; };
+		E73B5B412642DD0900156C34 /* PixabayAPIServiceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PixabayAPIServiceProtocol.swift; sourceTree = "<group>"; };
+		E73B5B4E2642DEC700156C34 /* RequestSenderMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestSenderMock.swift; sourceTree = "<group>"; };
 		E7456B35261501B6001DBF3F /* ObjectsExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObjectsExtensions.swift; sourceTree = "<group>"; };
 		E7601F5E2639FC8F00F557BC /* Emitter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Emitter.swift; sourceTree = "<group>"; };
 		E7601F69263AA73E00F557BC /* AnimatedSegue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimatedSegue.swift; sourceTree = "<group>"; };
@@ -121,7 +127,7 @@
 		E78044492630C0BD0067763F /* DownloadImageRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DownloadImageRequest.swift; sourceTree = "<group>"; };
 		E780444E2630C0CA0067763F /* DownloadImageParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DownloadImageParser.swift; sourceTree = "<group>"; };
 		E78B27D125E54D1500FA709C /* ProfileImageController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileImageController.swift; sourceTree = "<group>"; };
-		E78B27E225EF770700FA709C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		E78B27E225EF770700FA709C /* ConversationsListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConversationsListViewController.swift; sourceTree = "<group>"; };
 		E78B27ED25EF7F5100FA709C /* ConversationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConversationViewController.swift; sourceTree = "<group>"; };
 		E78B281225F024A600FA709C /* ConversationTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConversationTableViewCell.swift; sourceTree = "<group>"; };
 		E78B281725F03AA500FA709C /* TableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
@@ -226,7 +232,7 @@
 			isa = PBXGroup;
 			children = (
 				E7F70327260BDEB20081AEA0 /* AddChannel.swift */,
-				E78B27E225EF770700FA709C /* ViewController.swift */,
+				E78B27E225EF770700FA709C /* ConversationsListViewController.swift */,
 				E706DC15261E430F008EC502 /* DataSource.swift */,
 				E70612FC2628303100EFEFA6 /* ConversationsTableDelegate.swift */,
 				E70613012628309D00EFEFA6 /* ConversationsThemeDelegate.swift */,
@@ -343,6 +349,15 @@
 			path = TinkoffEduUITests;
 			sourceTree = "<group>";
 		};
+		E73B5B382642C80100156C34 /* Firebase */ = {
+			isa = PBXGroup;
+			children = (
+				E76E559F261F147700F85DA2 /* ChatFireStoreAPI.swift */,
+				E73B5B392642C81D00156C34 /* ChatFireStoreAPIProtocol.swift */,
+			);
+			path = Firebase;
+			sourceTree = "<group>";
+		};
 		E7601F5D2639FC8200F557BC /* Animations */ = {
 			isa = PBXGroup;
 			children = (
@@ -366,6 +381,7 @@
 		E7601FED2642BC3100F557BC /* TinkoffEduUnitTests */ = {
 			isa = PBXGroup;
 			children = (
+				E73B5B4E2642DEC700156C34 /* RequestSenderMock.swift */,
 				E7601FEE2642BC3100F557BC /* TinkoffEduUnitTests.swift */,
 				E7601FF02642BC3100F557BC /* Info.plist */,
 			);
@@ -413,6 +429,7 @@
 			isa = PBXGroup;
 			children = (
 				E78044412630B4630067763F /* PixabayAPIService.swift */,
+				E73B5B412642DD0900156C34 /* PixabayAPIServiceProtocol.swift */,
 			);
 			path = Pixabay;
 			sourceTree = "<group>";
@@ -493,8 +510,8 @@
 		E7F7031A260BAA550081AEA0 /* Api */ = {
 			isa = PBXGroup;
 			children = (
+				E73B5B382642C80100156C34 /* Firebase */,
 				E78044402630B4220067763F /* Pixabay */,
-				E76E559F261F147700F85DA2 /* ChatFireStoreAPI.swift */,
 			);
 			path = Api;
 			sourceTree = "<group>";
@@ -699,6 +716,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E73B5B532642DF2200156C34 /* RequestSenderMock.swift in Sources */,
 				E7601FEF2642BC3100F557BC /* TinkoffEduUnitTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -717,7 +735,7 @@
 				E70612FD2628303100EFEFA6 /* ConversationsTableDelegate.swift in Sources */,
 				E78044422630B4630067763F /* PixabayAPIService.swift in Sources */,
 				E733DBEE2602847900239A17 /* ProfileStateController.swift in Sources */,
-				E78B27E325EF770700FA709C /* ViewController.swift in Sources */,
+				E78B27E325EF770700FA709C /* ConversationsListViewController.swift in Sources */,
 				E706130A2628350800EFEFA6 /* ProfileViewModel.swift in Sources */,
 				E7601F5F2639FC8F00F557BC /* Emitter.swift in Sources */,
 				E72363962614CE7A00EAE761 /* Chat.xcdatamodeld in Sources */,
@@ -728,6 +746,7 @@
 				E7601F74263B302F00F557BC /* AnimatedButton.swift in Sources */,
 				E7C95A5425D83F2B00DCB3B2 /* AppDelegate.swift in Sources */,
 				E780444A2630C0BD0067763F /* DownloadImageRequest.swift in Sources */,
+				E73B5B422642DD0900156C34 /* PixabayAPIServiceProtocol.swift in Sources */,
 				E7601F6A263AA73E00F557BC /* AnimatedSegue.swift in Sources */,
 				E76E55A0261F147700F85DA2 /* ChatFireStoreAPI.swift in Sources */,
 				E728023725FA1581007ED613 /* ThemeManager.swift in Sources */,
@@ -741,6 +760,7 @@
 				E78B27EE25EF7F5100FA709C /* ConversationViewController.swift in Sources */,
 				E7601F6F263B2EDE00F557BC /* SettingsEmitterExtension.swift in Sources */,
 				E70613222628388C00EFEFA6 /* ProfileState.swift in Sources */,
+				E73B5B3A2642C81D00156C34 /* ChatFireStoreAPIProtocol.swift in Sources */,
 				E7F70328260BDEB20081AEA0 /* AddChannel.swift in Sources */,
 				E7F7033F260BEA480081AEA0 /* ChatInput.swift in Sources */,
 				E78043FD26307BFD0067763F /* ApiProfileCollectionViewController.swift in Sources */,
@@ -827,6 +847,7 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 9J6689CCTF;
+				"HEADER_SEARCH_PATHS[arch=*]" = "${SRCROOT}/Pods/Firebase/CoreOnly/Sources";
 				INFOPLIST_FILE = TinkoffEduUnitTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.2;
 				LD_RUNPATH_SEARCH_PATHS = (
