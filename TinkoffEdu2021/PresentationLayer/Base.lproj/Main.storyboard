@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17506" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="IdC-eq-agg">
-    <device id="retina4_7" orientation="portrait" appearance="light"/>
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17505"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -14,34 +15,34 @@
             <objects>
                 <viewController id="xLF-JF-p5I" customClass="ConversationsListViewController" customModule="Tinkoff_Edu" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="e2K-rB-dBW" customClass="ConversationsTableViewCell" customModule="Tinkoff_Edu" customModuleProvider="target">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="70" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="pSk-Ce-Sgt">
-                                <rect key="frame" x="0.0" y="22" width="375" height="667"/>
+                                <rect key="frame" x="0.0" y="27" width="414" height="896"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="ConversationsCell" rowHeight="68" id="OHv-VE-hhS" customClass="ConversationsTableViewCell" customModule="Tinkoff_Edu" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="375" height="68"/>
+                                        <rect key="frame" x="0.0" y="28" width="414" height="68"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="OHv-VE-hhS" id="iaE-Jx-Ror">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="68"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="68"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="3Zu-w6-hgF">
-                                                    <rect key="frame" x="19" y="1.5" width="337.5" height="65.5"/>
+                                                    <rect key="frame" x="20.5" y="1.5" width="373" height="65.5"/>
                                                     <subviews>
                                                         <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="RfO-6u-RAP">
-                                                            <rect key="frame" x="0.0" y="0.0" width="336" height="31.5"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="371.5" height="31.5"/>
                                                             <subviews>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mPA-vq-9Sb" customClass="TheamedUILabel" customModule="Tinkoff_Edu" customModuleProvider="target">
-                                                                    <rect key="frame" x="0.0" y="0.0" width="258.5" height="31.5"/>
+                                                                    <rect key="frame" x="0.0" y="0.0" width="287" height="31.5"/>
                                                                     <fontDescription key="fontDescription" type="system" pointSize="26"/>
                                                                     <nil key="textColor"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mwP-Ml-dhk" customClass="TheamedUILabel" customModule="Tinkoff_Edu" customModuleProvider="target">
-                                                                    <rect key="frame" x="268.5" y="0.0" width="67.5" height="31.5"/>
+                                                                    <rect key="frame" x="297" y="0.0" width="74.5" height="31.5"/>
                                                                     <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                                                     <nil key="textColor"/>
                                                                     <nil key="highlightedColor"/>
@@ -54,7 +55,7 @@
                                                             </constraints>
                                                         </stackView>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="justified" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9AX-0N-x0U" customClass="TheamedUILabel" customModule="Tinkoff_Edu" customModuleProvider="target">
-                                                            <rect key="frame" x="0.0" y="41.5" width="336" height="24"/>
+                                                            <rect key="frame" x="0.0" y="41.5" width="371.5" height="24"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
@@ -81,7 +82,7 @@
                                 </prototypes>
                             </tableView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="n5c-Ab-w9V">
-                                <rect key="frame" x="295" y="587" width="50" height="50"/>
+                                <rect key="frame" x="334" y="782" width="50" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="50" id="Yab-8E-RDF"/>
                                     <constraint firstAttribute="height" constant="50" id="o1S-J7-TYd"/>
@@ -132,11 +133,11 @@
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ProfileViewController" customModule="Tinkoff_Edu" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC" customClass="TheamedUIView" customModule="Tinkoff_Edu" customModuleProvider="target">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="647"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NJG-2M-wB8" customClass="TheamedUIButton" customModule="Tinkoff_Edu" customModuleProvider="target">
-                                <rect key="frame" x="37.5" y="587" width="300" height="40"/>
+                                <rect key="frame" x="41.5" y="748" width="331" height="40"/>
                                 <color key="backgroundColor" red="0.96470588235294119" green="0.96470588235294119" blue="0.96470588235294119" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="qHY-xI-1tx"/>
@@ -148,12 +149,12 @@
                                 </state>
                             </button>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="ФИО" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="sO6-lg-fh6">
-                                <rect key="frame" x="57" y="310" width="261" height="31"/>
+                                <rect key="frame" x="63" y="310" width="288" height="31"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ProfileIcon" translatesAutoresizingMaskIntoConstraints="NO" id="RXN-8v-IWJ">
-                                <rect key="frame" x="67.5" y="40" width="240" height="240"/>
+                                <rect key="frame" x="87" y="40" width="240" height="240"/>
                                 <color key="backgroundColor" red="0.89411764705882346" green="0.90980392156862744" blue="0.16862745098039217" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="240" id="0hO-4b-WZK"/>
@@ -161,20 +162,20 @@
                                 </constraints>
                             </imageView>
                             <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="nEV-iZ-pHk">
-                                <rect key="frame" x="162.5" y="467" width="50" height="50"/>
+                                <rect key="frame" x="182" y="628" width="50" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="50" id="WJ6-qc-KoA"/>
                                     <constraint firstAttribute="height" constant="50" id="yGA-Fs-OXP"/>
                                 </constraints>
                             </activityIndicatorView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Cancel" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wjx-s9-0KR">
-                                <rect key="frame" x="302" y="10" width="53" height="21"/>
+                                <rect key="frame" x="341" y="10" width="53" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut l" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="aOL-Ys-rCW">
-                                <rect key="frame" x="67.5" y="361" width="240" height="68"/>
+                                <rect key="frame" x="74.5" y="361" width="265" height="68"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="68" id="ABc-Oo-qoL"/>
@@ -184,7 +185,7 @@
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ch1-Q4-OAa" customClass="TheamedUIButton" customModule="Tinkoff_Edu" customModuleProvider="target">
-                                <rect key="frame" x="37.5" y="537" width="300" height="40"/>
+                                <rect key="frame" x="41.5" y="698" width="331" height="40"/>
                                 <color key="backgroundColor" red="0.96470588239999999" green="0.96470588239999999" blue="0.96470588239999999" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="KLL-PK-bMr"/>
@@ -235,18 +236,74 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="921" y="929"/>
+            <point key="canvasLocation" x="920.79999999999995" y="928.78560719640188"/>
+        </scene>
+        <!--Api Profile Collection View Controller-->
+        <scene sceneID="bla-kS-vbc">
+            <objects>
+                <collectionViewController storyboardIdentifier="ApiProfileCollectionViewController" id="4h8-KR-gd7" customClass="ApiProfileCollectionViewController" customModule="Tinkoff_Edu" customModuleProvider="target" sceneMemberID="viewController">
+                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="ctN-G8-9kk">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="uu2-En-pBc">
+                            <size key="itemSize" width="105" height="105"/>
+                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                            <inset key="sectionInset" minX="10" minY="10" maxX="10" maxY="10"/>
+                        </collectionViewFlowLayout>
+                        <cells>
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFill" reuseIdentifier="ApiProfileCell" id="38p-rj-NyF" customClass="ApiProfileCell" customModule="Tinkoff_Edu" customModuleProvider="target">
+                                <rect key="frame" x="10" y="10" width="105" height="105"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="fdI-qO-AOe">
+                                    <rect key="frame" x="0.0" y="0.0" width="105" height="105"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="white" translatesAutoresizingMaskIntoConstraints="NO" id="byK-On-77a">
+                                            <rect key="frame" x="42.5" y="42.5" width="20" height="20"/>
+                                            <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </activityIndicatorView>
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="QhQ-9M-fc0">
+                                            <rect key="frame" x="-67.5" y="-11.5" width="240" height="128"/>
+                                        </imageView>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="QhQ-9M-fc0" firstAttribute="width" secondItem="fdI-qO-AOe" secondAttribute="width" multiplier="2.28571" id="4DK-Xy-Zkf"/>
+                                        <constraint firstItem="QhQ-9M-fc0" firstAttribute="centerY" secondItem="fdI-qO-AOe" secondAttribute="centerY" id="FcO-Zd-jp9"/>
+                                        <constraint firstItem="QhQ-9M-fc0" firstAttribute="height" secondItem="fdI-qO-AOe" secondAttribute="height" multiplier="1.21905" id="d6d-J1-vA7"/>
+                                        <constraint firstItem="byK-On-77a" firstAttribute="centerX" secondItem="fdI-qO-AOe" secondAttribute="centerX" id="m29-iW-pTw"/>
+                                        <constraint firstItem="QhQ-9M-fc0" firstAttribute="centerX" secondItem="fdI-qO-AOe" secondAttribute="centerX" id="ncN-00-Xdq"/>
+                                        <constraint firstItem="byK-On-77a" firstAttribute="centerY" secondItem="fdI-qO-AOe" secondAttribute="centerY" id="v7T-st-Kuf"/>
+                                    </constraints>
+                                </collectionViewCellContentView>
+                                <color key="backgroundColor" red="1" green="0.86666666670000003" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <connections>
+                                    <outlet property="activityIndicator" destination="byK-On-77a" id="H8c-V0-bPZ"/>
+                                </connections>
+                            </collectionViewCell>
+                        </cells>
+                        <connections>
+                            <outlet property="dataSource" destination="4h8-KR-gd7" id="GvM-nv-COV"/>
+                            <outlet property="delegate" destination="4h8-KR-gd7" id="MZb-vG-EcP"/>
+                        </connections>
+                    </collectionView>
+                    <navigationItem key="navigationItem" id="XKf-Ye-FtN"/>
+                </collectionViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="vhS-me-nc2" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1864.8" y="928.78560719640188"/>
         </scene>
         <!--Settings-->
         <scene sceneID="1Ik-pj-I6q">
             <objects>
                 <viewController id="2nI-hd-jwH" customClass="SettingsViewController" customModule="Tinkoff_Edu" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ANW-VE-BP3">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wAv-a2-hue" customClass="UIButtonWithSelectBorder" customModule="Tinkoff_Edu" customModuleProvider="target">
-                                <rect key="frame" x="37.5" y="110" width="300" height="57"/>
+                                <rect key="frame" x="57" y="154" width="300" height="57"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="57" id="ZrX-e9-rBW"/>
@@ -254,27 +311,27 @@
                                 </constraints>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sBv-CC-nNF" customClass="UIButtonWithSelectBorder" customModule="Tinkoff_Edu" customModuleProvider="target">
-                                <rect key="frame" x="37.5" y="227.5" width="300" height="57"/>
+                                <rect key="frame" x="57" y="271.5" width="300" height="57"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cxY-OT-dz8" customClass="UIButtonWithSelectBorder" customModule="Tinkoff_Edu" customModuleProvider="target">
-                                <rect key="frame" x="37.5" y="344.5" width="300" height="57"/>
+                                <rect key="frame" x="57" y="388.5" width="300" height="57"/>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Classic" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LXa-Wi-khR">
-                                <rect key="frame" x="52.5" y="177" width="270" height="25.5"/>
+                                <rect key="frame" x="72" y="221" width="270" height="25.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="21"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Day" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Aot-eZ-8MT">
-                                <rect key="frame" x="52.5" y="294.5" width="270" height="25"/>
+                                <rect key="frame" x="72" y="338.5" width="270" height="25"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="21"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Night" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4TZ-Sl-UPL">
-                                <rect key="frame" x="50.5" y="411.5" width="274" height="25.5"/>
+                                <rect key="frame" x="70" y="455.5" width="274" height="25.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="21"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
@@ -324,7 +381,7 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="IdC-eq-agg" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="oxT-HN-obr">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
@@ -341,30 +398,30 @@
             <objects>
                 <viewController storyboardIdentifier="ConversationViewController" id="1ji-09-1E2" customClass="ConversationViewController" customModule="Tinkoff_Edu" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="NkE-hT-djB" customClass="ConversationBackView" customModule="Tinkoff_Edu" customModuleProvider="target">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="0ri-Fq-07j" customClass="ChatInputStackView" customModule="Tinkoff_Edu" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="600.5" width="375" height="66.5"/>
+                                <rect key="frame" x="0.0" y="780" width="414" height="82"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0rY-t0-3zf">
-                                        <rect key="frame" x="0.0" y="3" width="10" height="60"/>
+                                        <rect key="frame" x="0.0" y="11" width="10" height="60"/>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="10" id="heg-WZ-3zx"/>
                                         </constraints>
                                     </view>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="COe-1b-fCc">
-                                        <rect key="frame" x="20" y="14.5" width="295" height="37"/>
+                                        <rect key="frame" x="20" y="22.5" width="331" height="37"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="23"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YjD-Hl-Dvi">
-                                        <rect key="frame" x="325" y="16.5" width="30" height="33.5"/>
+                                        <rect key="frame" x="361" y="20.5" width="33" height="41"/>
                                         <state key="normal" title="Button" image="send"/>
                                     </button>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7Ft-up-ng6">
-                                        <rect key="frame" x="365" y="3" width="10" height="60"/>
+                                        <rect key="frame" x="404" y="11" width="10" height="60"/>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="10" id="Tbj-47-dvC"/>
@@ -377,11 +434,11 @@
                                 </constraints>
                             </stackView>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="bdM-HR-7Ld">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="567"/>
+                                <rect key="frame" x="0.0" y="44" width="414" height="695.5"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </tableView>
                             <view alpha="0.90000000000000002" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rtU-tT-afy" customClass="UISeparatorView" customModule="Tinkoff_Edu" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="567" width="375" height="33.5"/>
+                                <rect key="frame" x="0.0" y="739.5" width="414" height="40.5"/>
                             </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="ygf-Y5-r8c"/>

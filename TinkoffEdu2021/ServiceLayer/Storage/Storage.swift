@@ -9,11 +9,11 @@ import Foundation
 import UIKit
 
 class GDCStorage {
-    static func saveProfileGDC(profile: Profile,
+    static func saveProfileGDC(profile: Profile?,
                                img: UIImage?,
                                onComplete: @escaping (Error?) -> Void) {
         let documentDirectory = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first
-        let profileJson = profile.decode() ?? ""
+        let profileJson = profile?.decode()
         DispatchQueue.global().async {
             // sleep(1)
 
@@ -29,13 +29,15 @@ class GDCStorage {
                     }
                 }
             }
+            
+            if let json = profileJson {
+                // saving json
+                if let path = documentDirectory?.appendingPathComponent("profile.json") {
+                    do {
+                        try json.write(to: path, atomically: true, encoding: .utf8)
+                    } catch {
 
-            // saving json
-            if let path = documentDirectory?.appendingPathComponent("profile.json") {
-                do {
-                    try profileJson.write(to: path, atomically: true, encoding: .utf8)
-                } catch {
-
+                    }
                 }
             }
             DispatchQueue.main.async {
