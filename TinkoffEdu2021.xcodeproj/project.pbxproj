@@ -23,6 +23,7 @@
 		E728022925F927FB007ED613 /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = E728022825F927FB007ED613 /* Theme.swift */; };
 		E728023725FA1581007ED613 /* ThemeManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E728023625FA1581007ED613 /* ThemeManager.swift */; };
 		E733DBEE2602847900239A17 /* ProfileStateController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E733DBED2602847900239A17 /* ProfileStateController.swift */; };
+		E73B5B282642C06800156C34 /* TinkoffEduUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E73B5B272642C06800156C34 /* TinkoffEduUITests.swift */; };
 		E7456B36261501B6001DBF3F /* ObjectsExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7456B35261501B6001DBF3F /* ObjectsExtensions.swift */; };
 		E7601F5F2639FC8F00F557BC /* Emitter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7601F5E2639FC8F00F557BC /* Emitter.swift */; };
 		E7601F6A263AA73E00F557BC /* AnimatedSegue.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7601F69263AA73E00F557BC /* AnimatedSegue.swift */; };
@@ -30,6 +31,7 @@
 		E7601F74263B302F00F557BC /* AnimatedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7601F73263B302F00F557BC /* AnimatedButton.swift */; };
 		E7601F7A263B415C00F557BC /* Push.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7601F79263B415C00F557BC /* Push.swift */; };
 		E7601F82263B417C00F557BC /* Pop.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7601F81263B417C00F557BC /* Pop.swift */; };
+		E7601FEF2642BC3100F557BC /* TinkoffEduUnitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7601FEE2642BC3100F557BC /* TinkoffEduUnitTests.swift */; };
 		E76E55A0261F147700F85DA2 /* ChatFireStoreAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = E76E559F261F147700F85DA2 /* ChatFireStoreAPI.swift */; };
 		E76E55AF261F1E5B00F85DA2 /* ConversationDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = E76E55AE261F1E5B00F85DA2 /* ConversationDataSource.swift */; };
 		E78043F52628E7DD0067763F /* ProfileModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E78043F42628E7DC0067763F /* ProfileModel.swift */; };
@@ -52,22 +54,20 @@
 		E7C95A5B25D83F2B00DCB3B2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E7C95A5925D83F2B00DCB3B2 /* Main.storyboard */; };
 		E7C95A5D25D83F2F00DCB3B2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E7C95A5C25D83F2F00DCB3B2 /* Assets.xcassets */; };
 		E7C95AA525D8490600DCB3B2 /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7C95AA425D8490600DCB3B2 /* Logger.swift */; };
-		E7C95AA625D8490600DCB3B2 /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7C95AA425D8490600DCB3B2 /* Logger.swift */; };
-		E7C95AA725D8490600DCB3B2 /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7C95AA425D8490600DCB3B2 /* Logger.swift */; };
 		E7F70316260B97D00081AEA0 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = E7F70315260B97D00081AEA0 /* GoogleService-Info.plist */; };
 		E7F70328260BDEB20081AEA0 /* AddChannel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7F70327260BDEB20081AEA0 /* AddChannel.swift */; };
 		E7F7033F260BEA480081AEA0 /* ChatInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7F7033E260BEA470081AEA0 /* ChatInput.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		E7C95A6725D83F2F00DCB3B2 /* PBXContainerItemProxy */ = {
+		E73B5B2A2642C06800156C34 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = E7C95A4825D83F2B00DCB3B2 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = E7C95A4F25D83F2B00DCB3B2;
 			remoteInfo = TinkoffEdu2021;
 		};
-		E7C95A7225D83F2F00DCB3B2 /* PBXContainerItemProxy */ = {
+		E7601FF12642BC3100F557BC /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = E7C95A4825D83F2B00DCB3B2 /* Project object */;
 			proxyType = 1;
@@ -95,6 +95,9 @@
 		E728022825F927FB007ED613 /* Theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
 		E728023625FA1581007ED613 /* ThemeManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeManager.swift; sourceTree = "<group>"; };
 		E733DBED2602847900239A17 /* ProfileStateController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileStateController.swift; sourceTree = "<group>"; };
+		E73B5B252642C06800156C34 /* TinkoffEduUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TinkoffEduUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		E73B5B272642C06800156C34 /* TinkoffEduUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TinkoffEduUITests.swift; sourceTree = "<group>"; };
+		E73B5B292642C06800156C34 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E7456B35261501B6001DBF3F /* ObjectsExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObjectsExtensions.swift; sourceTree = "<group>"; };
 		E7601F5E2639FC8F00F557BC /* Emitter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Emitter.swift; sourceTree = "<group>"; };
 		E7601F69263AA73E00F557BC /* AnimatedSegue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimatedSegue.swift; sourceTree = "<group>"; };
@@ -102,6 +105,9 @@
 		E7601F73263B302F00F557BC /* AnimatedButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimatedButton.swift; sourceTree = "<group>"; };
 		E7601F79263B415C00F557BC /* Push.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Push.swift; sourceTree = "<group>"; };
 		E7601F81263B417C00F557BC /* Pop.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pop.swift; sourceTree = "<group>"; };
+		E7601FEC2642BC3100F557BC /* TinkoffEduUnitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TinkoffEduUnitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		E7601FEE2642BC3100F557BC /* TinkoffEduUnitTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TinkoffEduUnitTests.swift; sourceTree = "<group>"; };
+		E7601FF02642BC3100F557BC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E76E559F261F147700F85DA2 /* ChatFireStoreAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatFireStoreAPI.swift; sourceTree = "<group>"; };
 		E76E55AE261F1E5B00F85DA2 /* ConversationDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConversationDataSource.swift; sourceTree = "<group>"; };
 		E78043F42628E7DC0067763F /* ProfileModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileModel.swift; sourceTree = "<group>"; };
@@ -125,10 +131,6 @@
 		E7C95A5A25D83F2B00DCB3B2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		E7C95A5C25D83F2F00DCB3B2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E7C95A6125D83F2F00DCB3B2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		E7C95A6625D83F2F00DCB3B2 /* TinkoffEdu2021Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TinkoffEdu2021Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		E7C95A6C25D83F2F00DCB3B2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		E7C95A7125D83F2F00DCB3B2 /* TinkoffEdu2021UITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TinkoffEdu2021UITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		E7C95A7725D83F2F00DCB3B2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E7C95AA425D8490600DCB3B2 /* Logger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Logger.swift; sourceTree = "<group>"; };
 		E7F70315260B97D00081AEA0 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		E7F70327260BDEB20081AEA0 /* AddChannel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddChannel.swift; sourceTree = "<group>"; };
@@ -136,25 +138,25 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		E73B5B222642C06800156C34 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E7601FE92642BC3100F557BC /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		E7C95A4D25D83F2B00DCB3B2 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				45E0DBA749BE962A83020BA5 /* Pods_TinkoffEdu2021.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		E7C95A6325D83F2F00DCB3B2 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		E7C95A6E25D83F2F00DCB3B2 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -332,6 +334,15 @@
 			path = CoreLayer;
 			sourceTree = "<group>";
 		};
+		E73B5B262642C06800156C34 /* TinkoffEduUITests */ = {
+			isa = PBXGroup;
+			children = (
+				E73B5B272642C06800156C34 /* TinkoffEduUITests.swift */,
+				E73B5B292642C06800156C34 /* Info.plist */,
+			);
+			path = TinkoffEduUITests;
+			sourceTree = "<group>";
+		};
 		E7601F5D2639FC8200F557BC /* Animations */ = {
 			isa = PBXGroup;
 			children = (
@@ -350,6 +361,15 @@
 				E7601F81263B417C00F557BC /* Pop.swift */,
 			);
 			path = TransitionAnimations;
+			sourceTree = "<group>";
+		};
+		E7601FED2642BC3100F557BC /* TinkoffEduUnitTests */ = {
+			isa = PBXGroup;
+			children = (
+				E7601FEE2642BC3100F557BC /* TinkoffEduUnitTests.swift */,
+				E7601FF02642BC3100F557BC /* Info.plist */,
+			);
+			path = TinkoffEduUnitTests;
 			sourceTree = "<group>";
 		};
 		E7804404263081470067763F /* View */ = {
@@ -432,8 +452,8 @@
 			children = (
 				E7F70315260B97D00081AEA0 /* GoogleService-Info.plist */,
 				E7C95A5225D83F2B00DCB3B2 /* TinkoffEdu2021 */,
-				E7C95A6925D83F2F00DCB3B2 /* TinkoffEdu2021Tests */,
-				E7C95A7425D83F2F00DCB3B2 /* TinkoffEdu2021UITests */,
+				E7601FED2642BC3100F557BC /* TinkoffEduUnitTests */,
+				E73B5B262642C06800156C34 /* TinkoffEduUITests */,
 				E7C95A5125D83F2B00DCB3B2 /* Products */,
 				2F67CCF50248C10441D13578 /* Pods */,
 				D605BBF38F7F58B386C8421E /* Frameworks */,
@@ -444,8 +464,8 @@
 			isa = PBXGroup;
 			children = (
 				E7C95A5025D83F2B00DCB3B2 /* Tinkoff Edu.app */,
-				E7C95A6625D83F2F00DCB3B2 /* TinkoffEdu2021Tests.xctest */,
-				E7C95A7125D83F2F00DCB3B2 /* TinkoffEdu2021UITests.xctest */,
+				E7601FEC2642BC3100F557BC /* TinkoffEduUnitTests.xctest */,
+				E73B5B252642C06800156C34 /* TinkoffEduUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -460,22 +480,6 @@
 				E7C95A6125D83F2F00DCB3B2 /* Info.plist */,
 			);
 			path = TinkoffEdu2021;
-			sourceTree = "<group>";
-		};
-		E7C95A6925D83F2F00DCB3B2 /* TinkoffEdu2021Tests */ = {
-			isa = PBXGroup;
-			children = (
-				E7C95A6C25D83F2F00DCB3B2 /* Info.plist */,
-			);
-			path = TinkoffEdu2021Tests;
-			sourceTree = "<group>";
-		};
-		E7C95A7425D83F2F00DCB3B2 /* TinkoffEdu2021UITests */ = {
-			isa = PBXGroup;
-			children = (
-				E7C95A7725D83F2F00DCB3B2 /* Info.plist */,
-			);
-			path = TinkoffEdu2021UITests;
 			sourceTree = "<group>";
 		};
 		E7C95AA325D848F600DCB3B2 /*  Logging */ = {
@@ -498,6 +502,42 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		E73B5B242642C06800156C34 /* TinkoffEduUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E73B5B2E2642C06800156C34 /* Build configuration list for PBXNativeTarget "TinkoffEduUITests" */;
+			buildPhases = (
+				E73B5B212642C06800156C34 /* Sources */,
+				E73B5B222642C06800156C34 /* Frameworks */,
+				E73B5B232642C06800156C34 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				E73B5B2B2642C06800156C34 /* PBXTargetDependency */,
+			);
+			name = TinkoffEduUITests;
+			productName = TinkoffEduUITests;
+			productReference = E73B5B252642C06800156C34 /* TinkoffEduUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+		E7601FEB2642BC3100F557BC /* TinkoffEduUnitTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E7601FF32642BC3100F557BC /* Build configuration list for PBXNativeTarget "TinkoffEduUnitTests" */;
+			buildPhases = (
+				E7601FE82642BC3100F557BC /* Sources */,
+				E7601FE92642BC3100F557BC /* Frameworks */,
+				E7601FEA2642BC3100F557BC /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				E7601FF22642BC3100F557BC /* PBXTargetDependency */,
+			);
+			name = TinkoffEduUnitTests;
+			productName = TinkoffEduUnitTests;
+			productReference = E7601FEC2642BC3100F557BC /* TinkoffEduUnitTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		E7C95A4F25D83F2B00DCB3B2 /* TinkoffEdu2021 */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = E7C95A7A25D83F2F00DCB3B2 /* Build configuration list for PBXNativeTarget "TinkoffEdu2021" */;
@@ -518,42 +558,6 @@
 			productReference = E7C95A5025D83F2B00DCB3B2 /* Tinkoff Edu.app */;
 			productType = "com.apple.product-type.application";
 		};
-		E7C95A6525D83F2F00DCB3B2 /* TinkoffEdu2021Tests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = E7C95A7D25D83F2F00DCB3B2 /* Build configuration list for PBXNativeTarget "TinkoffEdu2021Tests" */;
-			buildPhases = (
-				E7C95A6225D83F2F00DCB3B2 /* Sources */,
-				E7C95A6325D83F2F00DCB3B2 /* Frameworks */,
-				E7C95A6425D83F2F00DCB3B2 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				E7C95A6825D83F2F00DCB3B2 /* PBXTargetDependency */,
-			);
-			name = TinkoffEdu2021Tests;
-			productName = TinkoffEdu2021Tests;
-			productReference = E7C95A6625D83F2F00DCB3B2 /* TinkoffEdu2021Tests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
-		E7C95A7025D83F2F00DCB3B2 /* TinkoffEdu2021UITests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = E7C95A8025D83F2F00DCB3B2 /* Build configuration list for PBXNativeTarget "TinkoffEdu2021UITests" */;
-			buildPhases = (
-				E7C95A6D25D83F2F00DCB3B2 /* Sources */,
-				E7C95A6E25D83F2F00DCB3B2 /* Frameworks */,
-				E7C95A6F25D83F2F00DCB3B2 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				E7C95A7325D83F2F00DCB3B2 /* PBXTargetDependency */,
-			);
-			name = TinkoffEdu2021UITests;
-			productName = TinkoffEdu2021UITests;
-			productReference = E7C95A7125D83F2F00DCB3B2 /* TinkoffEdu2021UITests.xctest */;
-			productType = "com.apple.product-type.bundle.ui-testing";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -563,16 +567,16 @@
 				LastSwiftUpdateCheck = 1220;
 				LastUpgradeCheck = 1220;
 				TargetAttributes = {
+					E73B5B242642C06800156C34 = {
+						CreatedOnToolsVersion = 12.2;
+						TestTargetID = E7C95A4F25D83F2B00DCB3B2;
+					};
+					E7601FEB2642BC3100F557BC = {
+						CreatedOnToolsVersion = 12.2;
+						TestTargetID = E7C95A4F25D83F2B00DCB3B2;
+					};
 					E7C95A4F25D83F2B00DCB3B2 = {
 						CreatedOnToolsVersion = 12.2;
-					};
-					E7C95A6525D83F2F00DCB3B2 = {
-						CreatedOnToolsVersion = 12.2;
-						TestTargetID = E7C95A4F25D83F2B00DCB3B2;
-					};
-					E7C95A7025D83F2F00DCB3B2 = {
-						CreatedOnToolsVersion = 12.2;
-						TestTargetID = E7C95A4F25D83F2B00DCB3B2;
 					};
 				};
 			};
@@ -590,13 +594,27 @@
 			projectRoot = "";
 			targets = (
 				E7C95A4F25D83F2B00DCB3B2 /* TinkoffEdu2021 */,
-				E7C95A6525D83F2F00DCB3B2 /* TinkoffEdu2021Tests */,
-				E7C95A7025D83F2F00DCB3B2 /* TinkoffEdu2021UITests */,
+				E7601FEB2642BC3100F557BC /* TinkoffEduUnitTests */,
+				E73B5B242642C06800156C34 /* TinkoffEduUITests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		E73B5B232642C06800156C34 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E7601FEA2642BC3100F557BC /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		E7C95A4E25D83F2B00DCB3B2 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -604,20 +622,6 @@
 				E7C95A5D25D83F2F00DCB3B2 /* Assets.xcassets in Resources */,
 				E7C95A5B25D83F2B00DCB3B2 /* Main.storyboard in Resources */,
 				E7F70316260B97D00081AEA0 /* GoogleService-Info.plist in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		E7C95A6425D83F2F00DCB3B2 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		E7C95A6F25D83F2F00DCB3B2 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -683,6 +687,22 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		E73B5B212642C06800156C34 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E73B5B282642C06800156C34 /* TinkoffEduUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E7601FE82642BC3100F557BC /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E7601FEF2642BC3100F557BC /* TinkoffEduUnitTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		E7C95A4C25D83F2B00DCB3B2 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -734,34 +754,18 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		E7C95A6225D83F2F00DCB3B2 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				E7C95AA625D8490600DCB3B2 /* Logger.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		E7C95A6D25D83F2F00DCB3B2 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				E7C95AA725D8490600DCB3B2 /* Logger.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		E7C95A6825D83F2F00DCB3B2 /* PBXTargetDependency */ = {
+		E73B5B2B2642C06800156C34 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = E7C95A4F25D83F2B00DCB3B2 /* TinkoffEdu2021 */;
-			targetProxy = E7C95A6725D83F2F00DCB3B2 /* PBXContainerItemProxy */;
+			targetProxy = E73B5B2A2642C06800156C34 /* PBXContainerItemProxy */;
 		};
-		E7C95A7325D83F2F00DCB3B2 /* PBXTargetDependency */ = {
+		E7601FF22642BC3100F557BC /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = E7C95A4F25D83F2B00DCB3B2 /* TinkoffEdu2021 */;
-			targetProxy = E7C95A7225D83F2F00DCB3B2 /* PBXContainerItemProxy */;
+			targetProxy = E7601FF12642BC3100F557BC /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -777,6 +781,88 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		E73B5B2C2642C06800156C34 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 9J6689CCTF;
+				INFOPLIST_FILE = TinkoffEduUITests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.zvaro.TinkoffEduUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = TinkoffEdu2021;
+			};
+			name = Debug;
+		};
+		E73B5B2D2642C06800156C34 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 9J6689CCTF;
+				INFOPLIST_FILE = TinkoffEduUITests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.zvaro.TinkoffEduUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = TinkoffEdu2021;
+			};
+			name = Release;
+		};
+		E7601FF42642BC3100F557BC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 9J6689CCTF;
+				INFOPLIST_FILE = TinkoffEduUnitTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.zvaro.TinkoffEduUnitTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Tinkoff Edu.app/Tinkoff Edu";
+			};
+			name = Debug;
+		};
+		E7601FF52642BC3100F557BC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 9J6689CCTF;
+				INFOPLIST_FILE = TinkoffEduUnitTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.zvaro.TinkoffEduUnitTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Tinkoff Edu.app/Tinkoff Edu";
+			};
+			name = Release;
+		};
 		E7C95A7825D83F2F00DCB3B2 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -933,93 +1019,27 @@
 			};
 			name = Release;
 		};
-		E7C95A7E25D83F2F00DCB3B2 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 9J6689CCTF;
-				INFOPLIST_FILE = TinkoffEdu2021Tests/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.2;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.zvaro.TinkoffEdu2021Tests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/TinkoffEdu2021.app/TinkoffEdu2021";
-			};
-			name = Debug;
-		};
-		E7C95A7F25D83F2F00DCB3B2 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 9J6689CCTF;
-				INFOPLIST_FILE = TinkoffEdu2021Tests/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.2;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.zvaro.TinkoffEdu2021Tests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/TinkoffEdu2021.app/TinkoffEdu2021";
-			};
-			name = Release;
-		};
-		E7C95A8125D83F2F00DCB3B2 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 9J6689CCTF;
-				INFOPLIST_FILE = TinkoffEdu2021UITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.zvaro.TinkoffEdu2021UITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = TinkoffEdu2021;
-			};
-			name = Debug;
-		};
-		E7C95A8225D83F2F00DCB3B2 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 9J6689CCTF;
-				INFOPLIST_FILE = TinkoffEdu2021UITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.zvaro.TinkoffEdu2021UITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = TinkoffEdu2021;
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		E73B5B2E2642C06800156C34 /* Build configuration list for PBXNativeTarget "TinkoffEduUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E73B5B2C2642C06800156C34 /* Debug */,
+				E73B5B2D2642C06800156C34 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E7601FF32642BC3100F557BC /* Build configuration list for PBXNativeTarget "TinkoffEduUnitTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E7601FF42642BC3100F557BC /* Debug */,
+				E7601FF52642BC3100F557BC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		E7C95A4B25D83F2B00DCB3B2 /* Build configuration list for PBXProject "TinkoffEdu2021" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -1034,24 +1054,6 @@
 			buildConfigurations = (
 				E7C95A7B25D83F2F00DCB3B2 /* Debug */,
 				E7C95A7C25D83F2F00DCB3B2 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		E7C95A7D25D83F2F00DCB3B2 /* Build configuration list for PBXNativeTarget "TinkoffEdu2021Tests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				E7C95A7E25D83F2F00DCB3B2 /* Debug */,
-				E7C95A7F25D83F2F00DCB3B2 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		E7C95A8025D83F2F00DCB3B2 /* Build configuration list for PBXNativeTarget "TinkoffEdu2021UITests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				E7C95A8125D83F2F00DCB3B2 /* Debug */,
-				E7C95A8225D83F2F00DCB3B2 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

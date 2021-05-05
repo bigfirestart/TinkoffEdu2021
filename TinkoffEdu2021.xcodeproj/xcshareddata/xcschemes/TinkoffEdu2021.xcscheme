@@ -48,6 +48,26 @@
                ReferencedContainer = "container:TinkoffEdu2021.xcodeproj">
             </BuildableReference>
          </TestableReference>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "E7601FEB2642BC3100F557BC"
+               BuildableName = "TinkoffEduUnitTests.xctest"
+               BlueprintName = "TinkoffEduUnitTests"
+               ReferencedContainer = "container:TinkoffEdu2021.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "E73B5B242642C06800156C34"
+               BuildableName = "TinkoffEduUITests.xctest"
+               BlueprintName = "TinkoffEduUITests"
+               ReferencedContainer = "container:TinkoffEdu2021.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
       </Testables>
    </TestAction>
    <LaunchAction
