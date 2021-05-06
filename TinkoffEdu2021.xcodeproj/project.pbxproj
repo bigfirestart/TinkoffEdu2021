@@ -24,6 +24,12 @@
 		E728023725FA1581007ED613 /* ThemeManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E728023625FA1581007ED613 /* ThemeManager.swift */; };
 		E733DBEE2602847900239A17 /* ProfileStateController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E733DBED2602847900239A17 /* ProfileStateController.swift */; };
 		E7456B36261501B6001DBF3F /* ObjectsExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7456B35261501B6001DBF3F /* ObjectsExtensions.swift */; };
+		E7601F5F2639FC8F00F557BC /* Emitter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7601F5E2639FC8F00F557BC /* Emitter.swift */; };
+		E7601F6A263AA73E00F557BC /* AnimatedSegue.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7601F69263AA73E00F557BC /* AnimatedSegue.swift */; };
+		E7601F6F263B2EDE00F557BC /* SettingsEmitterExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7601F6E263B2EDE00F557BC /* SettingsEmitterExtension.swift */; };
+		E7601F74263B302F00F557BC /* AnimatedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7601F73263B302F00F557BC /* AnimatedButton.swift */; };
+		E7601F7A263B415C00F557BC /* Push.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7601F79263B415C00F557BC /* Push.swift */; };
+		E7601F82263B417C00F557BC /* Pop.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7601F81263B417C00F557BC /* Pop.swift */; };
 		E76E55A0261F147700F85DA2 /* ChatFireStoreAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = E76E559F261F147700F85DA2 /* ChatFireStoreAPI.swift */; };
 		E76E55AF261F1E5B00F85DA2 /* ConversationDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = E76E55AE261F1E5B00F85DA2 /* ConversationDataSource.swift */; };
 		E78043F52628E7DD0067763F /* ProfileModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E78043F42628E7DC0067763F /* ProfileModel.swift */; };
@@ -90,6 +96,12 @@
 		E728023625FA1581007ED613 /* ThemeManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeManager.swift; sourceTree = "<group>"; };
 		E733DBED2602847900239A17 /* ProfileStateController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileStateController.swift; sourceTree = "<group>"; };
 		E7456B35261501B6001DBF3F /* ObjectsExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObjectsExtensions.swift; sourceTree = "<group>"; };
+		E7601F5E2639FC8F00F557BC /* Emitter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Emitter.swift; sourceTree = "<group>"; };
+		E7601F69263AA73E00F557BC /* AnimatedSegue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimatedSegue.swift; sourceTree = "<group>"; };
+		E7601F6E263B2EDE00F557BC /* SettingsEmitterExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsEmitterExtension.swift; sourceTree = "<group>"; };
+		E7601F73263B302F00F557BC /* AnimatedButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimatedButton.swift; sourceTree = "<group>"; };
+		E7601F79263B415C00F557BC /* Push.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Push.swift; sourceTree = "<group>"; };
+		E7601F81263B417C00F557BC /* Pop.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pop.swift; sourceTree = "<group>"; };
 		E76E559F261F147700F85DA2 /* ChatFireStoreAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatFireStoreAPI.swift; sourceTree = "<group>"; };
 		E76E55AE261F1E5B00F85DA2 /* ConversationDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConversationDataSource.swift; sourceTree = "<group>"; };
 		E78043F42628E7DC0067763F /* ProfileModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileModel.swift; sourceTree = "<group>"; };
@@ -225,6 +237,7 @@
 			children = (
 				E728021925F80867007ED613 /* SettingsViewController.swift */,
 				E728021E25F81760007ED613 /* SettingsExtensions.swift */,
+				E7601F6E263B2EDE00F557BC /* SettingsEmitterExtension.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -288,6 +301,7 @@
 		E72F0D052627581200E0E552 /* PresentationLayer */ = {
 			isa = PBXGroup;
 			children = (
+				E7601F5D2639FC8200F557BC /* Animations */,
 				E7C95A5C25D83F2F00DCB3B2 /* Assets.xcassets */,
 				E7C95A5925D83F2B00DCB3B2 /* Main.storyboard */,
 				E728021825F8084E007ED613 /* Settings */,
@@ -316,6 +330,26 @@
 				E72363932614CE4100EAE761 /* CoreData */,
 			);
 			path = CoreLayer;
+			sourceTree = "<group>";
+		};
+		E7601F5D2639FC8200F557BC /* Animations */ = {
+			isa = PBXGroup;
+			children = (
+				E7601F78263B414800F557BC /* TransitionAnimations */,
+				E7601F5E2639FC8F00F557BC /* Emitter.swift */,
+				E7601F73263B302F00F557BC /* AnimatedButton.swift */,
+			);
+			path = Animations;
+			sourceTree = "<group>";
+		};
+		E7601F78263B414800F557BC /* TransitionAnimations */ = {
+			isa = PBXGroup;
+			children = (
+				E7601F69263AA73E00F557BC /* AnimatedSegue.swift */,
+				E7601F79263B415C00F557BC /* Push.swift */,
+				E7601F81263B417C00F557BC /* Pop.swift */,
+			);
+			path = TransitionAnimations;
 			sourceTree = "<group>";
 		};
 		E7804404263081470067763F /* View */ = {
@@ -655,6 +689,7 @@
 			files = (
 				E78043F52628E7DD0067763F /* ProfileModel.swift in Sources */,
 				E7011CD126277E7B00D156B2 /* ConversationsModel.swift in Sources */,
+				E7601F7A263B415C00F557BC /* Push.swift in Sources */,
 				E7804406263081610067763F /* ApiProfileCell.swift in Sources */,
 				E78B281325F024A600FA709C /* ConversationTableViewCell.swift in Sources */,
 				E7C95A5825D83F2B00DCB3B2 /* ProfileViewController.swift in Sources */,
@@ -664,12 +699,16 @@
 				E733DBEE2602847900239A17 /* ProfileStateController.swift in Sources */,
 				E78B27E325EF770700FA709C /* ViewController.swift in Sources */,
 				E706130A2628350800EFEFA6 /* ProfileViewModel.swift in Sources */,
+				E7601F5F2639FC8F00F557BC /* Emitter.swift in Sources */,
 				E72363962614CE7A00EAE761 /* Chat.xcdatamodeld in Sources */,
 				E78B281825F03AA600FA709C /* TableViewCell.swift in Sources */,
+				E7601F82263B417C00F557BC /* Pop.swift in Sources */,
 				E78B27D225E54D1500FA709C /* ProfileImageController.swift in Sources */,
 				E728022925F927FB007ED613 /* Theme.swift in Sources */,
+				E7601F74263B302F00F557BC /* AnimatedButton.swift in Sources */,
 				E7C95A5425D83F2B00DCB3B2 /* AppDelegate.swift in Sources */,
 				E780444A2630C0BD0067763F /* DownloadImageRequest.swift in Sources */,
+				E7601F6A263AA73E00F557BC /* AnimatedSegue.swift in Sources */,
 				E76E55A0261F147700F85DA2 /* ChatFireStoreAPI.swift in Sources */,
 				E728023725FA1581007ED613 /* ThemeManager.swift in Sources */,
 				E78044332630B2470067763F /* ImageListRequest.swift in Sources */,
@@ -680,6 +719,7 @@
 				E706132B262849B600EFEFA6 /* Storage.swift in Sources */,
 				E72363AA2614E9FF00EAE761 /* CoreDataStack.swift in Sources */,
 				E78B27EE25EF7F5100FA709C /* ConversationViewController.swift in Sources */,
+				E7601F6F263B2EDE00F557BC /* SettingsEmitterExtension.swift in Sources */,
 				E70613222628388C00EFEFA6 /* ProfileState.swift in Sources */,
 				E7F70328260BDEB20081AEA0 /* AddChannel.swift in Sources */,
 				E7F7033F260BEA480081AEA0 /* ChatInput.swift in Sources */,

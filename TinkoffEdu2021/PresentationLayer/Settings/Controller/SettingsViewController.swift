@@ -18,13 +18,14 @@ class SettingsViewController: UIViewController {
 
     // может возникнуть retain cycle если themeDelegate будет ссылаться на SettingsViewController
     weak var themeDelegate: ThemesPickerDelegate?
+    var emitter: Emitter?
  
     // может возникнуть цикл если будем использовать self
     // var themeHandler: ((Theme) -> ())?
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        emitter = Emitter(view: self.view)
         setThemeButtonsStartState()
 
         themePreviewBtnAddSubviews(parentBtnView: classicThemeBtn,

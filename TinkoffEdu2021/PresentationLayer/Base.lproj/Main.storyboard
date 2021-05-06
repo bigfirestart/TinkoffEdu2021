@@ -115,7 +115,7 @@
                         <barButtonItem key="rightBarButtonItem" title="Profile" image="ProfileIcon" style="done" id="HOc-rx-V38">
                             <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <connections>
-                                <segue destination="BYZ-38-t0r" kind="presentation" id="0zX-e4-TdR"/>
+                                <segue destination="BYZ-38-t0r" kind="show" identifier="ProfileSegue" customClass="AnimatedSegue" customModule="Tinkoff_Edu" customModuleProvider="target" id="0zX-e4-TdR"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -133,11 +133,11 @@
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ProfileViewController" customModule="Tinkoff_Edu" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC" customClass="TheamedUIView" customModule="Tinkoff_Edu" customModuleProvider="target">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NJG-2M-wB8" customClass="TheamedUIButton" customModule="Tinkoff_Edu" customModuleProvider="target">
-                                <rect key="frame" x="41.5" y="748" width="331" height="40"/>
+                                <rect key="frame" x="41.5" y="802" width="331" height="40"/>
                                 <color key="backgroundColor" red="0.96470588235294119" green="0.96470588235294119" blue="0.96470588235294119" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="qHY-xI-1tx"/>
@@ -149,12 +149,12 @@
                                 </state>
                             </button>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="ФИО" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="sO6-lg-fh6">
-                                <rect key="frame" x="63" y="310" width="288" height="31"/>
+                                <rect key="frame" x="63" y="398" width="288" height="31"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ProfileIcon" translatesAutoresizingMaskIntoConstraints="NO" id="RXN-8v-IWJ">
-                                <rect key="frame" x="87" y="40" width="240" height="240"/>
+                                <rect key="frame" x="87" y="128" width="240" height="240"/>
                                 <color key="backgroundColor" red="0.89411764705882346" green="0.90980392156862744" blue="0.16862745098039217" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="240" id="0hO-4b-WZK"/>
@@ -162,20 +162,24 @@
                                 </constraints>
                             </imageView>
                             <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="nEV-iZ-pHk">
-                                <rect key="frame" x="182" y="628" width="50" height="50"/>
+                                <rect key="frame" x="182" y="682" width="50" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="50" id="WJ6-qc-KoA"/>
                                     <constraint firstAttribute="height" constant="50" id="yGA-Fs-OXP"/>
                                 </constraints>
                             </activityIndicatorView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Cancel" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wjx-s9-0KR">
-                                <rect key="frame" x="341" y="10" width="53" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="X" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wjx-s9-0KR">
+                                <rect key="frame" x="364" y="98" width="30" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="30" id="9CQ-8Y-f2m"/>
+                                    <constraint firstAttribute="height" constant="30" id="as5-RF-h4y"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut l" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="aOL-Ys-rCW">
-                                <rect key="frame" x="74.5" y="361" width="265" height="68"/>
+                                <rect key="frame" x="74.5" y="449" width="265" height="68"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="68" id="ABc-Oo-qoL"/>
@@ -184,8 +188,8 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ch1-Q4-OAa" customClass="TheamedUIButton" customModule="Tinkoff_Edu" customModuleProvider="target">
-                                <rect key="frame" x="41.5" y="698" width="331" height="40"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ch1-Q4-OAa" customClass="AnimatedTheamedUIButton" customModule="Tinkoff_Edu" customModuleProvider="target">
+                                <rect key="frame" x="41.5" y="752" width="331" height="40"/>
                                 <color key="backgroundColor" red="0.96470588239999999" green="0.96470588239999999" blue="0.96470588239999999" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="KLL-PK-bMr"/>
@@ -236,7 +240,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="920.79999999999995" y="928.78560719640188"/>
+            <point key="canvasLocation" x="920.28985507246387" y="928.125"/>
         </scene>
         <!--Api Profile Collection View Controller-->
         <scene sceneID="bla-kS-vbc">

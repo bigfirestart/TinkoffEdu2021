@@ -19,7 +19,6 @@ extension ProfileViewController {
         fioUITextField.text = model.state.fioText
         aboutUITextView.text = model.state.aboutText
         profileImg.image = model.state.img
-
     }
 
     func stopEdit() {
@@ -28,6 +27,7 @@ extension ProfileViewController {
         profileEditBtn.setTitle("Edit", for: .normal)
         saveGCDBtn.isHidden = true
         model.isInEditMode = false
+        saveGCDBtn.layer.removeAllAnimations()
     }
 
     func startEdit() {
@@ -39,8 +39,9 @@ extension ProfileViewController {
         saveGCDBtn.isHidden = false
         saveGCDBtn.isEnabled = false
         model.isInEditMode = true
+        saveGCDBtn.shake()
     }
-
+    
     @objc func editButtonClick() {
         if model.isInEditMode {
             stopEdit()
@@ -54,9 +55,7 @@ extension ProfileViewController {
         activityIndicator.startAnimating()
         activityIndicator.isHidden = false
         activityIndicator.hidesWhenStopped = true
-
         saveGCDBtn.isEnabled = false
-
         profileEditBtn.isEnabled = false
     }
 
@@ -66,10 +65,11 @@ extension ProfileViewController {
     }
 
     @objc func textFieldChanged() {
-        saveGCDBtn.isEnabled = true
+        enableSaveBtn()
     }
     @objc func enableSaveBtn() {
         saveGCDBtn.isEnabled = true
+        saveGCDBtn.stopShake()
     }
 
     func saveGDC() {

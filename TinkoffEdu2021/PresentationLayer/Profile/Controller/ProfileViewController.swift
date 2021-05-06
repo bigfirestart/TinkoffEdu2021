@@ -14,13 +14,13 @@ class ProfileViewController: UIViewController,
     @IBOutlet weak var cancelModalLabel: UILabel!
     @IBOutlet weak var profileImg: UIImageView!
     @IBOutlet weak var profileEditBtn: UIButton!
-    @IBOutlet weak var saveGCDBtn: UIButton!
+    @IBOutlet weak var saveGCDBtn: AnimatedTheamedUIButton!
 
     @IBOutlet weak var aboutUITextView: UITextView!
     @IBOutlet weak var fioUITextField: UITextField!
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
 
-   var model = ProfileViewModel()
+    var model = ProfileViewModel()
     
     override func viewDidLoad() {
         super.viewDidLoad()
