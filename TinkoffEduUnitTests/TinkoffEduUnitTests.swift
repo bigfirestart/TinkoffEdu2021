@@ -23,7 +23,7 @@ class TinkoffEduUnitTests: XCTestCase {
         
         // Assert
         XCTAssertEqual(requestSenderMock.callsCount, 1)
-        XCTAssertNotNil(config)
+        XCTAssertFalse(config.contains(where: {$0 == nil}))
         XCTAssertEqual(config.count, 1)
         XCTAssertEqual(domain, "https://pixabay.com/api/")
     }
@@ -42,7 +42,7 @@ class TinkoffEduUnitTests: XCTestCase {
         
         // Assert
         XCTAssertEqual(requestSenderMock.callsCount, 1)
-        XCTAssertNotNil(config)
+        XCTAssertFalse(config.contains(where: {$0 == nil}))
         XCTAssertEqual(config.count, 1)
         XCTAssertEqual(domain, imgUrl)
     }
