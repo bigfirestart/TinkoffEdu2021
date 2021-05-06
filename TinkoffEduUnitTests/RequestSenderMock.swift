@@ -8,12 +8,12 @@
 import Foundation
 @testable import Tinkoff_Edu
 
-class RequestSenderMock: IRequestSender {
+class RequestSenderMock<T>: IRequestSender where T: IParser {
     var callsCount = 0
-    var config: Any?
+    var config: [RequestConfig<T>?] = []
     
     func send<Parser>(config: RequestConfig<Parser>, completionHandler: @escaping (Result<Parser.Model, Error>) -> Void) where Parser: IParser {
         self.callsCount += 1
-        self.config = config
+        self.config.append((config as? RequestConfig<T>))
     }
 }
