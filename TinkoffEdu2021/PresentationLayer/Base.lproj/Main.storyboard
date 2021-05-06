@@ -117,7 +117,7 @@
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="Profile" id="UCc-Tc-7e6">
                             <connections>
-                                <segue destination="BYZ-38-t0r" kind="show" id="lE5-TA-lKK"/>
+                                <segue destination="BYZ-38-t0r" kind="show" customClass="AnimatedSegue" customModule="Tinkoff_Edu" customModuleProvider="target" id="lE5-TA-lKK"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
