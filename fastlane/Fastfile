@@ -1,7 +1,7 @@
 default_platform(:ios)
 
 platform :ios do
-	desc "build_for_testing"
+	desc "Build For Testing"
 	lane :build_for_testing do |options|
 		scan(
 			scheme: "TinkoffEdu2021",
@@ -10,19 +10,19 @@ platform :ios do
 		)
 	end
 
-	desc "run_tests"
+	desc "Run Tests"
 	lane :run_tests_without_build do |options|
 		scan(
 			scheme: "TinkoffEdu2021",
 			test_without_building: true
 		)
+		ds_notify_success
 	end
 
-	desc "build_and_test"
+	desc "Build And Test"
 	lane :build_and_test do |options|
 		build_for_testing
 		run_tests_without_build
-		ds_notify_success
 	end
 
 	desc "Send build notification to Discord"
@@ -30,7 +30,16 @@ platform :ios do
 		discord_notifier(
 		    webhook_url: ENV["DISCORD_HOOK"],
 		    title: "Build Succed 🎉",
-		    success: true
+		    description: "All tests Passed",
+		    discord_user_id: "7247",
+		    image_url: "https://ixbt.online/live/images/original/17/04/81/2021/04/02/c8deac0f9a.jpg?w=877",
+		    success: true,
+		    fields:[
+      			{
+        			name:"Author: ", 
+        			value:"Kirill Lukianov"
+        		}
+      		]
   		)
 	end
 
@@ -39,7 +48,15 @@ platform :ios do
 		    webhook_url: ENV["DISCORD_HOOK"],
 		    title: "Build Failed",
 		    description: exception.to_s,
-		    success: false
+		    success: false,
+		    discord_user_id: "7247",
+		    image_url: "https://i.ytimg.com/vi/21UXJFvpG0I/maxresdefault.jpg",
+		    fields:[
+      			{
+        			name:"Author: ", 
+        			value:"Kirill Lukianov"
+        		}
+      		]
   		)
     end
 end
