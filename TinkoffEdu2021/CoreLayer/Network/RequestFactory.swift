@@ -11,10 +11,12 @@ struct RequestFactory {
     
     struct PixabayRequests {
         
-        private static let apiKey = "21269507-831cedab8dfcf6db8da4bebee"
+        private static let apiKey = Bundle.main.object(forInfoDictionaryKey: "PIXABAY_API_KEY")
         
         static func searchImages() -> RequestConfig<ImageListParser> {
-            let request = ImageListRequest(key: apiKey)
+            print(apiKey)
+            guard let key = apiKey as? String else { preconditionFailure() }
+            let request = ImageListRequest(key: key)
             let parser = ImageListParser()
             
             return RequestConfig<ImageListParser>(request: request, parser: parser)
