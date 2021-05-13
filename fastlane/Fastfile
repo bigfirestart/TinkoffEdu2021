@@ -29,7 +29,7 @@ platform :ios do
 	lane :ds_notify_success do |options|
 		discord_notifier(
 		    webhook_url: ENV["DISCORD_HOOK"],
-		    title: "Build Succed",
+		    title: "Build Succed 🎉",
 		    success: true
   		)
 	end

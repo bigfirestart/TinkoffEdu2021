@@ -17,7 +17,8 @@ jobs:
       with:
         ruby-version: 2.6
         bundler-cache: true
-    - env:
+    - name: SetUp Env
+      env:
         DISCORD_HOOK: ${{ secrets.DISCORD_HOOK }}
     - name: Build and test
       run: bundle exec fastlane build_and_test 
