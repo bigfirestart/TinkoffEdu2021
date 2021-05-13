@@ -9,7 +9,7 @@ platform :ios do
 	desc "build_for_testing"
 	lane :build_for_testing do |options|
 		scan(
-			scheme: "TinkoffEdu2021"
+			scheme: "TinkoffEdu2021",
 			clean: true,
 			build_for_testing: true
 		)
