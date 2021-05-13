@@ -1,11 +1,6 @@
 default_platform(:ios)
 
 platform :ios do
-	desc "CI Testing Lab"
-	lane :hello do |options|
-		puts "Hellow"
-	end
-
 	desc "build_for_testing"
 	lane :build_for_testing do |options|
 		scan(
