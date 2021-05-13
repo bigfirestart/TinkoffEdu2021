@@ -17,5 +17,7 @@ jobs:
       with:
         ruby-version: 2.6
         bundler-cache: true
+    - name: Install Dependencies
+      run: pod install --repo-update
     - name: Build and test
       run: bundle exec fastlane build_and_test 

@@ -28,29 +28,4 @@ platform :ios do
 		build_for_testing
 		run_tests_without_build
 	end
-
-	desc "Discord Tests"
-	lane :di_notify do |options|
-		discord_notifier(
-		    webhook_url:"https://discord.com/api/webhooks/839416992241942530/2BPlVqHPrATx5G_odxvD2aUHWfI22X3vjyFv_cAWCGzg_QG4zj_HXOuIkol91YgDVo2w",
-		    title: "<a title>",
-		    description: "<a description>",
-		    fields: [
-			      {
-			        name:"<some name>", 
-			        value:"<some value>"
-			      },
-			      {
-			        name:"<some name>", 
-			        value:"<some value>",
-			        inline: true
-			      },
-			      {
-			        name:"<some name>", 
-			        value:"<some value>",
-			        inline: true
-			      }
-    		]  
-  		)
-	end
 end

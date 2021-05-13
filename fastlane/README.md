@@ -36,9 +36,9 @@ run_tests
 fastlane ios build_and_test
 ```
 build_and_test
-### ios discord
+### ios di_notify
 ```
-fastlane ios discord
+fastlane ios di_notify
 ```
 Discord Tests
 
