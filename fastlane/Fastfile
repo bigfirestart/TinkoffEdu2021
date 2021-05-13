@@ -22,5 +22,24 @@ platform :ios do
 	lane :build_and_test do |options|
 		build_for_testing
 		run_tests_without_build
+		ds_notify_success
 	end
+
+	desc "Send build notification to Discord"
+	lane :ds_notify_success do |options|
+		discord_notifier(
+		    webhook_url: ENV["DISCORD_HOOK"],
+		    title: "Build Succed",
+		    success: true
+  		)
+	end
+
+	error do |lane, exception, options|
+		discord_notifier(
+		    webhook_url: ENV["DISCORD_HOOK"],
+		    title: "Build Failed",
+		    description: exception.to_s,
+		    success: false
+  		)
+    end
 end
