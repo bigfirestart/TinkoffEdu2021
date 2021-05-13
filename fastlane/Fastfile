@@ -1,0 +1,56 @@
+default_platform(:ios)
+
+platform :ios do
+	desc "CI Testing Lab"
+	lane :hello do |options|
+		puts "Hellow"
+	end
+
+	desc "build_for_testing"
+	lane :build_for_testing do |options|
+		scan(
+			scheme: "TinkoffEdu2021"
+			clean: true,
+			build_for_testing: true
+		)
+	end
+
+	desc "run_tests"
+	lane :run_tests_without_build do |options|
+		scan(
+			scheme: "TinkoffEduUnitTests",
+			test_without_building: true
+		)
+	end
+
+	desc "build_and_test"
+	lane :build_and_test do |options|
+		build_for_testing
+		run_tests_without_build
+	end
+
+	desc "Discord Tests"
+	lane :discord do |options|
+		discord_notifier(
+		    webhook_url:"https://discord.com/api/webhooks/839416992241942530/2BPlVqHPrATx5G_odxvD2aUHWfI22X3vjyFv_cAWCGzg_QG4zj_HXOuIkol91YgDVo2w",
+		    title: "<a title>",
+		    description: "<a description>",
+		    fields: [
+			      {
+			        name:"<some name>", 
+			        value:"<some value>"
+			      },
+			      {
+			        name:"<some name>", 
+			        value:"<some value>",
+			        inline: true
+			      },
+			      {
+			        name:"<some name>", 
+			        value:"<some value>",
+			        inline: true
+			      }
+    		]  
+  		)
+	end
+end
