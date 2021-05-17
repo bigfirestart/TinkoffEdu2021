@@ -15,7 +15,7 @@ extension ConversationsListViewController {
         alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
         alert.addAction(UIAlertAction(title: "Add", style: .default, handler: { [weak alert] (_) in
             if let text = alert?.textFields?[0].text {
-                ChatFireStoreAPI(coreDataStack: self.model.coreDataStack).createChannel(channelName: text)
+                self.chatFireStoreAPI.createChannel(channelName: text)
             }
         }))
         self.present(alert, animated: true, completion: nil)

@@ -9,10 +9,16 @@ import Foundation
 import UIKit
 
 class PixabayAPIService {
-    static func getImageList(completionHandler: @escaping ([ImageListItem]?, Error?) -> Void) {
+    private var requestSender: IRequestSender
+    
+    init(requestSender: IRequestSender) {
+        self.requestSender = requestSender
+    }
+    
+    func getImageList(completionHandler: @escaping ([ImageListItem]?, Error?) -> Void) {
         let requestConfig = RequestFactory.PixabayRequests.searchImages()
         
-        RequestSender().send(config: requestConfig) { (result: Result<[ImageListItem], Error>) in
+        requestSender.send(config: requestConfig) { (result: Result<[ImageListItem], Error>) in
             switch result {
             case .success(let pictures):
                 completionHandler(pictures, nil)
@@ -21,11 +27,10 @@ class PixabayAPIService {
             }
         }
     }
-    static func downloadImage(urlString: String,
-                              completionHandler: @escaping (UIImage?, Error?) -> Void) {
-           let requestConfig = RequestFactory.PixabayRequests.downloadImage(urlString: urlString)
-           
-        RequestSender().send(config: requestConfig) { (result: Result<UIImage, Error>) in
+    func downloadImage(urlString: String, completionHandler: @escaping (UIImage?, Error?) -> Void) {
+        
+        let requestConfig = RequestFactory.PixabayRequests.downloadImage(urlString: urlString)
+        requestSender.send(config: requestConfig) { (result: Result<UIImage, Error>) in
             switch result {
             case .success(let picture):
                 completionHandler(picture, nil)

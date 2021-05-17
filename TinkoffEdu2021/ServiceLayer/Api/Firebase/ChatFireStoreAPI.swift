@@ -9,10 +9,10 @@ import Foundation
 import Firebase
 import CoreData
 
-class ChatFireStoreAPI {
+class ChatFireStoreAPI: ChatFireStoreAPIProtocol {
     let coreDataStack: CoreDataStack
     
-    init(coreDataStack: CoreDataStack) {
+    required init(coreDataStack: CoreDataStack) {
         self.coreDataStack = coreDataStack
     }
     

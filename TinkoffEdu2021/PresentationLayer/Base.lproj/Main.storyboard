@@ -96,6 +96,9 @@
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="hMl-Mj-Ybf"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <accessibility key="accessibilityConfiguration">
+                            <bool key="isElement" value="YES"/>
+                        </accessibility>
                         <constraints>
                             <constraint firstItem="pSk-Ce-Sgt" firstAttribute="centerX" secondItem="hMl-Mj-Ybf" secondAttribute="centerX" id="X5G-u6-4Ym"/>
                             <constraint firstItem="hMl-Mj-Ybf" firstAttribute="bottom" secondItem="n5c-Ab-w9V" secondAttribute="bottom" constant="30" id="aMC-C4-zAO"/>
@@ -112,10 +115,9 @@
                                 <segue destination="2nI-hd-jwH" kind="show" identifier="SegueToThemes" id="HGK-py-wVH"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" title="Profile" image="ProfileIcon" style="done" id="HOc-rx-V38">
-                            <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <barButtonItem key="rightBarButtonItem" title="Profile" id="UCc-Tc-7e6">
                             <connections>
-                                <segue destination="BYZ-38-t0r" kind="show" identifier="ProfileSegue" customClass="AnimatedSegue" customModule="Tinkoff_Edu" customModuleProvider="target" id="0zX-e4-TdR"/>
+                                <segue destination="BYZ-38-t0r" kind="show" customClass="AnimatedSegue" customModule="Tinkoff_Edu" customModuleProvider="target" id="lE5-TA-lKK"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
