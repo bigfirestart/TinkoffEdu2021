@@ -9,7 +9,7 @@ import Foundation
 
 class ImageListRequest: IRequest {
     private let key: String
-    private let domain = "https://pixabay.com/api/"
+    private let domain = Bundle.main.object(forInfoDictionaryKey: "PIXABAY_SERVER_DOMAIN") as? String ?? ""
        
     private var parameters = ["q": "nature",
                               "image_type": "photo",
@@ -23,7 +23,6 @@ class ImageListRequest: IRequest {
         for pair in parameters {
             formingString.append("\(pair.key)=\(pair.value)&")
         }
-           
         return String("\(domain)?\(formingString.dropLast())")
     }
        

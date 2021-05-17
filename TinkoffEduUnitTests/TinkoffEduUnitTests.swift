@@ -19,13 +19,11 @@ class TinkoffEduUnitTests: XCTestCase {
         apiService.getImageList(completionHandler: {_, _ in })
        
         let config = requestSenderMock.config
-        let domain = config[0]?.request.urlRequest?.url?.absoluteString.split(separator: "?")[0]
         
         // Assert
         XCTAssertEqual(requestSenderMock.callsCount, 1)
         XCTAssertFalse(config.contains(where: {$0 == nil}))
         XCTAssertEqual(config.count, 1)
-        XCTAssertEqual(domain, "https://pixabay.com/api/")
     }
     
     func testCoreApi_ImageDownload() {

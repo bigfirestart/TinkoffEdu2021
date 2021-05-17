@@ -35,6 +35,56 @@
 		E7601F7A263B415C00F557BC /* Push.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7601F79263B415C00F557BC /* Push.swift */; };
 		E7601F82263B417C00F557BC /* Pop.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7601F81263B417C00F557BC /* Pop.swift */; };
 		E7601FEF2642BC3100F557BC /* TinkoffEduUnitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7601FEE2642BC3100F557BC /* TinkoffEduUnitTests.swift */; };
+		E768778C264D73E20071213A /* ProfileModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E78043F42628E7DC0067763F /* ProfileModel.swift */; };
+		E768778D264D73E20071213A /* ConversationsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7011CD026277E7B00D156B2 /* ConversationsModel.swift */; };
+		E768778E264D73E20071213A /* Push.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7601F79263B415C00F557BC /* Push.swift */; };
+		E768778F264D73E20071213A /* ApiProfileCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7804405263081610067763F /* ApiProfileCell.swift */; };
+		E7687790264D73E20071213A /* ConversationTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E78B281225F024A600FA709C /* ConversationTableViewCell.swift */; };
+		E7687791264D73E20071213A /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7C95A5725D83F2B00DCB3B2 /* ProfileViewController.swift */; };
+		E7687792264D73E20071213A /* SettingsExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E728021E25F81760007ED613 /* SettingsExtensions.swift */; };
+		E7687793264D73E20071213A /* ConversationsTableDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E70612FC2628303100EFEFA6 /* ConversationsTableDelegate.swift */; };
+		E7687794264D73E20071213A /* PixabayAPIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E78044412630B4630067763F /* PixabayAPIService.swift */; };
+		E7687795264D73E20071213A /* ProfileStateController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E733DBED2602847900239A17 /* ProfileStateController.swift */; };
+		E7687796264D73E20071213A /* ConversationsListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E78B27E225EF770700FA709C /* ConversationsListViewController.swift */; };
+		E7687797264D73E20071213A /* ProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E70613092628350800EFEFA6 /* ProfileViewModel.swift */; };
+		E7687798264D73E20071213A /* Emitter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7601F5E2639FC8F00F557BC /* Emitter.swift */; };
+		E7687799264D73E20071213A /* Chat.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = E72363942614CE7A00EAE761 /* Chat.xcdatamodeld */; };
+		E768779A264D73E20071213A /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E78B281725F03AA500FA709C /* TableViewCell.swift */; };
+		E768779B264D73E20071213A /* Pop.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7601F81263B417C00F557BC /* Pop.swift */; };
+		E768779C264D73E20071213A /* ProfileImageController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E78B27D125E54D1500FA709C /* ProfileImageController.swift */; };
+		E768779D264D73E20071213A /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = E728022825F927FB007ED613 /* Theme.swift */; };
+		E768779E264D73E20071213A /* AnimatedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7601F73263B302F00F557BC /* AnimatedButton.swift */; };
+		E768779F264D73E20071213A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7C95A5325D83F2B00DCB3B2 /* AppDelegate.swift */; };
+		E76877A0264D73E20071213A /* DownloadImageRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = E78044492630C0BD0067763F /* DownloadImageRequest.swift */; };
+		E76877A1264D73E20071213A /* PixabayAPIServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = E73B5B412642DD0900156C34 /* PixabayAPIServiceProtocol.swift */; };
+		E76877A2264D73E20071213A /* AnimatedSegue.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7601F69263AA73E00F557BC /* AnimatedSegue.swift */; };
+		E76877A3264D73E20071213A /* ChatFireStoreAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = E76E559F261F147700F85DA2 /* ChatFireStoreAPI.swift */; };
+		E76877A4264D73E20071213A /* ThemeManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E728023625FA1581007ED613 /* ThemeManager.swift */; };
+		E76877A5264D73E20071213A /* ImageListRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = E78044322630B2470067763F /* ImageListRequest.swift */; };
+		E76877A6264D73E20071213A /* DownloadImageParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = E780444E2630C0CA0067763F /* DownloadImageParser.swift */; };
+		E76877A7264D73E20071213A /* ObjectsExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7456B35261501B6001DBF3F /* ObjectsExtensions.swift */; };
+		E76877A8264D73E20071213A /* Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = E780440E2630A0BA0067763F /* Network.swift */; };
+		E76877A9264D73E20071213A /* ConversationDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = E76E55AE261F1E5B00F85DA2 /* ConversationDataSource.swift */; };
+		E76877AA264D73E20071213A /* Storage.swift in Sources */ = {isa = PBXBuildFile; fileRef = E706132A262849B600EFEFA6 /* Storage.swift */; };
+		E76877AB264D73E20071213A /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = E72363A92614E9FF00EAE761 /* CoreDataStack.swift */; };
+		E76877AC264D73E20071213A /* ConversationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E78B27ED25EF7F5100FA709C /* ConversationViewController.swift */; };
+		E76877AD264D73E20071213A /* SettingsEmitterExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7601F6E263B2EDE00F557BC /* SettingsEmitterExtension.swift */; };
+		E76877AE264D73E20071213A /* ProfileState.swift in Sources */ = {isa = PBXBuildFile; fileRef = E70613212628388C00EFEFA6 /* ProfileState.swift */; };
+		E76877AF264D73E20071213A /* ChatFireStoreAPIProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = E73B5B392642C81D00156C34 /* ChatFireStoreAPIProtocol.swift */; };
+		E76877B0264D73E20071213A /* AddChannel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7F70327260BDEB20081AEA0 /* AddChannel.swift */; };
+		E76877B1264D73E20071213A /* ChatInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7F7033E260BEA470081AEA0 /* ChatInput.swift */; };
+		E76877B2264D73E20071213A /* ApiProfileCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E78043FC26307BFD0067763F /* ApiProfileCollectionViewController.swift */; };
+		E76877B3264D73E20071213A /* ConversationsThemeDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E70613012628309D00EFEFA6 /* ConversationsThemeDelegate.swift */; };
+		E76877B4264D73E20071213A /* ConversationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7011CA7262771DF00D156B2 /* ConversationModel.swift */; };
+		E76877B5264D73E20071213A /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7C95AA425D8490600DCB3B2 /* Logger.swift */; };
+		E76877B6264D73E20071213A /* RequestFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = E78044212630AF9A0067763F /* RequestFactory.swift */; };
+		E76877B7264D73E20071213A /* ImageListParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = E78044272630B05A0067763F /* ImageListParser.swift */; };
+		E76877B8264D73E20071213A /* DataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = E706DC15261E430F008EC502 /* DataSource.swift */; };
+		E76877B9264D73E20071213A /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E728021925F80867007ED613 /* SettingsViewController.swift */; };
+		E76877BB264D73E20071213A /* Pods_TinkoffEdu2021.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 233234376A1C82DC57D4B96E /* Pods_TinkoffEdu2021.framework */; };
+		E76877BD264D73E20071213A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E7C95A5C25D83F2F00DCB3B2 /* Assets.xcassets */; };
+		E76877BE264D73E20071213A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E7C95A5925D83F2B00DCB3B2 /* Main.storyboard */; };
+		E76877BF264D73E20071213A /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = E7F70315260B97D00081AEA0 /* GoogleService-Info.plist */; };
 		E76E55A0261F147700F85DA2 /* ChatFireStoreAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = E76E559F261F147700F85DA2 /* ChatFireStoreAPI.swift */; };
 		E76E55AF261F1E5B00F85DA2 /* ConversationDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = E76E55AE261F1E5B00F85DA2 /* ConversationDataSource.swift */; };
 		E78043F52628E7DD0067763F /* ProfileModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E78043F42628E7DC0067763F /* ProfileModel.swift */; };
@@ -114,6 +164,9 @@
 		E7601FEC2642BC3100F557BC /* TinkoffEduUnitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TinkoffEduUnitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E7601FEE2642BC3100F557BC /* TinkoffEduUnitTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TinkoffEduUnitTests.swift; sourceTree = "<group>"; };
 		E7601FF02642BC3100F557BC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E7687787264D73B60071213A /* config.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = config.xcconfig; sourceTree = "<group>"; };
+		E76877C4264D73E20071213A /* BuildApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BuildApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		E76877C9264D73E30071213A /* BuildApp.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = BuildApp.plist; path = /Users/kirilllukanov/Desktop/TinkoffEdu2021/BuildApp.plist; sourceTree = "<absolute>"; };
 		E76E559F261F147700F85DA2 /* ChatFireStoreAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatFireStoreAPI.swift; sourceTree = "<group>"; };
 		E76E55AE261F1E5B00F85DA2 /* ConversationDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConversationDataSource.swift; sourceTree = "<group>"; };
 		E78043F42628E7DC0067763F /* ProfileModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileModel.swift; sourceTree = "<group>"; };
@@ -155,6 +208,14 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E76877BA264D73E20071213A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E76877BB264D73E20071213A /* Pods_TinkoffEdu2021.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -467,6 +528,7 @@
 		E7C95A4725D83F2B00DCB3B2 = {
 			isa = PBXGroup;
 			children = (
+				E7687787264D73B60071213A /* config.xcconfig */,
 				E7F70315260B97D00081AEA0 /* GoogleService-Info.plist */,
 				E7C95A5225D83F2B00DCB3B2 /* TinkoffEdu2021 */,
 				E7601FED2642BC3100F557BC /* TinkoffEduUnitTests */,
@@ -474,6 +536,7 @@
 				E7C95A5125D83F2B00DCB3B2 /* Products */,
 				2F67CCF50248C10441D13578 /* Pods */,
 				D605BBF38F7F58B386C8421E /* Frameworks */,
+				E76877C9264D73E30071213A /* BuildApp.plist */,
 			);
 			sourceTree = "<group>";
 		};
@@ -483,6 +546,7 @@
 				E7C95A5025D83F2B00DCB3B2 /* Tinkoff Edu.app */,
 				E7601FEC2642BC3100F557BC /* TinkoffEduUnitTests.xctest */,
 				E73B5B252642C06800156C34 /* TinkoffEduUITests.xctest */,
+				E76877C4264D73E20071213A /* BuildApp.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -555,6 +619,26 @@
 			productReference = E7601FEC2642BC3100F557BC /* TinkoffEduUnitTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
+		E7687788264D73E20071213A /* BuildApp */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E76877C1264D73E20071213A /* Build configuration list for PBXNativeTarget "BuildApp" */;
+			buildPhases = (
+				E7687789264D73E20071213A /* [CP] Check Pods Manifest.lock */,
+				E768778A264D73E20071213A /* ShellScript */,
+				E768778B264D73E20071213A /* Sources */,
+				E76877BA264D73E20071213A /* Frameworks */,
+				E76877BC264D73E20071213A /* Resources */,
+				E76877C0264D73E20071213A /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = BuildApp;
+			productName = TinkoffEdu2021;
+			productReference = E76877C4264D73E20071213A /* BuildApp.app */;
+			productType = "com.apple.product-type.application";
+		};
 		E7C95A4F25D83F2B00DCB3B2 /* TinkoffEdu2021 */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = E7C95A7A25D83F2F00DCB3B2 /* Build configuration list for PBXNativeTarget "TinkoffEdu2021" */;
@@ -613,6 +697,7 @@
 				E7C95A4F25D83F2B00DCB3B2 /* TinkoffEdu2021 */,
 				E7601FEB2642BC3100F557BC /* TinkoffEduUnitTests */,
 				E73B5B242642C06800156C34 /* TinkoffEduUITests */,
+				E7687788264D73E20071213A /* BuildApp */,
 			);
 		};
 /* End PBXProject section */
@@ -629,6 +714,16 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E76877BC264D73E20071213A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E76877BD264D73E20071213A /* Assets.xcassets in Resources */,
+				E76877BE264D73E20071213A /* Main.storyboard in Resources */,
+				E76877BF264D73E20071213A /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -667,6 +762,62 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
+		E7687789264D73E20071213A /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-TinkoffEdu2021-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E768778A264D73E20071213A /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if [ -z \"$CI\" ]; then\n    ${PODS_ROOT}/SwiftLint/swiftlint\nfi\n";
+		};
+		E76877C0264D73E20071213A /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-TinkoffEdu2021/Pods-TinkoffEdu2021-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-TinkoffEdu2021/Pods-TinkoffEdu2021-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-TinkoffEdu2021/Pods-TinkoffEdu2021-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		E7AEAD3E5EE3EE1270D4ADF7 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -699,7 +850,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/SwiftLint/swiftlint\"\n";
+			shellScript = "if [ -z \"$CI\" ]; then\n    ${PODS_ROOT}/SwiftLint/swiftlint\nfi\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -718,6 +869,59 @@
 			files = (
 				E73B5B532642DF2200156C34 /* RequestSenderMock.swift in Sources */,
 				E7601FEF2642BC3100F557BC /* TinkoffEduUnitTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E768778B264D73E20071213A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E768778C264D73E20071213A /* ProfileModel.swift in Sources */,
+				E768778D264D73E20071213A /* ConversationsModel.swift in Sources */,
+				E768778E264D73E20071213A /* Push.swift in Sources */,
+				E768778F264D73E20071213A /* ApiProfileCell.swift in Sources */,
+				E7687790264D73E20071213A /* ConversationTableViewCell.swift in Sources */,
+				E7687791264D73E20071213A /* ProfileViewController.swift in Sources */,
+				E7687792264D73E20071213A /* SettingsExtensions.swift in Sources */,
+				E7687793264D73E20071213A /* ConversationsTableDelegate.swift in Sources */,
+				E7687794264D73E20071213A /* PixabayAPIService.swift in Sources */,
+				E7687795264D73E20071213A /* ProfileStateController.swift in Sources */,
+				E7687796264D73E20071213A /* ConversationsListViewController.swift in Sources */,
+				E7687797264D73E20071213A /* ProfileViewModel.swift in Sources */,
+				E7687798264D73E20071213A /* Emitter.swift in Sources */,
+				E7687799264D73E20071213A /* Chat.xcdatamodeld in Sources */,
+				E768779A264D73E20071213A /* TableViewCell.swift in Sources */,
+				E768779B264D73E20071213A /* Pop.swift in Sources */,
+				E768779C264D73E20071213A /* ProfileImageController.swift in Sources */,
+				E768779D264D73E20071213A /* Theme.swift in Sources */,
+				E768779E264D73E20071213A /* AnimatedButton.swift in Sources */,
+				E768779F264D73E20071213A /* AppDelegate.swift in Sources */,
+				E76877A0264D73E20071213A /* DownloadImageRequest.swift in Sources */,
+				E76877A1264D73E20071213A /* PixabayAPIServiceProtocol.swift in Sources */,
+				E76877A2264D73E20071213A /* AnimatedSegue.swift in Sources */,
+				E76877A3264D73E20071213A /* ChatFireStoreAPI.swift in Sources */,
+				E76877A4264D73E20071213A /* ThemeManager.swift in Sources */,
+				E76877A5264D73E20071213A /* ImageListRequest.swift in Sources */,
+				E76877A6264D73E20071213A /* DownloadImageParser.swift in Sources */,
+				E76877A7264D73E20071213A /* ObjectsExtensions.swift in Sources */,
+				E76877A8264D73E20071213A /* Network.swift in Sources */,
+				E76877A9264D73E20071213A /* ConversationDataSource.swift in Sources */,
+				E76877AA264D73E20071213A /* Storage.swift in Sources */,
+				E76877AB264D73E20071213A /* CoreDataStack.swift in Sources */,
+				E76877AC264D73E20071213A /* ConversationViewController.swift in Sources */,
+				E76877AD264D73E20071213A /* SettingsEmitterExtension.swift in Sources */,
+				E76877AE264D73E20071213A /* ProfileState.swift in Sources */,
+				E76877AF264D73E20071213A /* ChatFireStoreAPIProtocol.swift in Sources */,
+				E76877B0264D73E20071213A /* AddChannel.swift in Sources */,
+				E76877B1264D73E20071213A /* ChatInput.swift in Sources */,
+				E76877B2264D73E20071213A /* ApiProfileCollectionViewController.swift in Sources */,
+				E76877B3264D73E20071213A /* ConversationsThemeDelegate.swift in Sources */,
+				E76877B4264D73E20071213A /* ConversationModel.swift in Sources */,
+				E76877B5264D73E20071213A /* Logger.swift in Sources */,
+				E76877B6264D73E20071213A /* RequestFactory.swift in Sources */,
+				E76877B7264D73E20071213A /* ImageListParser.swift in Sources */,
+				E76877B8264D73E20071213A /* DataSource.swift in Sources */,
+				E76877B9264D73E20071213A /* SettingsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -881,6 +1085,46 @@
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Tinkoff Edu.app/Tinkoff Edu";
+			};
+			name = Release;
+		};
+		E76877C2264D73E20071213A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = E7687787264D73B60071213A /* config.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 9J6689CCTF;
+				INFOPLIST_FILE = BuildApp.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = ru.tinkoff.TinkoffChat;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		E76877C3264D73E20071213A /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1F68F86084AACB7103BC4CA6 /* Pods-TinkoffEdu2021.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 9J6689CCTF;
+				INFOPLIST_FILE = BuildApp.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = ru.tinkoff.TinkoffChat;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};
@@ -1057,6 +1301,15 @@
 			buildConfigurations = (
 				E7601FF42642BC3100F557BC /* Debug */,
 				E7601FF52642BC3100F557BC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E76877C1264D73E20071213A /* Build configuration list for PBXNativeTarget "BuildApp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E76877C2264D73E20071213A /* Debug */,
+				E76877C3264D73E20071213A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

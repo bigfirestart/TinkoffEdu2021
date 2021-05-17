@@ -28,7 +28,7 @@ class ConversationsListViewController: UIViewController, NSFetchedResultsControl
     required init?(coder aDecoder: NSCoder) {
         print("init from storyboard")
         self.model = ConversationsModel(coreDataStack: CoreDataStack())
-        self.chatFireStoreAPI = Tinkoff_Edu.ChatFireStoreAPI(coreDataStack: self.model.coreDataStack)
+        self.chatFireStoreAPI = ChatFireStoreAPI(coreDataStack: self.model.coreDataStack)
         super.init(coder: aDecoder)
     }
     
